@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const SlideShow = ({ product, changeSlide}) => {
+const SlideShow = ({ product, products, changeSlide}) => {
     let bigImage = product.images[product.activeIndex].image;
 
     const selectMiniImage = (e) => {
         const active = e.currentTarget.getAttribute('data');
         product.activeIndex = active;
-        changeSlide(product);
+        changeSlide(product, products);
     };
 
     return (
@@ -37,12 +37,15 @@ const SlideShow = ({ product, changeSlide}) => {
 
 export default connect(
     (state, ownProps) => ({
-        product: state.products[ownProps.id]
+        products: state.products,
+        product: state.products[ownProps.id] || state.catalogs.find(catalog => catalog.id === ownProps.catalogId).products[ownProps.id]
     }),
     dispatch => ({
-        changeSlide: (product) => {
+        changeSlide: (product, products) => {
             const payload = product;
-            dispatch({ type: 'CHANGE_SLIDE', payload });
+            const payload2 = products;
+
+            dispatch({ type: 'CHANGE_SLIDE', payload, payload2 });
         }
     })
 )(SlideShow);

@@ -22,16 +22,20 @@ const Color = ({ name }) => {
 };
 
 const RangeBox = () => {
+    const value = {
+        minValue: 700,
+        maxValue: 7000
+    };
+
     return (
         <div className="filter filter_type_price">
             <div className="price-range">
                 <div className="price-range__box">
                     <span className="price-range__text">от</span>
-                    <input type="text" className="price-range__input" id="price-range1" />
+                    <input type="text" className="price-range__input" id="price-range1" value={value.minValue} />
                     <span className="price-range__text">до</span>
-                    <input type="text" className="price-range__input" id="price-range2" />
+                    <input type="text" className="price-range__input" id="price-range2" value={value.maxValue} />
                 </div>
-                <div className="price-range__slider"></div>
             </div>
         </div>
     )
@@ -47,8 +51,9 @@ const Filter = ({ filter, changeFilter}) => {
     };
     return (
         <li className="filters__item">
-            <a href="#" className={"filter__title " + active} onClick={onTitleClick}>{filter.name}
-                <i className="manage-filter" key={filter.id}></i></a>
+            <div className={"filter__title " + active} onClick={onTitleClick}>{filter.name}
+                <i className="manage-filter" key={filter.id}></i>
+            </div>
             {
                 filter.open === 'yes' &&
                 <div className={"filter filter_type_" + filter.id}>

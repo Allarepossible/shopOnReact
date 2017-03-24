@@ -12,17 +12,18 @@ const Feature = ({ name, value }) => {
     );
 };
 
-const Product = ({ images, feature, image, articul, name, info, ratio, price, nalichie, id, activeIndex }) => {
+const Product = ({ images, feature, articul, name, info, ratio, price, nalichie, id, activeIndex, catalogId }) => {
     return (
         <li className="products" key={id}>
             <SlideShow
                 key={id}
                 id={id}
                 images={images}
-                bigImage={image}
+                bigImage={images[activeIndex]}
                 articul={articul}
                 name={name}
                 activeIndex={activeIndex}
+                catalogId={catalogId}
             />
             <div className="products_center_content">
                 <div className="products__title">{name}</div>
@@ -63,10 +64,12 @@ const Product = ({ images, feature, image, articul, name, info, ratio, price, na
     );
 };
 
-const ProductsList = ({ products}) => {
+const ProductsList = ({ products, views, catalogId }) => {
+    const activeView = views.filter((view) => view.active)[0].name;
+
     return (
         <div className="contacts">
-            <ul className="products_list1">
+            <ul className={"products_list products_list_type_" + activeView}>
                 {
                     products.filter((product) => product.name).map((el, index) => {
                         return <Product
@@ -81,6 +84,7 @@ const ProductsList = ({ products}) => {
                             images={el.images}
                             feature={el.feature}
                             activeIndex={el.activeIndex}
+                            catalogId={catalogId}
                         />;
                     })
                 }
@@ -89,14 +93,16 @@ const ProductsList = ({ products}) => {
     );
 };
 
-const Products = ({ products }) => {
+const Products = ({ ownProps, views, catalogId }) => {
     return (
-        <ProductsList key="products" products={products} />
+        <ProductsList key="products" products={ownProps.products} views={views} catalogId={catalogId} />
     );
 };
 
 export default connect(
-    (state) => ({
-        products: state.products
+    (state, ownProps) => ({
+        catalogId: ownProps.catalogId,
+        views: state.views,
+        ownProps
     })
 )(Products);

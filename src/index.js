@@ -8,6 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
 import Shop from './containers/Shop';
+import Catalog from './containers/Catalog';
 import './index.css';
 
 import reducer from './reducers';
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
         <Route path="/" component={Shop} />
+        <Route path="/catalog/:id" component={Catalog} />
       </Router>
     </Provider>,
     document.getElementById('root')
