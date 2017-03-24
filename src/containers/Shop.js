@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Menu from '../components/Menu';
+import Sort from '../components/Sort';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Products from '../components/Products';
 import Filters from '../components/Filters';
@@ -24,6 +26,7 @@ const Shop = ({products, filters}) => {
                                 />
                             </aside>
                             <div className="right_content">
+                                <Sort />
                                 <div className="content">
                                     <div className="content">
                                         <Products
@@ -70,6 +73,7 @@ const Shop = ({products, filters}) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
