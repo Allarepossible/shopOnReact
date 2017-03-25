@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Breadcrumb = ({ name }) => {
+const Breadcrumb = ({ name, link }) => {
     return (
         <li className='breadcrumbs__item'>
-            <a href='#' className='breadcrumbs__link'>{name}</a>
+            <a href={link} className='breadcrumbs__link'>{name}</a>
         </li>
     );
 };
 
-const Breadcrumbs = () => {
-    const breadcrumbs = ['Главная', 'Каталог'];
+const Breadcrumbs = ({ catalog }) => {
+    const breadcrumbs = catalog ? [{name: 'Главная', link:'/'}].concat(catalog) : [{name: 'Главная', link:'/'}];
 
     return (
         <div className='breadcrumbs'>
@@ -19,7 +19,8 @@ const Breadcrumbs = () => {
                         breadcrumbs.map((el, i) => {
                             return <Breadcrumb
                                 key={i}
-                                name={el}
+                                name={el.name}
+                                link={el.link}
                             />;
                         })
                     }

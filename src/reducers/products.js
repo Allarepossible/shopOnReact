@@ -20,7 +20,7 @@ export default function products(state = initialState, action) {
             ...action.payload
         ];
     } else if (action.type === 'SET_STATE') {
-
+        state = action.payload;
         return [
             ...action.payload
         ];

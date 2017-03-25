@@ -2,17 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import SlideShow from './SlideShow';
-
-const Feature = ({ name, value }) => {
-    return (
-        <li className='features__item'>
-            <div className='features_name'>{name}</div>
-            <div className='features_value'>{value}</div>
-        </li>
-    );
-};
+import Feature from './Feature';
 
 const Product = ({ images, feature, articul, name, info, ratio, price, nalichie, id, activeIndex, catalogId }) => {
+    const NewPrice = String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+
     return (
         <li className='products' key={id}>
             <SlideShow
@@ -56,8 +50,11 @@ const Product = ({ images, feature, articul, name, info, ratio, price, nalichie,
 
             </div>
             <div className='products_right_content'>
-                <div className='products__price'>{price} P</div>
-                <div className='products_nallichie'>{nalichie}</div>
+                <div className='products__price'>{NewPrice} P</div>
+                <div className="products__about">
+                    <div className='products_nallichie'>{nalichie}</div>
+                    <a className='products__link' href={'/#/catalog/' + catalogId + '/' + articul}>Подробнее</a>
+                </div>
                 <button className='products__buy'>В корзину</button>
             </div>
         </li>

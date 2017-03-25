@@ -4,15 +4,14 @@ import { connect } from 'react-redux';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import Menu from '../components/navigation/Menu';
-import Sort from '../components/filters/Sort';
 import Breadcrumbs from '../components/navigation/Breadcrumbs';
+import Sort from '../components/filters/Sort';
 import PathProducts from '../components/navigation/PathProducts';
 import Information from '../components/Information';
 import Products from '../components/products/Products';
 import Filters from '../components/filters/Filters';
 
-const Catalog = ({ products, catalog, filters, setState }) => {
-    const catalogLink = '/#/catalog/' + catalog.id;
+const Search = ({ products, catalog, filters, setState }) => {
     if (products === 0) {
         setState(catalog.products);
     }
@@ -21,10 +20,10 @@ const Catalog = ({ products, catalog, filters, setState }) => {
         <div>
             <div className='wrapper'>
                 <Header />
-                <Menu active={catalog.id}/>
+                <Menu />
                 <div className='main_content'>
                     <div className='container'>
-                        <Breadcrumbs catalog={[{name: "Каталог", link: '/#/catalog/'}, {name: catalog.name, link: catalogLink}]}/>
+                        <Breadcrumbs catalog={[{name:'Поиск', link: '/#/search'}]} />
                         <h1 className='main_head_text'>{catalog.name}</h1>
                         <div className='layout'>
                             <aside className='sidebar'>
@@ -65,4 +64,4 @@ export default connect(
             dispatch({ type: 'SET_STATE', payload });
         }
     })
-)(Catalog);
+)(Search);

@@ -1,14 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const MenuItems = ({ name, id, active, changeCatalog }) => {
-    const activeMenu = id === active ? ' nav__item-active' : '';
-    return (
-        <li className={'nav__item' + activeMenu}>
-            <a href={'/#/catalog/' + id} className='nav__link' onClick={changeCatalog} data={id}>{name}</a>
-        </li>
-    );
-};
+import MenuItem from './MenuItem';
 
 const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
     const changeCatalog = (e) => {
@@ -25,11 +18,12 @@ const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
                 <ul className='nav__list'>
                     {
                         catalogsName.map((catalog, i) => {
-                            return <MenuItems
+                            return <MenuItem
                                 key={i}
                                 name={catalog.name}
                                 id={catalog.id}
                                 active={ownProps.active}
+                                className={'nav'}
                                 changeCatalog={changeCatalog}
                             />;
                         })

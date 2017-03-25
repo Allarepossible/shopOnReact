@@ -2,6 +2,7 @@ const initialState = [
     {
         id: 'tablets',
         name: 'Планшеты',
+        img: 'images/img/tablets/ASUS-Transformer-Book-1.jpeg',
         products: [
             {
                 name :'Samsung Galaxy Tab A 10.1',
@@ -13,7 +14,7 @@ const initialState = [
                 ],
                 activeIndex: 0,
                 date:124325,
-                articul :'138789',
+                articul: 1000,
                 oc: 'Android',
                 brands: 'Samsung',
                 color: 'white',
@@ -40,7 +41,7 @@ const initialState = [
                     {image: 'images/img/tablets/ASUS-Transformer-Book-2.jpeg'},
                     {image: 'images/img/tablets/ASUS-Transformer-Book-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 1001,
                 oc: 'Windows 10',
                 brands: 'Microsoft',
                 color: 'white',
@@ -67,7 +68,7 @@ const initialState = [
                     {image: 'images/img/tablets/Prestigio-MultiPad-2.jpeg'},
                     {image: 'images/img/tablets/Prestigio-MultiPad-3.jpeg'}
                 ],
-                articul :'132489',
+                articul: 1002,
                 oc: 'Android',
                 brands: 'Archos',
                 color: 'white',
@@ -94,7 +95,7 @@ const initialState = [
                     {image: 'images/img/tablets/Lenovo-TAB-2-2.jpeg'},
                     {image: 'images/img/tablets/Lenovo-TAB-2-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 1003,
                 oc: 'Android',
                 brands: 'Philips',
                 color: 'white',
@@ -121,7 +122,7 @@ const initialState = [
                     {image: 'images/img/tablets/Apple-iPad-Pro-9.7-2.jpeg'},
                     {image: 'images/img/tablets/Apple-iPad-Pro-9.7-3.jpeg'}
                 ],
-                articul :'965471',
+                articul: 1004,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -151,7 +152,7 @@ const initialState = [
                     {image: 'images/img/tablets/Lenovo-Tab-3-TB3-2.jpeg'},
                     {image: 'images/img/tablets/Lenovo-Tab-3-TB3-3.jpeg'}
                 ],
-                articul :'321419',
+                articul: 1005,
                 feature : [
                     {name: 'Тип SIM-кары', value: 'Micro-SIM'},
                     {name: 'Количество SIM-карт', value: 2},
@@ -172,6 +173,7 @@ const initialState = [
 
         id: 'mobiles',
         name: 'Мобильные телефоны',
+        img: 'images/img/mobiles/Microsoft-Lumia-640-s1.jpg',
         products: [
             {
                 name :'Samsung GT-I9301I  GALAXY S 3',
@@ -183,7 +185,7 @@ const initialState = [
                 ],
                 activeIndex: 0,
                 date:12432575,
-                articul :'128789',
+                articul: 2000,
                 oc: 'Android',
                 brands: 'Samsung',
                 color: 'white',
@@ -210,7 +212,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Microsoft-Lumia-640-s2.jpg'},
                     {image: 'images/img/mobiles/Microsoft-Lumia-640-s3.jpg'}
                 ],
-                articul :'321559',
+                articul: 2001,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -237,7 +239,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Archos-50-Oxygen-Plus-s2.jpg'},
                     {image: 'images/img/mobiles/Archos-50-Oxygen-Plus-s3.jpg'}
                 ],
-                articul :'132489',
+                articul: 2002,
                 oc: 'Android',
                 brands: 'Archos',
                 color: 'white',
@@ -264,7 +266,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Philips-S398-Black-s2.jpg'},
                     {image: 'images/img/mobiles/Philips-S398-Black-s3.jpg'}
                 ],
-                articul :'321559',
+                articul: 2003,
                 oc: 'Android',
                 brands: 'Philips',
                 color: 'white',
@@ -291,7 +293,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Microsoft-Lumia-430-RM-10-s2.jpg'},
                     {image: 'images/img/mobiles/Microsoft-Lumia-430-RM-10-s3.jpg'}
                 ],
-                articul :'965471',
+                articul: 2004,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -321,7 +323,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Senseit-L301-Black-s2.jpg'},
                     {image: 'images/img/mobiles/Senseit-L301-Black-s3.jpg'}
                 ],
-                articul :'321419',
+                articul: 2005,
                 feature : [
                     {name: 'Тип SIM-кары', value: 'Micro-SIM'},
                     {name: 'Количество SIM-карт', value: 2},
@@ -345,7 +347,7 @@ const initialState = [
                     {image: 'images/img/mobiles/HIGHSCREEN-WinWin-Black-s2.jpg'},
                     {image: 'images/img/mobiles/HIGHSCREEN-WinWin-Black-s3.jpg'}
                 ],
-                articul :'451781',
+                articul: 2006,
                 oc: 'Windows Phone',
                 brands: 'WinWin',
                 color: 'black',
@@ -372,7 +374,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s2.jpg'},
                     {image: 'images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s3.jpg'}
                 ],
-                articul :'321489',
+                articul: 2007,
                 oc: 'Android',
                 brands: 'Alcatel',
                 color: 'white',
@@ -399,7 +401,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Fly-IQ434-Era-Nano-5-s2.jpg'},
                     {image: 'images/img/mobiles/Fly-IQ434-Era-Nano-5-s3.jpg'}
                 ],
-                articul :'987441',
+                articul: 2008,
                 oc: 'IOS',
                 brands: 'Fly',
                 color: 'black',
@@ -423,6 +425,7 @@ const initialState = [
 
         id: 'mp3',
         name: 'Mp3 плееры',
+        img: 'images/img/mp3/Apple-iPod-nano-7-1.jpeg',
         products: [
             {
                 name :'Apple iPod nano 7',
@@ -434,7 +437,7 @@ const initialState = [
                 ],
                 activeIndex: 0,
                 date:12874325,
-                articul :'128789',
+                articul: 3000,
                 oc: 'Android',
                 brands: 'Samsung',
                 color: 'white',
@@ -461,7 +464,7 @@ const initialState = [
                     {image: 'images/img/mp3/Sony-NWZ-B183F-2.jpeg'},
                     {image: 'images/img/mp3/Sony-NWZ-B183F-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 3001,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -488,7 +491,7 @@ const initialState = [
                     {image: 'images/img/mp3/Digma-B3-8Gb-2.jpeg'},
                     {image: 'images/img/mp3/Digma-B3-8Gb-3.jpeg'}
                 ],
-                articul :'132489',
+                articul: 3002,
                 oc: 'Android',
                 brands: 'Archos',
                 color: 'white',
@@ -515,7 +518,7 @@ const initialState = [
                     {image: 'images/img/mp3/Fiio-X3-II-2.jpeg'},
                     {image: 'images/img/mp3/Fiio-X3-II-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 3003,
                 oc: 'Android',
                 brands: 'Philips',
                 color: 'white',
@@ -542,7 +545,7 @@ const initialState = [
                     {image: 'images/img/mp3/Apple-iPod-touch-6-2.jpeg'},
                     {image: 'images/img/mp3/Apple-iPod-touch-6-3.jpeg'}
                 ],
-                articul :'965471',
+                articul: 3004,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -572,7 +575,7 @@ const initialState = [
                     {image: 'images/img/mp3/Fiio-X1-2.jpeg'},
                     {image: 'images/img/mp3/Fiio-X1-3.jpeg'}
                 ],
-                articul :'321419',
+                articul: 3005,
                 feature : [
                     {name: 'Тип SIM-кары', value: 'Micro-SIM'},
                     {name: 'Количество SIM-карт', value: 2},
@@ -596,7 +599,7 @@ const initialState = [
                     {image: 'images/img/mp3/Sony-NWZ-WS613-2.jpeg'},
                     {image: 'images/img/mp3/Sony-NWZ-WS613-3.jpeg'}
                 ],
-                articul :'451781',
+                articul: 3006,
                 oc: 'Windows Phone',
                 brands: 'WinWin',
                 color: 'black',
@@ -619,7 +622,8 @@ const initialState = [
     {
 
         id: 'computers',
-        name: 'Персональные компьютеры',
+        name: 'Компьютеры',
+        img: 'images/img/computers/PRO-099070-Intel-Core-1.jpg',
         products: [
             {
                 name :'Компьютер PRO-099070',
@@ -630,7 +634,7 @@ const initialState = [
                     {image: 'images/img/computers/PRO-099070-Intel-Core-3.jpg'}
                 ],
                 activeIndex: 0, date:124325,
-                articul :'128789',
+                articul: 4000,
                 oc: 'Android',
                 brands: 'Samsung',
                 color: 'white',
@@ -656,7 +660,7 @@ const initialState = [
                     {image: 'images/img/computers/RIWER-590330-1.jpg'},
                     {image: 'images/img/computers/RIWER-590330-1.jpg'}
                 ],
-                articul :'321559',
+                articul: 4001,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -682,7 +686,7 @@ const initialState = [
                     {image: 'images/img/computers/GT51CA-RU002T-2.jpg'},
                     {image: 'images/img/computers/GT51CA-RU002T-3.jpg'}
                 ],
-                articul :'132489',
+                articul: 4002,
                 oc: 'Android',
                 brands: 'Archos',
                 color: 'white',
@@ -708,7 +712,7 @@ const initialState = [
                     {image: 'images/img/computers/Apple-Mac-mini-2.jpeg'},
                     {image: 'images/img/computers/Apple-Mac-mini-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 4003,
                 oc: 'Android',
                 brands: 'Philips',
                 color: 'white',
@@ -734,7 +738,7 @@ const initialState = [
                     {image: 'images/img/computers/MicroXperts-2.jpg'},
                     {image: 'images/img/computers/MicroXperts-3.jpg'}
                 ],
-                articul :'965471',
+                articul: 4004,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -763,7 +767,7 @@ const initialState = [
                     {image: 'images/img/computers/RS-1114-2.jpg'},
                     {image: 'images/img/computers/RS-1114-3.jpg'}
                 ],
-                articul :'321419',
+                articul: 4005,
                 feature : [
                     {name: 'Тип SIM-кары', value: 'Micro-SIM'},
                     {name: 'Количество SIM-карт', value: 2},
@@ -786,7 +790,7 @@ const initialState = [
                     {image: 'images/img/computers/LENOVO-Erazer-X310-2.jpeg'},
                     {image: 'images/img/computers/LENOVO-Erazer-X310-3.jpeg'}
                 ],
-                articul :'451781',
+                articul: 4006,
                 oc: 'Windows Phone',
                 brands: 'WinWin',
                 color: 'black',
@@ -810,6 +814,7 @@ const initialState = [
 
         id: 'accessorizes',
         name: 'Аксессуары',
+        img: 'images/img/accessorizes/Continent-CC-1.jpeg',
         products: [
             {
                 name :'Continent CC-01',
@@ -820,7 +825,7 @@ const initialState = [
                     {image: 'images/img/accessorizes/Continent-CC-1.jpeg'}
                 ],
                 activeIndex: 0, date:124325,
-                articul :'128789',
+                articul: 5000,
                 oc: 'Android',
                 brands: 'Samsung',
                 color: 'white',
@@ -846,7 +851,7 @@ const initialState = [
                     {image: 'images/img/accessorizes/Drifter-Backpack-16-2.jpeg'},
                     {image: 'images/img/accessorizes/Drifter-Backpack-16-1.jpeg'}
                 ],
-                articul :'321559',
+                articul: 5001,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -872,7 +877,7 @@ const initialState = [
                     {image: 'images/img/accessorizes/KS-is-2.jpg'},
                     {image: 'images/img/accessorizes/KS-is-3.jpg'}
                 ],
-                articul :'132489',
+                articul: 5002,
                 oc: 'Android',
                 brands: 'Archos',
                 color: 'white',
@@ -898,7 +903,7 @@ const initialState = [
                     {image: 'images/img/accessorizes/Lenovo-Thinkpad-2.jpg'},
                     {image: 'images/img/accessorizes/Lenovo-Thinkpad-3.jpg'}
                 ],
-                articul :'321559',
+                articul: 5003,
                 oc: 'Android',
                 brands: 'Philips',
                 color: 'white',
@@ -924,7 +929,7 @@ const initialState = [
                     {image: 'images/img/accessorizes/Notebook-Backpack-2.jpeg'},
                     {image: 'images/img/accessorizes/Notebook-Backpack-3.jpeg'}
                 ],
-                articul :'965471',
+                articul: 5004,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -948,6 +953,7 @@ const initialState = [
 
         id: 'nouts',
         name: 'Ноутбуки',
+        img: 'images/img/nouts/Apple-MacBook-Air-13-1.jpeg',
         products: [
             {
                 name :'Apple MacBook Air 13',
@@ -958,7 +964,7 @@ const initialState = [
                     {image: 'images/img/nouts/Apple-MacBook-Air-13-3.jpeg'}
                 ],
                 activeIndex: 0, date:124325,
-                articul :'128789',
+                articul: 6000,
                 oc: 'Android',
                 brands: 'Samsung',
                 color: 'white',
@@ -984,7 +990,7 @@ const initialState = [
                     {image: 'images/img/nouts/ASUS-VivoBook-Max-2.jpeg'},
                     {image: 'images/img/nouts/ASUS-VivoBook-Max-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 6001,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -1010,7 +1016,7 @@ const initialState = [
                     {image: 'images/img/nouts/DELL-INSPIRON-5567-2.jpeg'},
                     {image: 'images/img/nouts/DELL-INSPIRON-5567-3.jpeg'}
                 ],
-                articul :'132489',
+                articul: 6002,
                 oc: 'Android',
                 brands: 'Archos',
                 color: 'white',
@@ -1036,7 +1042,7 @@ const initialState = [
                     {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-2.jpeg'},
                     {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 6003,
                 oc: 'Android',
                 brands: 'Philips',
                 color: 'white',
@@ -1062,7 +1068,7 @@ const initialState = [
                     {image: 'images/img/nouts/DELL-Vostro-5468-2.jpeg'},
                     {image: 'images/img/nouts/DELL-Vostro-5468-3.jpeg'}
                 ],
-                articul :'965471',
+                articul: 6004,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -1091,7 +1097,7 @@ const initialState = [
                     {image: 'images/img/nouts/MSI-GP72-7RD-Leopard-2.jpeg'},
                     {image: 'images/img/nouts/MSI-GP72-7RD-Leopard-3.jpeg'}
                 ],
-                articul :'321419',
+                articul: 6005,
                 feature : [
                     {name: 'Тип SIM-кары', value: 'Micro-SIM'},
                     {name: 'Количество SIM-карт', value: 2},
@@ -1114,7 +1120,7 @@ const initialState = [
                     {image: 'images/img/nouts/HP-ProBook-430-G4-2.jpeg'},
                     {image: 'images/img/nouts/HP-ProBook-430-G4-3.jpeg'}
                 ],
-                articul :'451781',
+                articul: 6006,
                 oc: 'Windows Phone',
                 brands: 'WinWin',
                 color: 'black',
@@ -1140,7 +1146,7 @@ const initialState = [
                     {image: 'images/img/nouts/Sony-VAIO-Pro-2.jpeg'},
                     {image: 'images/img/nouts/Sony-VAIO-Pro-3.jpeg'}
                 ],
-                articul :'321489',
+                articul: 6007,
                 oc: 'Android',
                 brands: 'Alcatel',
                 color: 'white',
@@ -1164,6 +1170,7 @@ const initialState = [
 
         id: 'technics',
         name: 'Бытовая техника',
+        img: 'images/img/technics/Indesit-IWUB-4085-1.jpeg',
         products: [
             {
                 name :'Indesit IWUB 4085',
@@ -1174,7 +1181,7 @@ const initialState = [
                     {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'}
                 ],
                 activeIndex: 0, date:124325,
-                articul :'128789',
+                articul: 7000,
                 oc: 'Android',
                 brands: 'Samsung',
                 color: 'white',
@@ -1200,7 +1207,7 @@ const initialState = [
                     {image: 'images/img/technics/Shivaki-SVC-1748-2.jpeg'},
                     {image: 'images/img/technics/Shivaki-SVC-1748-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 7001,
                 oc: 'WindowsPhone',
                 brands: 'Microsoft',
                 color: 'white',
@@ -1226,7 +1233,7 @@ const initialState = [
                     {image: 'images/img/technics/Hansa-BK316-3-2.jpeg'},
                     {image: 'images/img/technics/Hansa-BK316-3-3.jpeg'}
                 ],
-                articul :'132489',
+                articul: 7002,
                 oc: 'Android',
                 brands: 'Archos',
                 color: 'white',
@@ -1252,7 +1259,7 @@ const initialState = [
                     {image: 'images/img/technics/Brother-4234D-2.jpeg'},
                     {image: 'images/img/technics/Brother-4234D-3.jpeg'}
                 ],
-                articul :'321559',
+                articul: 7003,
                 oc: 'Android',
                 brands: 'Philips',
                 color: 'white',
@@ -1271,7 +1278,198 @@ const initialState = [
                 price : 3900
             }
         ],
-    }
+    },
+    {
+
+        id: 'watch',
+        name: 'Умные Часы',
+        img: 'images/img/watch/Apple-Watch-Series-2-1.jpeg',
+        products: [
+            {
+                name :'Xiaomi Mi Band 2',
+                id: 1,
+                images: [
+                    {image: 'images/img/watch/Xiaomi-Mi-Band-2-1.jpeg'},
+                    {image: 'images/img/watch/Xiaomi-Mi-Band-2-2.jpeg'},
+                    {image: 'images/img/watch/Xiaomi-Mi-Band-2-3.jpeg'}
+                ],
+                activeIndex: 0, date:124325,
+                articul: 8000,
+                oc: 'Android',
+                brands: 'Samsung',
+                color: 'white',
+                feature : [
+                    {name: 'Тип SIM-карты', value: 'Micro-SIM'},
+                    {name: 'Количество SIM-карт', value: 1},
+                    {name: 'Цвет', value : 'Белый'},
+                    {name: 'ОС', value: 'Android'},
+                    {name: 'Связь 3G', value : 'Есть'},
+                    {name: '4G(LTE)', value : 'Нет'},
+                    {name: 'GPS-модуль', value : 'Есть'}
+                ],
+                ratio : 3,
+                nalichie : 'В наличии',
+                info : 'Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
+                price : 3982
+            }, {
+                name :'Smart Baby Watch Q50',
+                id: 2,
+                activeIndex: 0, date:124325,
+                images: [
+                    {image: 'images/img/watch/Smart-Baby-Watch-Q50-1.jpeg'},
+                    {image: 'images/img/watch/Smart-Baby-Watch-Q50-2.jpeg'},
+                    {image: 'images/img/watch/Smart-Baby-Watch-Q50-3.jpeg'}
+                ],
+                articul: 8001,
+                oc: 'WindowsPhone',
+                brands: 'Microsoft',
+                color: 'white',
+                feature : [
+                    {name: 'Тип SIM-кары', value: 'Micro-SIM'},
+                    {name: 'Количество SIM-карт', value: 2},
+                    {name: 'Цвет', value : 'Белый'},
+                    {name: 'ОС', value: 'Windows Phone'},
+                    {name: 'Связь 3G', value: 'Есть'},
+                    {name: '4G(LTE)', value: 'Нет'},
+                    {name: 'GPS-модуль', value: 'A-GPS'}
+                ],
+                ratio : 5,
+                nalichie : 'В наличии',
+                info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
+                price : 7283
+            }, {
+                name :'Apple Watch Series 2',
+                id: 3,
+                activeIndex: 0, date:124325,
+                images: [
+                    {image: 'images/img/watch/Apple-Watch-Series-2-1.jpeg'},
+                    {image: 'images/img/watch/Apple-Watch-Series-2-2.jpeg'},
+                    {image: 'images/img/watch/Apple-Watch-Series-2-3.jpeg'}
+                ],
+                articul: 8002,
+                oc: 'Android',
+                brands: 'Archos',
+                color: 'white',
+                feature : [
+                    {name: 'Тип SIM-кары', value: 'Micro-SIM'},
+                    {name: 'Количество SIM-карт', value: 2},
+                    {name: 'Цвет', value: 'Серый'},
+                    {name: 'ОС', value: 'Android'},
+                    {name: 'Связь 3G', value: 'Есть'},
+                    {name: '4G(LTE)', value: 'Нет'},
+                    {name: 'GPS-модуль', value: 'Есть'}
+                ],
+                ratio : 4,
+                nalichie : 'В наличии',
+                info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
+                price : 9900
+            }, {
+                name :'Smart Baby Watch Q80',
+                id: 4,
+                activeIndex: 0, date:124325,
+                images: [
+                    {image: 'images/img/watch/Smart-Baby-Watch-Q80-1.jpeg'},
+                    {image: 'images/img/watch/Smart-Baby-Watch-Q80-2.jpeg'},
+                    {image: 'images/img/watch/Smart-Baby-Watch-Q80-3.jpeg'}
+                ],
+                articul: 8003,
+                oc: 'Android',
+                brands: 'Philips',
+                color: 'white',
+                feature : [
+                    {name: 'Тип SIM-карты', value: null},
+                    {name: 'Количество SIM-карт', value: 2},
+                    {name: 'Цвет', value : null},
+                    {name: 'ОС', value: 'Android'},
+                    {name: 'Связь 3G', value: null},
+                    {name: '4G(LTE)', value: 'Нет'},
+                    {name: 'GPS-модуль', value: null}
+                ],
+                ratio : 2,
+                nalichie : 'В наличии',
+                info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
+                price : 11923
+            }, {
+                name :'Samsung Gear S3 Frontier',
+                id: 5,
+                activeIndex: 0, date:124325,
+                images: [
+                    {image: 'images/img/watch/Samsung-Gear-S3-Frontier-1.jpeg'},
+                    {image: 'images/img/watch/Samsung-Gear-S3-Frontier-2.jpeg'},
+                    {image: 'images/img/watch/Samsung-Gear-S3-Frontier-3.jpeg'}
+                ],
+                articul: 8004,
+                oc: 'WindowsPhone',
+                brands: 'Microsoft',
+                color: 'white',
+                feature : [
+                    {name: 'Тип SIM-кары', value: 'Micro-SIM'},
+                    {name: 'Количество SIM-карт', value: 2},
+                    {name: 'Цвет', value : 'Черный'},
+                    {name: 'ОС', value: 'Windows Phone'},
+                    {name: 'Связь 3G', value: 'Есть'},
+                    {name: '4G(LTE)', value: 'Нет'},
+                    {name: 'GPS-модуль', value: 'A-GPS'}
+                ],
+                ratio : 4,
+                nalichie : 'В наличии',
+                info : 'Смартфон Microsoft Lumia 430 RM-1099 black Куда бы вы ни направлялись, смартфон должен быть надежным спутником. Поэтому у Microsoft Lumia 430 Dual SIM (RM-1099) удобный компактный корпус ...',
+                price : 5390
+            }, {
+                name :'Samsung Gear S3 Classic',
+                id: 6,
+                activeIndex: 0, date:124325,
+                oc: 'IOS',
+                brands: 'Senseit',
+                color: 'black',
+                images: [
+                    {image: 'images/img/watch/Samsung-Gear-S3-Classic-1.jpeg'},
+                    {image: 'images/img/watch/Samsung-Gear-S3-Classic-2.jpeg'},
+                    {image: 'images/img/watch/Samsung-Gear-S3-Classic-3.jpeg'}
+                ],
+                articul: 8005,
+                feature : [
+                    {name: 'Тип SIM-кары', value: 'Micro-SIM'},
+                    {name: 'Количество SIM-карт', value: 2},
+                    {name: 'Цвет', value: 'Черный'},
+                    {name: 'ОС', value: 'IOS'},
+                    {name: 'Связь 3G', value: 'Есть'},
+                    {name: '4G(LTE)', value: 'Нет'},
+                    {name: 'GPS-модуль', value : 'A-GPS'}
+                ],
+                ratio : 1,
+                nalichie : 'В наличии',
+                info : 'Смартфон Senseit L301 black, черный. Micro-SIM, две поддерживаемых SIM-карты, Android, 3G, GPS-модуль...  ',
+                price : 4990
+            }, {
+                name :'Apple Watch Series 2 42mm',
+                id: 7,
+                activeIndex: 0, date:124325,
+                images: [
+                    {image: 'images/img/watch/Apple-Watch-Series-2-42mm-1.jpeg'},
+                    {image: 'images/img/watch/Apple-Watch-Series-2-42mm-2.jpeg'},
+                    {image: 'images/img/watch/Apple-Watch-Series-2-42mm-3.jpeg'}
+                ],
+                articul: 8006,
+                oc: 'Windows Phone',
+                brands: 'WinWin',
+                color: 'black',
+                feature : [
+                    {name: 'Тип SIM-кары', value: 'Micro-SIM'},
+                    {name: 'Количество SIM-карт', value: 2},
+                    {name: 'Цвет', value : 'Черный'},
+                    {name: 'ОС', value: 'Windows Phone'},
+                    {name: 'Связь 3G', value: 'Есть'},
+                    {name: '4G(LTE)', value: 'Нет'},
+                    {name: 'GPS-модуль', value: 'Есть'}
+                ],
+                ratio : 5,
+                nalichie : 'В наличии',
+                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4 дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
+                price : 6273
+            }
+        ],
+    },
 ];
 export default function catalogs(state = initialState, action) {
     return state;
