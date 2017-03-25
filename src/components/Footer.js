@@ -2,16 +2,16 @@ import React from 'react';
 
 const NavItems = ({ name }) => {
     return (
-        <li className="footer_nav__item">
-            <a href="#" className="footer_nav__link">{name}</a>
+        <li className='footer_nav__item'>
+            <a href='#' className='footer_nav__link'>{name}</a>
         </li>
     );
 };
 
 const SocialItems = ({ name }) => {
     return (
-        <li className="footer_socials__item">
-            <a href="#" className={"footer_socials__link footer_socials__link_" + name} />
+        <li className='footer_socials__item'>
+            <a href='#' className={'footer_socials__link footer_socials__link_' + name} />
         </li>
     );
 };
@@ -21,12 +21,12 @@ const Footer = () => {
     const navigation = ['Планшеты', 'Мобильные телефоны', 'Mp3 плееры', 'Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника'];
 
     return (
-        <footer className="footer">
-            <div className="container">
-                <div className="footer_content">
-                    <img src="images/logo/logo_footer.png" alt="" className="footer_logo"/>
-                    <div className="footer_socials">
-                        <ul className="footer_socials__list">
+        <footer className='footer'>
+            <div className='container'>
+                <div className='footer_content'>
+                    <img src='images/logo/logo_footer.png' alt='' className='footer_logo'/>
+                    <div className='footer_socials'>
+                        <ul className='footer_socials__list'>
                             {
                                 socials.map((el, i) => {
                                     return <SocialItems
@@ -37,8 +37,8 @@ const Footer = () => {
                             }
                         </ul>
                     </div>
-                    <div className="footer_nav">
-                        <ul className="footer_nav__list">
+                    <div className='footer_nav'>
+                        <ul className='footer_nav__list'>
                             {
                                 navigation.map((el, i) => {
                                     return <NavItems
@@ -51,8 +51,8 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <div className="copyright">All rights reserved. 2015. no copy alowed</div>
+            <div className='container'>
+                <div className='copyright'>All rights reserved. 2015. no copy alowed</div>
             </div>
         </footer>
     );

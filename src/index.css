@@ -1,4 +1,4 @@
-/* font-family: "OpenSansRegular"; */
+/* font-family: 'OpenSansRegular'; */
 @font-face
 {
     font-family: 'OpenSansRegular';
@@ -10,7 +10,7 @@
     url('../public/font/OpenSansRegular.woff') format('woff'),
     url('../public/font/OpenSansRegular.ttf') format('truetype');
 }
-/* font-family: "OpenSansLight"; */
+/* font-family: 'OpenSansLight'; */
 @font-face
 {
     font-family: 'OpenSansLight';
@@ -22,7 +22,7 @@
     url('../public/font/OpenSansLight.woff') format('woff'),
     url('../public/font/OpenSansLight.ttf') format('truetype');
 }
-/* font-family: "OpenSansBold"; */
+/* font-family: 'OpenSansBold'; */
 @font-face
 {
     font-family: 'OpenSansBold';
@@ -34,7 +34,7 @@
     url('../public/font/OpenSansBold.woff') format('woff'),
     url('../public/font/OpenSansBold.ttf') format('truetype');
 }
-/* font-family: "OpenSansSemiBold"; */
+/* font-family: 'OpenSansSemiBold'; */
 @font-face
 {
     font-family: 'OpenSansSemiBold';

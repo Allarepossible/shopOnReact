@@ -6,6 +6,7 @@ import products from './products';
 import images from './images';
 import activeFilters from './activeFilters';
 import filters from './filters';
+import sort from './sort';
 import views from './views';
 
 export default combineReducers({
@@ -15,5 +16,6 @@ export default combineReducers({
     catalogs,
     filters,
     views,
+    sort,
     activeFilters
 })

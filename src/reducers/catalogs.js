@@ -1,7 +1,7 @@
 const initialState = [
     {
-        id: "tablets",
-        name: "Планшеты",
+        id: 'tablets',
+        name: 'Планшеты',
         products: [
             {
                 name :'Samsung Galaxy Tab A 10.1',
@@ -12,6 +12,7 @@ const initialState = [
                     {image: 'images/img/tablets/Samsung-Galaxy-Tab-3.jpeg'}
                 ],
                 activeIndex: 0,
+                date:124325,
                 articul :'138789',
                 oc: 'Android',
                 brands: 'Samsung',
@@ -28,11 +29,12 @@ const initialState = [
                 ratio : 3,
                 nalichie : 'В наличии',
                 info : 'Планшет Galaxy Tab A 10.1, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
-                price : '11 290'
+                price : 12382
             }, {
                 name :'ASUS-Transformer-Book-1.jpeg',
                 id: 2,
                 activeIndex: 0,
+                date:1242325,
                 images: [
                     {image: 'images/img/tablets/ASUS-Transformer-Book-1.jpeg'},
                     {image: 'images/img/tablets/ASUS-Transformer-Book-2.jpeg'},
@@ -54,11 +56,12 @@ const initialState = [
                 ratio : 5,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
-                price : '10 990'
+                price : 9823
             }, {
                 name :'Prestigio MultiPad PMP1012TE',
                 id: 3,
                 activeIndex: 0,
+                date:1124325,
                 images: [
                     {image: 'images/img/tablets/Prestigio-MultiPad-1.jpeg'},
                     {image: 'images/img/tablets/Prestigio-MultiPad-2.jpeg'},
@@ -80,11 +83,12 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
-                price : '9 900'
+                price : 8263
             }, {
                 name :'Lenovo TAB 2',
                 id: 4,
                 activeIndex: 0,
+                date:12432455,
                 images: [
                     {image: 'images/img/tablets/Lenovo-TAB-2-1.jpeg'},
                     {image: 'images/img/tablets/Lenovo-TAB-2-2.jpeg'},
@@ -106,11 +110,12 @@ const initialState = [
                 ratio : 2,
                 nalichie : 'В наличии',
                 info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
-                price : '8 990'
+                price : 12932
             }, {
                 name :'Apple iPad Pro 9.7',
                 id: 5,
                 activeIndex: 0,
+                date:1243825,
                 images: [
                     {image: 'images/img/tablets/Apple-iPad-Pro-9.7-1.jpeg'},
                     {image: 'images/img/tablets/Apple-iPad-Pro-9.7-2.jpeg'},
@@ -132,11 +137,12 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 430 RM-1099 black Куда бы вы ни направлялись, смартфон должен быть надежным спутником. Поэтому у Microsoft Lumia 430 Dual SIM (RM-1099) удобный компактный корпус ...',
-                price : '5 390'
+                price : 5632
             }, {
                 name :'Lenovo Tab 3 TB3',
                 id: 6,
                 activeIndex: 0,
+                date:1249325,
                 oc: 'IOS',
                 brands: 'Senseit',
                 color: 'black',
@@ -158,14 +164,14 @@ const initialState = [
                 ratio : 1,
                 nalichie : 'В наличии',
                 info : 'Смартфон Senseit L301 black, черный. Micro-SIM, две поддерживаемых SIM-карты, Android, 3G, GPS-модуль...  ',
-                price : '4 990'
+                price : 6241
             }
         ],
     },
     {
 
-        id: "mobiles",
-        name: "Мобильные телефоны",
+        id: 'mobiles',
+        name: 'Мобильные телефоны',
         products: [
             {
                 name :'Samsung GT-I9301I  GALAXY S 3',
@@ -176,6 +182,7 @@ const initialState = [
                     {image: 'images/img/mobiles/Samsung-GT-I9301I-s3.jpg'}
                 ],
                 activeIndex: 0,
+                date:12432575,
                 articul :'128789',
                 oc: 'Android',
                 brands: 'Samsung',
@@ -192,11 +199,12 @@ const initialState = [
                 ratio : 3,
                 nalichie : 'В наличии',
                 info : 'Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
-                price : '11 290'
+                price : 1290
             }, {
                 name :'Microsoft Lumia 640 RM-1077',
                 id: 2,
                 activeIndex: 0,
+                date:12432556,
                 images: [
                     {image: 'images/img/mobiles/Microsoft-Lumia-640-s1.jpg'},
                     {image: 'images/img/mobiles/Microsoft-Lumia-640-s2.jpg'},
@@ -218,11 +226,12 @@ const initialState = [
                 ratio : 5,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
-                price : '10 990'
+                price : 8990
             }, {
                 name :'Archos 50 Oxygen Plus',
                 id: 3,
                 activeIndex: 0,
+                date:124325567,
                 images: [
                     {image: 'images/img/mobiles/Archos-50-Oxygen-Plus-s1.jpg'},
                     {image: 'images/img/mobiles/Archos-50-Oxygen-Plus-s2.jpg'},
@@ -244,11 +253,12 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
-                price : '9 900'
+                price : 9090
             }, {
                 name :'Philips S398 Black',
                 id: 4,
                 activeIndex: 0,
+                date: 12354325,
                 images: [
                     {image: 'images/img/mobiles/Philips-S398-Black-s1.jpg'},
                     {image: 'images/img/mobiles/Philips-S398-Black-s2.jpg'},
@@ -270,11 +280,12 @@ const initialState = [
                 ratio : 2,
                 nalichie : 'В наличии',
                 info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
-                price : '8 990'
+                price : 12990
             }, {
                 name :'Microsoft Lumia 430 RM-10',
                 id: 5,
                 activeIndex: 0,
+                date: 12437625,
                 images: [
                     {image: 'images/img/mobiles/Microsoft-Lumia-430-RM-10-s1.jpg'},
                     {image: 'images/img/mobiles/Microsoft-Lumia-430-RM-10-s2.jpg'},
@@ -296,11 +307,12 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 430 RM-1099 black Куда бы вы ни направлялись, смартфон должен быть надежным спутником. Поэтому у Microsoft Lumia 430 Dual SIM (RM-1099) удобный компактный корпус ...',
-                price : '5 390'
+                price : 5392
             }, {
                 name :'Senseit L301 Black ',
                 id: 6,
                 activeIndex: 0,
+                date:12234325,
                 oc: 'IOS',
                 brands: 'Senseit',
                 color: 'black',
@@ -322,11 +334,12 @@ const initialState = [
                 ratio : 1,
                 nalichie : 'В наличии',
                 info : 'Смартфон Senseit L301 black, черный. Micro-SIM, две поддерживаемых SIM-карты, Android, 3G, GPS-модуль...  ',
-                price : '4 990'
+                price : 4990
             }, {
                 name :'HIGHSCREEN WinWin Black',
                 id: 7,
                 activeIndex: 0,
+                date:12435425,
                 images: [
                     {image: 'images/img/mobiles/HIGHSCREEN-WinWin-Black-s1.jpg'},
                     {image: 'images/img/mobiles/HIGHSCREEN-WinWin-Black-s2.jpg'},
@@ -347,12 +360,13 @@ const initialState = [
                 ],
                 ratio : 5,
                 nalichie : 'В наличии',
-                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4" дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
-                price : '3 990'
+                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4 дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
+                price : 13992
             }, {
                 name :'Alcatel OT4013D PIXI 3 (2 SIM)',
                 id: 8,
                 activeIndex: 0,
+                date:12476325,
                 images: [
                     {image: 'images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s1.jpg'},
                     {image: 'images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s2.jpg'},
@@ -374,11 +388,12 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Alcatel OT4013D PIXI 3 (2 SIM). Смартфон Alcatel One Touch 4013D оснащен четырехдюймовым дисплеем и двумя слотами для SIM-карт...',
-                price : '3 990'
+                price : 3892
             }, {
                 name :'Fly IQ434 Era Nano 5',
                 id: 9,
                 activeIndex: 0,
+                date:12432875,
                 images: [
                     {image: 'images/img/mobiles/Fly-IQ434-Era-Nano-5-s1.jpg'},
                     {image: 'images/img/mobiles/Fly-IQ434-Era-Nano-5-s2.jpg'},
@@ -399,15 +414,15 @@ const initialState = [
                 ],
                 ratio : 3,
                 nalichie : 'В наличии',
-                info : 'Смартфон Fly IQ434 Era Nano 5 оснащен 3.5" дисплеем и двумя слотами для SIM-карт. Android 2.3, Micro SD, Wi-Fi.... ',
-                price : '1 790'
+                info : 'Смартфон Fly IQ434 Era Nano 5 оснащен 3.5 дисплеем и двумя слотами для SIM-карт. Android 2.3, Micro SD, Wi-Fi.... ',
+                price : 1790
             }
         ],
     },
     {
 
-        id: "mp3",
-        name: "Mp3 плееры",
+        id: 'mp3',
+        name: 'Mp3 плееры',
         products: [
             {
                 name :'Apple iPod nano 7',
@@ -418,6 +433,7 @@ const initialState = [
                     {image: 'images/img/mp3/Apple-iPod-nano-7-3.jpeg'}
                 ],
                 activeIndex: 0,
+                date:12874325,
                 articul :'128789',
                 oc: 'Android',
                 brands: 'Samsung',
@@ -434,11 +450,12 @@ const initialState = [
                 ratio : 3,
                 nalichie : 'В наличии',
                 info : 'Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
-                price : '11 290'
+                price : 11283
             }, {
                 name :'Sony NWZ-B183F',
                 id: 2,
                 activeIndex: 0,
+                date:12443325,
                 images: [
                     {image: 'images/img/mp3/Sony-NWZ-B183F-1.jpeg'},
                     {image: 'images/img/mp3/Sony-NWZ-B183F-2.jpeg'},
@@ -460,11 +477,12 @@ const initialState = [
                 ratio : 5,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
-                price : '10 990'
+                price : 10230
             }, {
                 name :'Digma B3 8Gb',
                 id: 3,
                 activeIndex: 0,
+                date:124356325,
                 images: [
                     {image: 'images/img/mp3/Digma-B3-8Gb-1.jpeg'},
                     {image: 'images/img/mp3/Digma-B3-8Gb-2.jpeg'},
@@ -486,11 +504,12 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
-                price : '9 900'
+                price : 43023
             }, {
                 name :'Fiio X3 II',
                 id: 4,
                 activeIndex: 0,
+                date:12432425,
                 images: [
                     {image: 'images/img/mp3/Fiio-X3-II-1.jpeg'},
                     {image: 'images/img/mp3/Fiio-X3-II-2.jpeg'},
@@ -512,11 +531,12 @@ const initialState = [
                 ratio : 2,
                 nalichie : 'В наличии',
                 info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
-                price : '8 990'
+                price : 4928
             }, {
                 name :'Apple iPod touch 6',
                 id: 5,
                 activeIndex: 0,
+                date:124325325,
                 images: [
                     {image: 'images/img/mp3/Apple-iPod-touch-6-1.jpeg'},
                     {image: 'images/img/mp3/Apple-iPod-touch-6-2.jpeg'},
@@ -538,11 +558,12 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 430 RM-1099 black Куда бы вы ни направлялись, смартфон должен быть надежным спутником. Поэтому у Microsoft Lumia 430 Dual SIM (RM-1099) удобный компактный корпус ...',
-                price : '5 390'
+                price : 6723
             }, {
                 name :'Fiio X1',
                 id: 6,
                 activeIndex: 0,
+                date:12432235,
                 oc: 'IOS',
                 brands: 'Senseit',
                 color: 'black',
@@ -564,11 +585,12 @@ const initialState = [
                 ratio : 1,
                 nalichie : 'В наличии',
                 info : 'Смартфон Senseit L301 black, черный. Micro-SIM, две поддерживаемых SIM-карты, Android, 3G, GPS-модуль...  ',
-                price : '4 990'
+                price : 8526
             }, {
                 name :'Sony NWZ-WS613',
                 id: 7,
                 activeIndex: 0,
+                date:12432125,
                 images: [
                     {image: 'images/img/mp3/Sony-NWZ-WS613-1.jpeg'},
                     {image: 'images/img/mp3/Sony-NWZ-WS613-2.jpeg'},
@@ -589,15 +611,15 @@ const initialState = [
                 ],
                 ratio : 5,
                 nalichie : 'В наличии',
-                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4" дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
-                price : '3 990'
+                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4 дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
+                price : 3721
             }
         ],
     },
     {
 
-        id: "computers",
-        name: "Персональные компьютеры",
+        id: 'computers',
+        name: 'Персональные компьютеры',
         products: [
             {
                 name :'Компьютер PRO-099070',
@@ -607,7 +629,7 @@ const initialState = [
                     {image: 'images/img/computers/PRO-099070-Intel-Core-2.jpg'},
                     {image: 'images/img/computers/PRO-099070-Intel-Core-3.jpg'}
                 ],
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 articul :'128789',
                 oc: 'Android',
                 brands: 'Samsung',
@@ -624,11 +646,11 @@ const initialState = [
                 ratio : 3,
                 nalichie : 'В наличии',
                 info : 'Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
-                price : '11 290'
+                price : 3982
             }, {
                 name :'КОМПЬЮТЕР RIWER 590330',
                 id: 2,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/RIWER-590330-1.jpg'},
                     {image: 'images/img/computers/RIWER-590330-1.jpg'},
@@ -650,11 +672,11 @@ const initialState = [
                 ratio : 5,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
-                price : '10 990'
+                price : 7283
             }, {
                 name :'Системный блок игровой ASUS GT51CA-RU002T',
                 id: 3,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/GT51CA-RU002T-1.jpg'},
                     {image: 'images/img/computers/GT51CA-RU002T-2.jpg'},
@@ -676,11 +698,11 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
-                price : '9 900'
+                price : 9900
             }, {
                 name :'Системный блок Apple Mac mini',
                 id: 4,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/Apple-Mac-mini-1.jpeg'},
                     {image: 'images/img/computers/Apple-Mac-mini-2.jpeg'},
@@ -702,11 +724,11 @@ const initialState = [
                 ratio : 2,
                 nalichie : 'В наличии',
                 info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
-                price : '8 990'
+                price : 11923
             }, {
                 name :'Домашний компьютер MicroXperts',
                 id: 5,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/MicroXperts-1.jpg'},
                     {image: 'images/img/computers/MicroXperts-2.jpg'},
@@ -728,11 +750,11 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 430 RM-1099 black Куда бы вы ни направлялись, смартфон должен быть надежным спутником. Поэтому у Microsoft Lumia 430 Dual SIM (RM-1099) удобный компактный корпус ...',
-                price : '5 390'
+                price : 5390
             }, {
                 name :'Игровой компьютер RS 1114',
                 id: 6,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 oc: 'IOS',
                 brands: 'Senseit',
                 color: 'black',
@@ -754,11 +776,11 @@ const initialState = [
                 ratio : 1,
                 nalichie : 'В наличии',
                 info : 'Смартфон Senseit L301 black, черный. Micro-SIM, две поддерживаемых SIM-карты, Android, 3G, GPS-модуль...  ',
-                price : '4 990'
+                price : 4990
             }, {
                 name :'Системный блок LENOVO Erazer X310',
                 id: 7,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/LENOVO-Erazer-X310-1.jpeg'},
                     {image: 'images/img/computers/LENOVO-Erazer-X310-2.jpeg'},
@@ -779,15 +801,15 @@ const initialState = [
                 ],
                 ratio : 5,
                 nalichie : 'В наличии',
-                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4" дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
-                price : '3 990'
+                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4 дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
+                price : 6273
             }
         ],
     },
     {
 
-        id: "accessorizes",
-        name: "Аксессуары",
+        id: 'accessorizes',
+        name: 'Аксессуары',
         products: [
             {
                 name :'Continent CC-01',
@@ -797,7 +819,7 @@ const initialState = [
                     {image: 'images/img/accessorizes/Continent-CC-2.jpeg'},
                     {image: 'images/img/accessorizes/Continent-CC-1.jpeg'}
                 ],
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 articul :'128789',
                 oc: 'Android',
                 brands: 'Samsung',
@@ -814,11 +836,11 @@ const initialState = [
                 ratio : 3,
                 nalichie : 'В наличии',
                 info : 'Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
-                price : '11 290'
+                price : 8293
             }, {
                 name :'Targus Drifter Backpack 16',
                 id: 2,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/Drifter-Backpack-16-1.jpeg'},
                     {image: 'images/img/accessorizes/Drifter-Backpack-16-2.jpeg'},
@@ -840,11 +862,11 @@ const initialState = [
                 ratio : 5,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
-                price : '10 990'
+                price : 10992
             }, {
                 name :'адаптер для ноутбуков KS-is',
                 id: 3,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/KS-is-1.jpg'},
                     {image: 'images/img/accessorizes/KS-is-2.jpg'},
@@ -866,11 +888,11 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
-                price : '9 900'
+                price : 9900
             }, {
                 name :'Аккумуляторная батарея для ноутбука Lenovo Thinkpad',
                 id: 4,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/Lenovo-Thinkpad-1.jpg'},
                     {image: 'images/img/accessorizes/Lenovo-Thinkpad-2.jpg'},
@@ -892,11 +914,11 @@ const initialState = [
                 ratio : 2,
                 nalichie : 'В наличии',
                 info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
-                price : '8 990'
+                price : 2432
             }, {
                 name :'HAMA Vienna Notebook Backpack',
                 id: 5,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/Notebook-Backpack-1.jpeg'},
                     {image: 'images/img/accessorizes/Notebook-Backpack-2.jpeg'},
@@ -918,14 +940,14 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 430 RM-1099 black Куда бы вы ни направлялись, смартфон должен быть надежным спутником. Поэтому у Microsoft Lumia 430 Dual SIM (RM-1099) удобный компактный корпус ...',
-                price : '5 390'
+                price : 5940
             }
         ],
     },
     {
 
-        id: "nouts",
-        name: "Ноутбуки",
+        id: 'nouts',
+        name: 'Ноутбуки',
         products: [
             {
                 name :'Apple MacBook Air 13',
@@ -935,7 +957,7 @@ const initialState = [
                     {image: 'images/img/nouts/Apple-MacBook-Air-13-2.jpeg'},
                     {image: 'images/img/nouts/Apple-MacBook-Air-13-3.jpeg'}
                 ],
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 articul :'128789',
                 oc: 'Android',
                 brands: 'Samsung',
@@ -952,11 +974,11 @@ const initialState = [
                 ratio : 3,
                 nalichie : 'В наличии',
                 info : 'Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
-                price : '11 290'
+                price : 11240
             }, {
                 name :'ASUS VivoBook Max',
                 id: 2,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/ASUS-VivoBook-Max-1.jpeg'},
                     {image: 'images/img/nouts/ASUS-VivoBook-Max-2.jpeg'},
@@ -978,11 +1000,11 @@ const initialState = [
                 ratio : 5,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
-                price : '10 990'
+                price : 10240
             }, {
                 name :'DELL INSPIRON 5567',
                 id: 3,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/DELL-INSPIRON-5567-1.jpeg'},
                     {image: 'images/img/nouts/DELL-INSPIRON-5567-2.jpeg'},
@@ -1004,11 +1026,11 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
-                price : '9 900'
+                price : 9900
             }, {
                 name :'Lenovo IdeaPad 110 15 AMD',
                 id: 4,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-1.jpeg'},
                     {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-2.jpeg'},
@@ -1030,11 +1052,11 @@ const initialState = [
                 ratio : 2,
                 nalichie : 'В наличии',
                 info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
-                price : '8 990'
+                price : 3900
             }, {
                 name :'DELL Vostro 5468',
                 id: 5,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/DELL-Vostro-5468-1.jpeg'},
                     {image: 'images/img/nouts/DELL-Vostro-5468-2.jpeg'},
@@ -1056,11 +1078,11 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 430 RM-1099 black Куда бы вы ни направлялись, смартфон должен быть надежным спутником. Поэтому у Microsoft Lumia 430 Dual SIM (RM-1099) удобный компактный корпус ...',
-                price : '5 390'
+                price : 5940
             }, {
                 name :'MSI GP72 7RD Leopard',
                 id: 6,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 oc: 'IOS',
                 brands: 'Senseit',
                 color: 'black',
@@ -1082,11 +1104,11 @@ const initialState = [
                 ratio : 1,
                 nalichie : 'В наличии',
                 info : 'Смартфон Senseit L301 black, черный. Micro-SIM, две поддерживаемых SIM-карты, Android, 3G, GPS-модуль...  ',
-                price : '4 990'
+                price : 11923
             }, {
                 name :'HP ProBook 430 G4',
                 id: 7,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/HP-ProBook-430-G4-1.jpeg'},
                     {image: 'images/img/nouts/HP-ProBook-430-G4-2.jpeg'},
@@ -1107,12 +1129,12 @@ const initialState = [
                 ],
                 ratio : 5,
                 nalichie : 'В наличии',
-                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4" дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
-                price : '3 990'
+                info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4 дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
+                price : 5623
             }, {
                 name :'Sony VAIO Pro SVP1322M9R',
                 id: 8,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/Sony-VAIO-Pro-1.jpeg'},
                     {image: 'images/img/nouts/Sony-VAIO-Pro-2.jpeg'},
@@ -1134,14 +1156,14 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Alcatel OT4013D PIXI 3 (2 SIM). Смартфон Alcatel One Touch 4013D оснащен четырехдюймовым дисплеем и двумя слотами для SIM-карт...',
-                price : '3 990'
+                price : 3900
             }
         ],
     },
     {
 
-        id: "technics",
-        name: "Бытовая техника",
+        id: 'technics',
+        name: 'Бытовая техника',
         products: [
             {
                 name :'Indesit IWUB 4085',
@@ -1151,7 +1173,7 @@ const initialState = [
                     {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'},
                     {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'}
                 ],
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 articul :'128789',
                 oc: 'Android',
                 brands: 'Samsung',
@@ -1168,11 +1190,11 @@ const initialState = [
                 ratio : 3,
                 nalichie : 'В наличии',
                 info : 'Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...',
-                price : '11 290'
+                price : 11240
             }, {
                 name :'Shivaki SVC 1748',
                 id: 2,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/technics/Shivaki-SVC-1748-1.jpeg'},
                     {image: 'images/img/technics/Shivaki-SVC-1748-2.jpeg'},
@@ -1194,11 +1216,11 @@ const initialState = [
                 ratio : 5,
                 nalichie : 'В наличии',
                 info : 'Смартфон Microsoft Lumia 640 Dual SIM (RM-1077) С ним вы открываете мир ярких цифровых возможностей. Этот многофункциональный смартфон уже содержит набор бесплатных сервисов Microsoft...',
-                price : '10 990'
+                price : 10240
             }, {
                 name :'Hansa BK316.3',
                 id: 3,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/technics/Hansa-BK316-3-1.jpeg'},
                     {image: 'images/img/technics/Hansa-BK316-3-2.jpeg'},
@@ -1220,11 +1242,11 @@ const initialState = [
                 ratio : 4,
                 nalichie : 'В наличии',
                 info : 'Смартфон Archos 50 Oxygen Plus, серый. Моноблок, Micro-SIM, Android , 3G, Bluetooth, USB-подключение к ПК, Wi-Fi, Разрешение основной камеры 8 Мп...',
-                price : '9 900'
+                price : 9900
             }, {
                 name :'Brother 4234D оверлок',
                 id: 4,
-                activeIndex: 0,
+                activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/technics/Brother-4234D-1.jpeg'},
                     {image: 'images/img/technics/Brother-4234D-2.jpeg'},
@@ -1246,7 +1268,7 @@ const initialState = [
                 ratio : 2,
                 nalichie : 'В наличии',
                 info : 'Смартфон Philips S398 Black. Черный корпус и разнообразие цветных панелей для Philips S398 как нельзя лучше подчеркнут ваш статус и уверенность в себе. Преимущества этой модели...',
-                price : '8 990'
+                price : 3900
             }
         ],
     }

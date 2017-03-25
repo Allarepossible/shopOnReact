@@ -3,20 +3,20 @@ import { connect } from 'react-redux';
 
 import CheckboxFilter from './CheckboxFilter';
 
-const Select = ({ key, name }) => {
+const Select = ({ id, name }) => {
     return (
-        <li className="filter__item filter__item_type_radio">
-            <input className="input input_type_radio" type="radio" id={key} key={name} name="availible" />
-            <label className="label label_type_radio" htmlFor={key}>{name}</label>
+        <li className='filter__item filter__item_type_radio'>
+            <input className='input input_type_radio' type='radio' id={id} name='availible' />
+            <label className='label label_type_radio' htmlFor={id}>{name}</label>
         </li>
     )
 };
 
 const Color = ({ name }) => {
     return (
-        <li className="color__item">
-            <a className={"color__link " + name} key={name}></a>
-            <span className="color__text">{name}</span>
+        <li className='color__item'>
+            <a className={'color__link ' + name} key={name}></a>
+            <span className='color__text'>{name}</span>
         </li>
     )
 };
@@ -27,14 +27,18 @@ const RangeBox = () => {
         maxValue: 7000
     };
 
+    const changeValue = () => {
+
+    };
+
     return (
-        <div className="filter filter_type_price">
-            <div className="price-range">
-                <div className="price-range__box">
-                    <span className="price-range__text">от</span>
-                    <input type="text" className="price-range__input" id="price-range1" value={value.minValue} />
-                    <span className="price-range__text">до</span>
-                    <input type="text" className="price-range__input" id="price-range2" value={value.maxValue} />
+        <div className='filter filter_type_price'>
+            <div className='price-range'>
+                <div className='price-range__box'>
+                    <span className='price-range__text'>от</span>
+                    <input type='text' className='price-range__input' id='price-range1' value={value.minValue} onChange={changeValue} />
+                    <span className='price-range__text'>до</span>
+                    <input type='text' className='price-range__input' id='price-range2' value={value.maxValue} onChange={changeValue} />
                 </div>
             </div>
         </div>
@@ -42,22 +46,23 @@ const RangeBox = () => {
 };
 
 const Filter = ({ filter, changeFilter}) => {
-    const active = filter.open === 'yes' ? "active" : "";
+    const active = filter.open === 'yes' ? 'active' : '';
 
     const onTitleClick = () => {
         filter.open = filter.open === 'yes' ? 'no' : 'yes';
 
         changeFilter(filter);
     };
+
     return (
-        <li className="filters__item">
-            <div className={"filter__title " + active} onClick={onTitleClick}>{filter.name}
-                <i className="manage-filter" key={filter.id}></i>
+        <li className='filters__item'>
+            <div className={'filter__title ' + active} onClick={onTitleClick}>{filter.name}
+                <i className='manage-filter' key={filter.id}></i>
             </div>
             {
                 filter.open === 'yes' &&
-                <div className={"filter filter_type_" + filter.id}>
-                    <ul className="filter__list">
+                <div className={'filter filter_type_' + filter.id}>
+                    <ul className='filter__list'>
                         {
                             filter.type === 'checkbox' &&
                             filter.values.map((el, i) => {
@@ -73,6 +78,7 @@ const Filter = ({ filter, changeFilter}) => {
                             filter.values.map((el, i) => {
                                 return <Select
                                     key={i}
+                                    id={i}
                                     name={el}
                                 />;
                             })
@@ -92,7 +98,7 @@ const Filter = ({ filter, changeFilter}) => {
                         }
                         {
                             filter.reset === true &&
-                            <a href="#" className="reset-filter" key={filter.id}>Сбросить фильтр</a>
+                            <a href='#' className='reset-filter' key={filter.id}>Сбросить фильтр</a>
                         }
                     </ul>
                 </div>

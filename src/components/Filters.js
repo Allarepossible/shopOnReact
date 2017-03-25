@@ -5,8 +5,8 @@ import Filter from './Filter';
 
 const FiltersItem = ({ filters}) => {
     return (
-        <div className="filters">
-            <ul className="filters__list">
+        <div className='filters'>
+            <ul className='filters__list'>
                 {
                     filters.map((el, i) => {
                         return <Filter
@@ -27,7 +27,7 @@ const FiltersItem = ({ filters}) => {
 
 const Filters = ({ filters}) => {
     return (
-        <FiltersItem key="filters" filters={filters}/>
+        <FiltersItem key='filters' filters={filters}/>
     );
 };
 

@@ -14,23 +14,23 @@ import Filters from '../components/Filters';
 const Shop = ({products, filters}) => {
     return (
         <div>
-            <div className="wrapper">
+            <div className='wrapper'>
                 <Header />
                 <Menu />
-                <div className="main_content">
-                    <div className="container">
+                <div className='main_content'>
+                    <div className='container'>
                         <Breadcrumbs />
-                        <h1 className="main_head_text">Мобильные телефоны</h1>
-                        <div className="layout">
-                            <aside className="sidebar">
+                        <h1 className='main_head_text'>Мобильные телефоны</h1>
+                        <div className='layout'>
+                            <aside className='sidebar'>
                                 <Filters
                                     filters={filters}
                                 />
                             </aside>
-                            <div className="right_content">
+                            <div className='right_content'>
                                 <Sort />
-                                <div className="content">
-                                    <div className="content">
+                                <div className='content'>
+                                    <div className='content'>
                                         <Products
                                             products={products}
                                         />
