@@ -7,6 +7,7 @@ import { Router, Route, hashHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
+import Cart from './containers/Cart';
 import Shop from './containers/Shop';
 import Search from './containers/Search';
 import Catalog from './containers/Catalog';
@@ -25,6 +26,7 @@ ReactDOM.render(
       <Router history={history}>
         <Route path='/' component={Shop} />
         <Route path='/search' component={Search} />
+        <Route path='/cart' component={Cart} />
         <Route path='/catalog' component={StaticPage} />
         <Route path='/catalog/:catalogId' component={Catalog} />
         <Route path='/catalog/:catalogId/:productId' component={ProductPage} />

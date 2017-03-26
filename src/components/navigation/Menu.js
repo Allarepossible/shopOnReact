@@ -9,7 +9,7 @@ const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
         const activeCatalog = catalogs.filter((catalog) => catalog.id === activeCategoryId)[0];
         const sortProducts = activeCatalog.products.sort((a,b) => a[sort.name] - b[sort.name])
 
-        changeView(sortProducts)
+        changeView(sortProducts, activeCatalog.filters);
     };
 
     return (
@@ -38,17 +38,19 @@ export default connect(
     (state, ownProps) => ({
         sort: state.sort.find((item) => item.active),
         catalogs: state.catalogs,
-        catalogsName: state.catalogs.map((catalog) => {return {name: catalog.name, id: catalog.id}}),
+        catalogsName: state.catalogs.map((catalog) => {
+            return {
+                name: catalog.name,
+                id: catalog.id}
+        }),
         ownProps
     }),
     dispatch => ({
-        changeView: (products) => {
+        changeView: (products , filters) => {
             const payload = products;
+            const payload2 = filters;
             dispatch({ type: 'CHANGE_CATEGORY', payload });
-        },
-        sortProduct: (sortProducts) => {
-            const payload = sortProducts;
-            dispatch({ type: 'SORT_PRODUCTS', payload });
+            dispatch({ type: 'SET_FILTERS', payload2 });
         }
     })
 )(Menu);

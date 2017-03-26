@@ -9,7 +9,7 @@ import Feature from '../components/products/Feature';
 
 const ProductPage = ({ activeSlide, catalog, ownProps, changeActiveSlide }) => {
     const product = catalog.products.find((product) => product.articul === Number(ownProps.params.productId));
-    const catalogLink = '/#/catalog/' + catalog.id;
+    const catalogLink = '/catalog/' + catalog.id;
     const NewPrice = String(product.price).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
 
     const selectMiniImage = (e) => {
@@ -25,7 +25,7 @@ const ProductPage = ({ activeSlide, catalog, ownProps, changeActiveSlide }) => {
                 <Menu />
                 <div className='main_content'>
                     <div className='container'>
-                        <Breadcrumbs catalog={[{name: 'Каталог', link: '/#/catalog'}, {name: catalog.name, link: catalogLink}, {name: product.name, link: catalogLink + product.articul}]} />
+                        <Breadcrumbs catalog={[{name: 'Каталог', link: '/catalog'}, {name: catalog.name, link: catalogLink}, {name: product.name, link: catalogLink + product.articul}]} />
                         <h1 className='main_head_text'>{product.name}</h1>
                         <div className='layout'>
                             <div className='product__container'>

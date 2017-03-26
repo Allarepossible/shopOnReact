@@ -1,9 +1,9 @@
 import React from 'react';
 
-const PathProducts = () => {
+const PathProducts = ({ countOfProducts }) => {
     return (
         <div className='path_products'>
-            <ul className='path__list'>
+            <ul className={'path__list ' + countOfProducts}>
                 <li className='path__item'>
                     <a href='' className='path__link'>&lt;</a>
                 </li>

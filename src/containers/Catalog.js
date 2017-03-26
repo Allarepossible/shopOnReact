@@ -12,9 +12,9 @@ import Products from '../components/products/Products';
 import Filters from '../components/filters/Filters';
 
 const Catalog = ({ products, catalog, filters, setState }) => {
-    const catalogLink = '/#/catalog/' + catalog.id;
+    const catalogLink = '/catalog/' + catalog.id;
     if (products === 0) {
-        setState(catalog.products);
+        setState(catalog.products, catalog.filters);
     }
 
     return (
@@ -24,7 +24,7 @@ const Catalog = ({ products, catalog, filters, setState }) => {
                 <Menu active={catalog.id}/>
                 <div className='main_content'>
                     <div className='container'>
-                        <Breadcrumbs catalog={[{name: "Каталог", link: '/#/catalog/'}, {name: catalog.name, link: catalogLink}]}/>
+                        <Breadcrumbs catalog={[{name: "Каталог", link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}/>
                         <h1 className='main_head_text'>{catalog.name}</h1>
                         <div className='layout'>
                             <aside className='sidebar'>
@@ -38,9 +38,13 @@ const Catalog = ({ products, catalog, filters, setState }) => {
                                     <div className='content'>
                                         <Products
                                             catalogId={catalog.id}
+                                            countOfProducts={products.length}
                                         />
                                     </div>
-                                    <PathProducts />
+                                    {
+                                        products.length > 9 &&
+                                        <PathProducts />
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -60,9 +64,12 @@ export default connect(
         filters: state.filters
     }),
     dispatch => ({
-        setState: (products) => {
+        setState: (products, filters) => {
             const payload = products;
+            const payload2 = filters;
+
             dispatch({ type: 'SET_STATE', payload });
+            dispatch({ type: 'SET_FILTERS', payload2 });
         }
     })
 )(Catalog);

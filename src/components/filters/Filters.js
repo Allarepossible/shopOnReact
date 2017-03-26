@@ -33,6 +33,7 @@ const Filters = ({ filters}) => {
 
 export default connect(
     (state) => ({
+        activeFilters: state.activeFilters,
         filters: state.filters
     })
 )(Filters);

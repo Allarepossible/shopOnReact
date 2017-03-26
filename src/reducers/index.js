@@ -7,6 +7,7 @@ import activeSlide from './activeSlide';
 import activeFilters from './activeFilters';
 import filters from './filters';
 import sort from './sort';
+import cart from './cart';
 import views from './views';
 
 export default combineReducers({
@@ -17,5 +18,6 @@ export default combineReducers({
     filters,
     views,
     sort,
+    cart,
     activeFilters
 })

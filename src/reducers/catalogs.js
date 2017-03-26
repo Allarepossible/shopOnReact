@@ -7,6 +7,7 @@ const initialState = [
             {
                 name :'Samsung Galaxy Tab A 10.1',
                 id: 1,
+                catalog: 'tablets',
                 images: [
                     {image: 'images/img/tablets/Samsung-Galaxy-Tab-1.jpeg'},
                     {image: 'images/img/tablets/Samsung-Galaxy-Tab-2.jpeg'},
@@ -34,6 +35,7 @@ const initialState = [
             }, {
                 name :'ASUS-Transformer-Book-1.jpeg',
                 id: 2,
+                catalog: 'tablets',
                 activeIndex: 0,
                 date:1242325,
                 images: [
@@ -61,6 +63,7 @@ const initialState = [
             }, {
                 name :'Prestigio MultiPad PMP1012TE',
                 id: 3,
+                catalog: 'tablets',
                 activeIndex: 0,
                 date:1124325,
                 images: [
@@ -88,6 +91,7 @@ const initialState = [
             }, {
                 name :'Lenovo TAB 2',
                 id: 4,
+                catalog: 'tablets',
                 activeIndex: 0,
                 date:12432455,
                 images: [
@@ -115,6 +119,7 @@ const initialState = [
             }, {
                 name :'Apple iPad Pro 9.7',
                 id: 5,
+                catalog: 'tablets',
                 activeIndex: 0,
                 date:1243825,
                 images: [
@@ -142,6 +147,7 @@ const initialState = [
             }, {
                 name :'Lenovo Tab 3 TB3',
                 id: 6,
+                catalog: 'tablets',
                 activeIndex: 0,
                 date:1249325,
                 oc: 'IOS',
@@ -168,6 +174,47 @@ const initialState = [
                 price : 6241
             }
         ],
+        filters: [
+            {
+                name: 'Наличие в магазинах',
+                open: 'yes',
+                id: 'shop',
+                type: 'select',
+                values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+                reset: false
+            }, {
+                name: 'Бренды',
+                open: 'yes',
+                id: 'brands',
+                type: 'checkbox',
+                values: ['Lenovo', 'Apple', 'Samsung', 'Asus'],
+                reset: true
+            }, {
+                name: 'Цена',
+                open: 'yes',
+                id: 'price',
+                type: 'range-box',
+                values: {
+                    'от': '0',
+                    'до': '10 000'
+                },
+                reset: false
+            }, {
+                name: 'Цвет',
+                open: 'yes',
+                id: 'color',
+                type: 'color',
+                values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green'],
+                reset: true
+            }, {
+                name: 'Операционная система',
+                open: 'yes',
+                id: 'oc',
+                type: 'checkbox',
+                values: ['Android', 'iOS', 'Window'],
+                reset: true
+            }
+        ],
     },
     {
 
@@ -178,6 +225,7 @@ const initialState = [
             {
                 name :'Samsung GT-I9301I  GALAXY S 3',
                 id: 1,
+                catalog: 'mobiles',
                 images: [
                     {image: 'images/img/mobiles/Samsung-GT-I9301I-s1.jpg'},
                     {image: 'images/img/mobiles/Samsung-GT-I9301I-s2.jpg'},
@@ -205,6 +253,7 @@ const initialState = [
             }, {
                 name :'Microsoft Lumia 640 RM-1077',
                 id: 2,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date:12432556,
                 images: [
@@ -232,6 +281,7 @@ const initialState = [
             }, {
                 name :'Archos 50 Oxygen Plus',
                 id: 3,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date:124325567,
                 images: [
@@ -259,6 +309,7 @@ const initialState = [
             }, {
                 name :'Philips S398 Black',
                 id: 4,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date: 12354325,
                 images: [
@@ -286,6 +337,7 @@ const initialState = [
             }, {
                 name :'Microsoft Lumia 430 RM-10',
                 id: 5,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date: 12437625,
                 images: [
@@ -313,6 +365,7 @@ const initialState = [
             }, {
                 name :'Senseit L301 Black ',
                 id: 6,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date:12234325,
                 oc: 'IOS',
@@ -340,6 +393,7 @@ const initialState = [
             }, {
                 name :'HIGHSCREEN WinWin Black',
                 id: 7,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date:12435425,
                 images: [
@@ -367,6 +421,7 @@ const initialState = [
             }, {
                 name :'Alcatel OT4013D PIXI 3 (2 SIM)',
                 id: 8,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date:12476325,
                 images: [
@@ -394,6 +449,7 @@ const initialState = [
             }, {
                 name :'Fly IQ434 Era Nano 5',
                 id: 9,
+                catalog: 'mobiles',
                 activeIndex: 0,
                 date:12432875,
                 images: [
@@ -418,6 +474,75 @@ const initialState = [
                 nalichie : 'В наличии',
                 info : 'Смартфон Fly IQ434 Era Nano 5 оснащен 3.5 дисплеем и двумя слотами для SIM-карт. Android 2.3, Micro SD, Wi-Fi.... ',
                 price : 1790
+            }, {
+                name :'Apple iPhone 5S',
+                id: 10,
+                catalog: 'mobiles',
+                activeIndex: 0,
+                date:12432875,
+                images: [
+                    {image: 'images/img/mobiles/Apple-iPhone-5S-1.jpeg'},
+                    {image: 'images/img/mobiles/Apple-iPhone-5S-2.jpeg'},
+                    {image: 'images/img/mobiles/Apple-iPhone-5S-3.jpeg'}
+                ],
+                articul: 2009,
+                oc: 'IOS',
+                brands: 'Apple',
+                color: 'black',
+                feature : [
+                    {name: 'Тип SIM-кары', value: 'Micro-SIM'},
+                    {name: 'Количество SIM-карт', value: 2},
+                    {name: 'Цвет', value: 'Черный'},
+                    {name: 'ОС', value: 'IOS'},
+                    {name: 'Связь 3G', value : 'Нет'},
+                    {name: '4G(LTE)', value : 'Нет'},
+                    {name: 'GPS-модуль', value : 'Нет'}
+                ],
+                ratio : 3,
+                nalichie : 'В наличии',
+                info : 'Смартфон Fly IQ434 Era Nano 5 оснащен 3.5 дисплеем и двумя слотами для SIM-карт. Android 2.3, Micro SD, Wi-Fi.... ',
+                price : 26790
+            }
+        ],
+        filters: [
+            {
+                name: 'Наличие в магазинах',
+                open: 'yes',
+                id: 'shop',
+                type: 'select',
+                values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+                reset: false
+            }, {
+                name: 'Бренды',
+                open: 'yes',
+                id: 'brands',
+                type: 'checkbox',
+                values: ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola'],
+                reset: true
+            }, {
+                name: 'Цена',
+                open: 'yes',
+                id: 'price',
+                type: 'range-box',
+                values: {
+                    'от': '0',
+                    'до': '10 000'
+                },
+                reset: false
+            }, {
+                name: 'Цвет',
+                open: 'yes',
+                id: 'color',
+                type: 'color',
+                values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green', 'skyblue', 'violet', 'pink', 'brown'],
+                reset: true
+            }, {
+                name: 'Операционная система',
+                open: 'yes',
+                id: 'oc',
+                type: 'checkbox',
+                values: ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom'],
+                reset: true
             }
         ],
     },
@@ -430,6 +555,7 @@ const initialState = [
             {
                 name :'Apple iPod nano 7',
                 id: 1,
+                catalog: 'mp3',
                 images: [
                     {image: 'images/img/mp3/Apple-iPod-nano-7-1.jpeg'},
                     {image: 'images/img/mp3/Apple-iPod-nano-7-2.jpeg'},
@@ -457,6 +583,7 @@ const initialState = [
             }, {
                 name :'Sony NWZ-B183F',
                 id: 2,
+                catalog: 'mp3',
                 activeIndex: 0,
                 date:12443325,
                 images: [
@@ -484,6 +611,7 @@ const initialState = [
             }, {
                 name :'Digma B3 8Gb',
                 id: 3,
+                catalog: 'mp3',
                 activeIndex: 0,
                 date:124356325,
                 images: [
@@ -511,6 +639,7 @@ const initialState = [
             }, {
                 name :'Fiio X3 II',
                 id: 4,
+                catalog: 'mp3',
                 activeIndex: 0,
                 date:12432425,
                 images: [
@@ -538,6 +667,7 @@ const initialState = [
             }, {
                 name :'Apple iPod touch 6',
                 id: 5,
+                catalog: 'mp3',
                 activeIndex: 0,
                 date:124325325,
                 images: [
@@ -565,6 +695,7 @@ const initialState = [
             }, {
                 name :'Fiio X1',
                 id: 6,
+                catalog: 'mp3',
                 activeIndex: 0,
                 date:12432235,
                 oc: 'IOS',
@@ -592,6 +723,7 @@ const initialState = [
             }, {
                 name :'Sony NWZ-WS613',
                 id: 7,
+                catalog: 'mp3',
                 activeIndex: 0,
                 date:12432125,
                 images: [
@@ -618,6 +750,40 @@ const initialState = [
                 price : 3721
             }
         ],
+        filters: [
+        {
+            name: 'Наличие в магазинах',
+            open: 'yes',
+            id: 'shop',
+            type: 'select',
+            values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+            reset: false
+        }, {
+            name: 'Бренды',
+            open: 'yes',
+            id: 'brands',
+            type: 'checkbox',
+            values: ['Lenovo', 'Apple', 'Samsung', 'Fly', 'Motorola'],
+            reset: true
+        }, {
+            name: 'Цена',
+            open: 'yes',
+            id: 'price',
+            type: 'range-box',
+            values: {
+                'от': '0',
+                'до': '10 000'
+            },
+            reset: false
+        }, {
+            name: 'Цвет',
+            open: 'yes',
+            id: 'color',
+            type: 'color',
+            values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green'],
+            reset: true
+        }
+    ],
     },
     {
 
@@ -628,6 +794,7 @@ const initialState = [
             {
                 name :'Компьютер PRO-099070',
                 id: 1,
+                catalog: 'computers',
                 images: [
                     {image: 'images/img/computers/PRO-099070-Intel-Core-1.jpg'},
                     {image: 'images/img/computers/PRO-099070-Intel-Core-2.jpg'},
@@ -654,6 +821,7 @@ const initialState = [
             }, {
                 name :'КОМПЬЮТЕР RIWER 590330',
                 id: 2,
+                catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/RIWER-590330-1.jpg'},
@@ -680,6 +848,7 @@ const initialState = [
             }, {
                 name :'Системный блок игровой ASUS GT51CA-RU002T',
                 id: 3,
+                catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/GT51CA-RU002T-1.jpg'},
@@ -706,6 +875,7 @@ const initialState = [
             }, {
                 name :'Системный блок Apple Mac mini',
                 id: 4,
+                catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/Apple-Mac-mini-1.jpeg'},
@@ -732,6 +902,7 @@ const initialState = [
             }, {
                 name :'Домашний компьютер MicroXperts',
                 id: 5,
+                catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/MicroXperts-1.jpg'},
@@ -758,6 +929,7 @@ const initialState = [
             }, {
                 name :'Игровой компьютер RS 1114',
                 id: 6,
+                catalog: 'computers',
                 activeIndex: 0, date:124325,
                 oc: 'IOS',
                 brands: 'Senseit',
@@ -784,6 +956,7 @@ const initialState = [
             }, {
                 name :'Системный блок LENOVO Erazer X310',
                 id: 7,
+                catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/computers/LENOVO-Erazer-X310-1.jpeg'},
@@ -809,6 +982,47 @@ const initialState = [
                 price : 6273
             }
         ],
+        filters: [
+            {
+                name: 'Наличие в магазинах',
+                open: 'yes',
+                id: 'shop',
+                type: 'select',
+                values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+                reset: false
+            }, {
+                name: 'Бренды',
+                open: 'yes',
+                id: 'brands',
+                type: 'checkbox',
+                values: ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola'],
+                reset: true
+            }, {
+                name: 'Цена',
+                open: 'yes',
+                id: 'price',
+                type: 'range-box',
+                values: {
+                    'от': '0',
+                    'до': '10 000'
+                },
+                reset: false
+            }, {
+                name: 'Цвет',
+                open: 'yes',
+                id: 'color',
+                type: 'color',
+                values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green', 'skyblue', 'violet', 'pink', 'brown'],
+                reset: true
+            }, {
+                name: 'Операционная система',
+                open: 'yes',
+                id: 'oc',
+                type: 'checkbox',
+                values: ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom'],
+                reset: true
+            }
+        ],
     },
     {
 
@@ -819,6 +1033,7 @@ const initialState = [
             {
                 name :'Continent CC-01',
                 id: 1,
+                catalog: 'accessorizes',
                 images: [
                     {image: 'images/img/accessorizes/Continent-CC-1.jpeg'},
                     {image: 'images/img/accessorizes/Continent-CC-2.jpeg'},
@@ -845,6 +1060,7 @@ const initialState = [
             }, {
                 name :'Targus Drifter Backpack 16',
                 id: 2,
+                catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/Drifter-Backpack-16-1.jpeg'},
@@ -871,6 +1087,7 @@ const initialState = [
             }, {
                 name :'адаптер для ноутбуков KS-is',
                 id: 3,
+                catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/KS-is-1.jpg'},
@@ -897,6 +1114,7 @@ const initialState = [
             }, {
                 name :'Аккумуляторная батарея для ноутбука Lenovo Thinkpad',
                 id: 4,
+                catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/Lenovo-Thinkpad-1.jpg'},
@@ -923,6 +1141,7 @@ const initialState = [
             }, {
                 name :'HAMA Vienna Notebook Backpack',
                 id: 5,
+                catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/accessorizes/Notebook-Backpack-1.jpeg'},
@@ -948,6 +1167,47 @@ const initialState = [
                 price : 5940
             }
         ],
+        filters: [
+            {
+                name: 'Наличие в магазинах',
+                open: 'yes',
+                id: 'shop',
+                type: 'select',
+                values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+                reset: false
+            }, {
+                name: 'Бренды',
+                open: 'yes',
+                id: 'brands',
+                type: 'checkbox',
+                values: ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola'],
+                reset: true
+            }, {
+                name: 'Цена',
+                open: 'yes',
+                id: 'price',
+                type: 'range-box',
+                values: {
+                    'от': '0',
+                    'до': '10 000'
+                },
+                reset: false
+            }, {
+                name: 'Цвет',
+                open: 'yes',
+                id: 'color',
+                type: 'color',
+                values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green', 'skyblue', 'violet', 'pink', 'brown'],
+                reset: true
+            }, {
+                name: 'Операционная система',
+                open: 'yes',
+                id: 'oc',
+                type: 'checkbox',
+                values: ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom'],
+                reset: true
+            }
+        ],
     },
     {
 
@@ -958,6 +1218,7 @@ const initialState = [
             {
                 name :'Apple MacBook Air 13',
                 id: 1,
+                catalog: 'nouts',
                 images: [
                     {image: 'images/img/nouts/Apple-MacBook-Air-13-1.jpeg'},
                     {image: 'images/img/nouts/Apple-MacBook-Air-13-2.jpeg'},
@@ -984,6 +1245,7 @@ const initialState = [
             }, {
                 name :'ASUS VivoBook Max',
                 id: 2,
+                catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/ASUS-VivoBook-Max-1.jpeg'},
@@ -1010,6 +1272,7 @@ const initialState = [
             }, {
                 name :'DELL INSPIRON 5567',
                 id: 3,
+                catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/DELL-INSPIRON-5567-1.jpeg'},
@@ -1036,6 +1299,7 @@ const initialState = [
             }, {
                 name :'Lenovo IdeaPad 110 15 AMD',
                 id: 4,
+                catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-1.jpeg'},
@@ -1062,6 +1326,7 @@ const initialState = [
             }, {
                 name :'DELL Vostro 5468',
                 id: 5,
+                catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/DELL-Vostro-5468-1.jpeg'},
@@ -1088,6 +1353,7 @@ const initialState = [
             }, {
                 name :'MSI GP72 7RD Leopard',
                 id: 6,
+                catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 oc: 'IOS',
                 brands: 'Senseit',
@@ -1114,6 +1380,7 @@ const initialState = [
             }, {
                 name :'HP ProBook 430 G4',
                 id: 7,
+                catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/HP-ProBook-430-G4-1.jpeg'},
@@ -1140,6 +1407,7 @@ const initialState = [
             }, {
                 name :'Sony VAIO Pro SVP1322M9R',
                 id: 8,
+                catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/nouts/Sony-VAIO-Pro-1.jpeg'},
@@ -1165,6 +1433,47 @@ const initialState = [
                 price : 3900
             }
         ],
+        filters: [
+            {
+                name: 'Наличие в магазинах',
+                open: 'yes',
+                id: 'shop',
+                type: 'select',
+                values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+                reset: false
+            }, {
+                name: 'Бренды',
+                open: 'yes',
+                id: 'brands',
+                type: 'checkbox',
+                values: ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola'],
+                reset: true
+            }, {
+                name: 'Цена',
+                open: 'yes',
+                id: 'price',
+                type: 'range-box',
+                values: {
+                    'от': '0',
+                    'до': '10 000'
+                },
+                reset: false
+            }, {
+                name: 'Цвет',
+                open: 'yes',
+                id: 'color',
+                type: 'color',
+                values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green', 'skyblue', 'violet', 'pink', 'brown'],
+                reset: true
+            }, {
+                name: 'Операционная система',
+                open: 'yes',
+                id: 'oc',
+                type: 'checkbox',
+                values: ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom'],
+                reset: true
+            }
+        ],
     },
     {
 
@@ -1175,6 +1484,7 @@ const initialState = [
             {
                 name :'Indesit IWUB 4085',
                 id: 1,
+                catalog: 'technics',
                 images: [
                     {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'},
                     {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'},
@@ -1201,6 +1511,7 @@ const initialState = [
             }, {
                 name :'Shivaki SVC 1748',
                 id: 2,
+                catalog: 'technics',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/technics/Shivaki-SVC-1748-1.jpeg'},
@@ -1227,6 +1538,7 @@ const initialState = [
             }, {
                 name :'Hansa BK316.3',
                 id: 3,
+                catalog: 'technics',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/technics/Hansa-BK316-3-1.jpeg'},
@@ -1253,6 +1565,7 @@ const initialState = [
             }, {
                 name :'Brother 4234D оверлок',
                 id: 4,
+                catalog: 'technics',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/technics/Brother-4234D-1.jpeg'},
@@ -1278,6 +1591,47 @@ const initialState = [
                 price : 3900
             }
         ],
+        filters: [
+            {
+                name: 'Наличие в магазинах',
+                open: 'yes',
+                id: 'shop',
+                type: 'select',
+                values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+                reset: false
+            }, {
+                name: 'Бренды',
+                open: 'yes',
+                id: 'brands',
+                type: 'checkbox',
+                values: ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola'],
+                reset: true
+            }, {
+                name: 'Цена',
+                open: 'yes',
+                id: 'price',
+                type: 'range-box',
+                values: {
+                    'от': '0',
+                    'до': '10 000'
+                },
+                reset: false
+            }, {
+                name: 'Цвет',
+                open: 'yes',
+                id: 'color',
+                type: 'color',
+                values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green', 'skyblue', 'violet', 'pink', 'brown'],
+                reset: true
+            }, {
+                name: 'Операционная система',
+                open: 'yes',
+                id: 'oc',
+                type: 'checkbox',
+                values: ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom'],
+                reset: true
+            }
+        ],
     },
     {
 
@@ -1288,6 +1642,7 @@ const initialState = [
             {
                 name :'Xiaomi Mi Band 2',
                 id: 1,
+                catalog: 'watch',
                 images: [
                     {image: 'images/img/watch/Xiaomi-Mi-Band-2-1.jpeg'},
                     {image: 'images/img/watch/Xiaomi-Mi-Band-2-2.jpeg'},
@@ -1314,6 +1669,7 @@ const initialState = [
             }, {
                 name :'Smart Baby Watch Q50',
                 id: 2,
+                catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/watch/Smart-Baby-Watch-Q50-1.jpeg'},
@@ -1340,6 +1696,7 @@ const initialState = [
             }, {
                 name :'Apple Watch Series 2',
                 id: 3,
+                catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/watch/Apple-Watch-Series-2-1.jpeg'},
@@ -1366,6 +1723,7 @@ const initialState = [
             }, {
                 name :'Smart Baby Watch Q80',
                 id: 4,
+                catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/watch/Smart-Baby-Watch-Q80-1.jpeg'},
@@ -1392,6 +1750,7 @@ const initialState = [
             }, {
                 name :'Samsung Gear S3 Frontier',
                 id: 5,
+                catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/watch/Samsung-Gear-S3-Frontier-1.jpeg'},
@@ -1418,6 +1777,7 @@ const initialState = [
             }, {
                 name :'Samsung Gear S3 Classic',
                 id: 6,
+                catalog: 'watch',
                 activeIndex: 0, date:124325,
                 oc: 'IOS',
                 brands: 'Senseit',
@@ -1444,6 +1804,7 @@ const initialState = [
             }, {
                 name :'Apple Watch Series 2 42mm',
                 id: 7,
+                catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
                     {image: 'images/img/watch/Apple-Watch-Series-2-42mm-1.jpeg'},
@@ -1467,6 +1828,47 @@ const initialState = [
                 nalichie : 'В наличии',
                 info : 'Смартфон HIGHSCREEN WinWin Black оснащен 4 дисплеем и двумя слотами для SIM-карт.  Windows Phone , 3G, Bluetooth, USB-подключение к ПК...',
                 price : 6273
+            }
+        ],
+        filters: [
+            {
+                name: 'Наличие в магазинах',
+                open: 'yes',
+                id: 'shop',
+                type: 'select',
+                values: ['Во всех магазинах', 'В ближайшем ко мне магазине'],
+                reset: false
+            }, {
+                name: 'Бренды',
+                open: 'yes',
+                id: 'brands',
+                type: 'checkbox',
+                values: ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola'],
+                reset: true
+            }, {
+                name: 'Цена',
+                open: 'yes',
+                id: 'price',
+                type: 'range-box',
+                values: {
+                    'от': '0',
+                    'до': '10 000'
+                },
+                reset: false
+            }, {
+                name: 'Цвет',
+                open: 'yes',
+                id: 'color',
+                type: 'color',
+                values: ['white', 'gray', 'black', 'blue', 'red', 'yellow', 'orange', 'green', 'skyblue', 'violet', 'pink', 'brown'],
+                reset: true
+            }, {
+                name: 'Операционная система',
+                open: 'yes',
+                id: 'oc',
+                type: 'checkbox',
+                values: ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom'],
+                reset: true
             }
         ],
     },
