@@ -3,7 +3,9 @@ import React from 'react';
 const SocialItem = ({ name, link, className }) => {
     return (
         <li className={className + '__item'}>
-            <a href={link} className={className + '__link ' + className + '__link_' + name} />
+            <a href={link} className={className + '__link'}>
+                <i className={className + '__icon ' + className + '__icon_type_' + name} />
+            </a>
         </li>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router'
 
-const Breadcrumb = ({ name, link }) => {
+const Breadcrumb = ({ name, link}) => {
     return (
         <li className='breadcrumbs__item'>
             <Link to={link} className='breadcrumbs__link'>{name}</Link>

@@ -29,18 +29,20 @@ const Header = ({ cart }) => {
     return (
         <header className='header'>
             <div className='header__top'>
-                <div className='container'>
+                <div className='header__container container'>
                     <Socials className={'socials'} />
-                    <a href='tel://+7(921)123-12-13' className='header__phone'>+7 (921) 123-12-12</a>
-                    <div className='adress'>ул. Маяковская 6, офис 17</div>
+                    <div className="header__contacts">
+                        <div className='header__address'>ул. Маяковская 6, офис 17</div>
+                        <a href='tel://+7(921)123-12-13' className='header__phone'>+7 (921) 123-12-12</a>
+                    </div>
                 </div>
             </div>
             <div className='header__bottom'>
-                <div className='container'>
-                    <Link href='/'>
-                        <img src='images/logo/logo.png' alt='Cooltech' className='logo'/>
+                <div className='header__container container'>
+                    <Link to='/'>
+                        <img src='images/logo/logo.png' alt='Cooltech' className='header__logo'/>
                     </Link>
-                    <form action='' className='search'>
+                    <form action='' className='header__search search'>
                         <input type='text' className='search__input' placeholder='Что будем искать'/>
                         <button type='submit' className='search__submit' href="/search">Найти</button>
                     </form>

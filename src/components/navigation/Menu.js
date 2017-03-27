@@ -13,9 +13,9 @@ const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
     };
 
     return (
-        <nav className='nav'>
+        <nav className='menu'>
             <div className='container'>
-                <ul className='nav__list'>
+                <ul className='menu__list'>
                     {
                         catalogsName.map((catalog, i) => {
                             return <MenuItem
@@ -23,7 +23,7 @@ const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
                                 name={catalog.name}
                                 id={catalog.id}
                                 active={ownProps.active}
-                                className={'nav'}
+                                className={'menu'}
                                 changeCatalog={changeCatalog}
                             />;
                         })
