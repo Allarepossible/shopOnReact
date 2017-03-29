@@ -1,0 +1,268 @@
+.category__list
+{
+    margin-bottom: 30px;
+}
+
+.category__item
+{
+    border: 1px solid #dee1e4;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.category__item:hover
+{
+    z-index: 3;
+    box-shadow: 0 1px 5px 1px rgba(118, 118, 118, .75);
+}
+
+.category__list_type_tile
+{
+    flex-wrap: wrap;
+}
+
+.category__list_type_tile .category__item
+{
+    width: 235px;
+    padding: 15px 8px;
+    margin-bottom: 15px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product__slideshow
+{
+    width: 138px;
+    margin-bottom: 15px;
+}
+
+.product__title
+{
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.product__features
+{
+    width: 95%;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.features__item
+{
+    padding: 1px 3px;
+
+    background-color: #e6e6e6;
+}
+
+.features__item:nth-child(2n)
+{
+    background-color: #fff;
+}
+
+.product__raiting
+{
+    margin-bottom: 15px;
+}
+
+.raiting__star
+{
+    width: 16px;
+    height: 15px;
+
+    margin-right: 2px;
+}
+
+.star-full
+{
+    background: url('/images/star2.png') -2px -1px;
+}
+
+.star
+{
+    background: url('/images/star1.png');
+}
+
+.raiting__value
+{
+    padding: 1px 10px;
+
+
+    color: #fff;
+    border-radius: 7px;
+    background-color: #b5beca;
+}
+
+.product__price
+{
+    margin-bottom: 15px;
+}
+
+.product__about
+{
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.product__nalichie
+{
+    position: relative;
+
+}
+
+.product__nalichie:before
+{
+    position: absolute;
+    top: 5px;
+    left: -10px;
+
+    width: 7px;
+    height: 7px;
+
+    content: '';
+
+    border-radius: 50%;
+    background-color: #60ac49;
+}
+
+.product__buy
+{
+    padding: 6px 15px;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+    background-color: #ff6e35;
+}
+
+.product__buy:hover
+{
+    background-color: #e84100;
+}
+
+/*******      view column & line       ********/
+
+.category__list_type_column,
+.category__list_type_line
+{
+    flex-direction: column;
+}
+
+.category__list_type_column .category__item,
+.category__list_type_line .category__item
+{
+    align-items: flex-start;
+    flex-direction: row;
+
+    width: 100%;
+    margin-bottom: 0;
+    padding: 20px;
+
+    border-bottom: none;
+    border-radius: 0;
+}
+
+.category__list_type_column .category__item
+{
+    padding: 20px;
+}
+
+.category__list_type_line .category__item
+{
+    align-items: center;
+    padding: 10px;
+}
+
+.category__list_type_column .category__item:first-child,
+.category__list_type_line .category__item:first-child
+{
+    border-radius: 6px 6px 0 0;
+}
+
+.category__list_type_column .category__item:last-child,
+.category__list_type_line .category__item:last-child
+{
+    border-bottom: 1px solid #dee1e4;
+    border-radius: 0 0 6px 6px;
+}
+
+.category__list_type_column .product__center
+{
+    width: 50%;
+}
+
+.category__list_type_column .product__info
+{
+    margin-bottom: 30px;
+}
+
+.category__list_type_column .product__raiting
+{
+    justify-content: flex-start;
+}
+
+.category__list_type_line .product__info
+{
+    width: 250px;
+    margin-bottom: 0;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.category__list_type_line .product__title,
+.category__list_type_line .product__price
+{
+    margin-bottom: 0;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80px;
+}
+
+.path_products
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.path__list
+{
+    display: flex;
+}
+
+.path__item
+{
+    margin-left: 1px;
+}
+
+.path__link
+{
+    font-family: 'OpenSansSemiBold', Arial, sans-serif;
+    font-size: 11px;
+
+    padding: 4px 8px;
+
+    text-decoration: none;
+
+    color: #7f7f7f;
+    border: 1px solid #dee1e4;
+    border-radius: 3px;
+    background-color: #fbfbfb;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .004);
+}
+.path__link-active
+{
+    border: 1px solid #c8c8c8;
+    background-color: #e0e0e0;
+}
+.path__link:hover
+{
+    border: 1px solid #c8c8c8;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12), inset 0 1px 0 1px rgba(255, 255, 255, .004);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12), inset 0 1px 0 1px rgba(255, 255, 255, .004);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12), inset 0 1px 0 1px rgba(255, 255, 255, .004);
+}

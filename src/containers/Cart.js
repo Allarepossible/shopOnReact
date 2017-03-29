@@ -40,7 +40,7 @@ const CartItem = ({ image, name, articul, nalichie, catalog, price, count, delet
     };
 
     return (
-        <li className='cart__item products'>
+        <li className='cart__item'>
             <Link className='products__link' to={'/catalog/' + catalog + '/' + articul}>
                 <div className='photo'>
                     <img className='big-photo' src={image} alt={name} />
@@ -78,11 +78,11 @@ const Cart = ({ cart, deleteProduct, changeCountOfProductInCart }) => {
             <div className='wrapper'>
                 <Header />
                 <Menu />
-                <div className='main_content'>
+                <div className='layout'>
                     <div className='container'>
                         <Breadcrumbs catalog={[{name: "Корзина", link: '/cart'}]}/>
-                        <h1 className='main_head_text'>Корзина</h1>
-                        <div className='container'>
+                        <h1 className='h1 text text_color_grey text_weight_bold'>Корзина</h1>
+                        <div className='container cart'>
                             <ul className='cart__list'>
                                 {
                                     cart.length > 0 &&

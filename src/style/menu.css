@@ -1,6 +1,8 @@
 .menu
 {
     display: flex;
+    background-color: #fff;
+    margin-bottom: 15px;
 }
 
 .menu__list

@@ -21,10 +21,10 @@ const Search = ({ products, catalog, filters, setState }) => {
             <div className='wrapper'>
                 <Header />
                 <Menu />
-                <div className='main_content'>
+                <div className='layout'>
                     <div className='container'>
                         <Breadcrumbs catalog={[{name:'Поиск', link: '/search'}]} />
-                        <h1 className='main_head_text'>{catalog.name}</h1>
+                        <h1 className='h1 text text_color_grey text_weight_bold'>{catalog.name}</h1>
                         <div className='layout'>
                             <aside className='sidebar'>
                                 <Filters

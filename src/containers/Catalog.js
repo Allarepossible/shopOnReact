@@ -22,12 +22,12 @@ const Catalog = ({ products, catalog, filters, setState }) => {
             <div className='wrapper'>
                 <Header />
                 <Menu active={catalog.id}/>
-                <div className='main_content'>
+                <div className='layout'>
                     <div className='container'>
                         <Breadcrumbs catalog={[{name: "Каталог", link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}/>
-                        <h1 className='main_head_text'>{catalog.name}</h1>
+                        <h1 className='h1 text text_color_grey text_weight_bold'>{catalog.name}</h1>
                         <div className='layout'>
-                            <aside className='sidebar'>
+                            <aside className='layout sidebar'>
                                 <Filters
                                     filters={filters}
                                 />
@@ -35,12 +35,10 @@ const Catalog = ({ products, catalog, filters, setState }) => {
                             <div className='right_content'>
                                 <Sort />
                                 <div className='content'>
-                                    <div className='content'>
-                                        <Products
-                                            catalogId={catalog.id}
-                                            countOfProducts={products.length}
-                                        />
-                                    </div>
+                                    <Products
+                                        catalogId={catalog.id}
+                                        countOfProducts={products.length}
+                                    />
                                     {
                                         products.length > 9 &&
                                         <PathProducts />

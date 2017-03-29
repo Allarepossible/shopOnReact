@@ -11,26 +11,22 @@ const SlideShow = ({ product, products, changeSlide}) => {
     };
 
     return (
-        <div className='products__slideshow'>
-            <div className='slideshow'>
-                <img className='big-photo' src={bigImage} alt={product.name} />
+        <div className='product__slideshow slideshow'>
+            <div className="slideshow__wrap-img">
+                <img className='slideshow__img' src={bigImage} alt={product.name} />
             </div>
-            <ul className='mini__list'>
+            <ul className='slideshow__list layout'>
                 {
                     product.images.map((image, i) => {
-                        const active = i === Number(product.activeIndex) ? ' mini__item-active' : '';
-                        return <li className={'mini__item' + active} key={i}>
-                            <a className='slideshow_pic' onClick={selectMiniImage} data={i} >
-                                <img className='mini__img' src={image.image} alt='' />
+                        const active = i === Number(product.activeIndex) ? ' active' : '';
+                        return <li className={'slideshow__item' + active} key={i}>
+                            <a className='slideshow__link' onClick={selectMiniImage} data={i} >
+                                <img className='slideshow__preview' src={image.image} alt='' />
                             </a>
                         </li>
                     })
                 }
             </ul>
-            <div className='products__articul'>
-                <span className='art'> Артикул </span>
-                <span className='art_number'>{product.articul}</span>
-            </div>
         </div>
     );
 };

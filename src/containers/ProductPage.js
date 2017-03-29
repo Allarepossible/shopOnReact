@@ -5,7 +5,7 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import Menu from '../components/navigation/Menu';
 import Breadcrumbs from '../components/navigation/Breadcrumbs';
-import Feature from '../components/products/Feature';
+import Feature from '../components/products/Features';
 
 const ProductPage = ({ activeSlide, catalog, ownProps, changeActiveSlide }) => {
     const product = catalog.products.find((product) => product.articul === Number(ownProps.params.productId));
@@ -23,10 +23,10 @@ const ProductPage = ({ activeSlide, catalog, ownProps, changeActiveSlide }) => {
             <div className='wrapper'>
                 <Header />
                 <Menu />
-                <div className='main_content'>
+                <div className='layout'>
                     <div className='container'>
                         <Breadcrumbs catalog={[{name: 'Каталог', link: '/catalog'}, {name: catalog.name, link: catalogLink}, {name: product.name, link: catalogLink + product.articul}]} />
-                        <h1 className='main_head_text'>{product.name}</h1>
+                        <h1 className='h1 text text_color_grey text_weight_bold'>{product.name}</h1>
                         <div className='layout'>
                             <div className='product__container'>
                                 <div className='product__slideshow'>

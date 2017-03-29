@@ -15,11 +15,6 @@
     background-color: #fff;
 }
 
-.filters__list
-{
-    list-style: none;
-}
-
 .filters__item
 {
     padding: 10px 15px;
@@ -34,13 +29,13 @@
 .filter__title
 {
     font-family: 'OpenSansSemiBold', Arial, sans-serif;
-    font-size: 14px;
 
     position: relative;
 
     display: block;
 
     padding: 5px;
+
     cursor: pointer;
 
     color: #333;
@@ -165,8 +160,8 @@
 
     border-radius: 3px;
     -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
-    -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
+       -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
 }
 
 .input_type_checkbox:checked + .label_type_checkbox:before
@@ -209,40 +204,40 @@
     color: #5db2fc;
 }
 
-.color
+.filter_type_color .filter__list
 {
-    font-size: 0;
+    display: flex;
 
-    width: 213px;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
 .color__item
 {
-    display: inline-block;
+    display: flex;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 37px;
-    height: 37px;
-    margin-top: 18px;
-    margin-right: 19px;
+    width: 25%;
+    height: 60px;
+
+    justify-content: center;
+    align-items: center;
 }
+
 .color__link
 {
     display: block;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     width: 37px;
     height: 37px;
 
     border: 1px solid #dee1e4;
 }
+
 .color__link:hover
 {
     border: 2px solid #ff6e35;
 }
+
 .color__text
 {
     position: absolute;
@@ -250,63 +245,34 @@
     left: -9999px;
 }
 
-.choosen
+.color__item .active
 {
     border: 2px solid #ff6e35;
-}
-
-.color__list
-{
-    display: block;
-
-    margin-top: 14px;
-    margin-bottom: -22px;
 }
 
 .price-range
 {
     margin-top: 16px;
 }
+
 .price-range__input
 {
     font-family: 'OpenSansSemiBold', Arial, sans-serif;
-    font-size: 14px;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+
     width: 80px;
     padding: 5px 6px;
 
     border: 1px solid #ebedef;
     border-radius: 3px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(148, 148, 148, .43);
-    -moz-box-shadow: inset 0 1px 1px rgba(148, 148, 148, .43);
     box-shadow: inset 0 1px 1px rgba(148, 148, 148, .43);
 }
+
 .price-range__box
 {
     display: flex;
 
     justify-content: space-between;
-}
-.price-range #price-range2
-{
-    margin-right: 0;
-}
-.price-range__slider
-{
-    width: 273px;
-    height: 3px;
-
-    cursor: pointer;
-
-    border: 0;
-    background-color: #dee1e4;
-}
-.price-range__text
-{
-    font-size: 14px;
 }
 
 .white
@@ -367,4 +333,11 @@
 .brown
 {
     background-color: #7f401d;
+}
+
+select
+{
+    background-color: #fff;
+    width: 100px;
+    height: 25px;
 }

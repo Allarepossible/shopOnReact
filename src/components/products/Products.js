@@ -7,8 +7,8 @@ const ProductsList = ({ products, views, catalogId }) => {
     const activeView = views.filter((view) => view.active)[0].name;
 
     return (
-        <div className='contacts'>
-            <ul className={'products_list products_list_type_' + activeView}>
+        <div className='category'>
+            <ul className={'layout category__list category__list_type_' + activeView}>
                 {
                     products.filter((product) => product.name).map((el, index) => {
                         if (index < 9) {
@@ -24,6 +24,7 @@ const ProductsList = ({ products, views, catalogId }) => {
                                 images={el.images}
                                 feature={el.feature}
                                 activeIndex={el.activeIndex}
+                                view={activeView}
                                 catalogId={catalogId}
                             />;
                         } else {
