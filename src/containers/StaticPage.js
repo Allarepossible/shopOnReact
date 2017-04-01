@@ -13,7 +13,7 @@ const StaticPage = ({ catalog, catalogs, changeView}) => {
         const activeCatalog = catalog.filter((catalog) => catalog.id === activeCategoryId)[0];
         const sortProducts = activeCatalog.products;
 
-        changeView(sortProducts)
+        changeView(sortProducts, activeCatalog.filters)
     };
 
     return (
@@ -63,8 +63,10 @@ export default connect(
         ownProps
     }),
     dispatch => ({
-        changeView: (products) => {
+        changeView: (products, filters) => {
             const payload = products;
+            const payload2 = filters;
+            dispatch({ type: 'SET_FILTERS', payload2 });
             dispatch({ type: 'CHANGE_CATEGORY', payload });
         }
     })

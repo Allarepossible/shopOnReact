@@ -7,18 +7,20 @@
 .cart__item
 {
     display: flex;
-    flex-direction: row;
+    align-items: center;
 
     width: 100%;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 5px 10px;
 
     border: 1px solid #dee1e4;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, .6);
+}
 
-    align-items: center;
-    justify-content: space-between;
+.cart__link
+{
+    width: 7%;
 }
 
 .cart__item .photo
@@ -40,6 +42,28 @@
 {
     max-width: 95%;
     max-height: 95%;
+}
+
+.cart__articul
+{
+    width: 12%;
+    text-align: center;
+}
+
+.cart__nalichie
+{
+    width: 9%;
+}
+
+.cart__title
+{
+    width: 50%;
+}
+
+.cart__price
+{
+    width: 12%;
+    text-align: right;
 }
 
 .common-price
@@ -66,9 +90,9 @@
 {
     display: flex;
 
-    width: 130px;
+    width: 10%;
 
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .counter__input
@@ -88,8 +112,8 @@
 {
     position: relative;
 
-    width: 27px;
-    height: 27px;
+    width: 25px;
+    height: 25px;
 
     cursor: pointer;
 
@@ -99,34 +123,51 @@
 
 .counter__button_type_plus:after
 {
-    font-size: 26px;
-
+    width: 13px;
+    height: 13px;
     position: absolute;
-    top: -4px;
-    left: 7px;
+    top: 5px;
+    left: 6px;
 
-    content: '+';
+    content: '';
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTExIDExVjIuOTkxYzAtLjUzNi40NDctLjk5MSAxLS45OTEuNTU2IDAgMSAuNDQ0IDEgLjk5MVYxMWg4LjAwOGMuNTM2IDAgLjk5Mi40NDcuOTkyIDEgMCAuNTU2LS40NDUgMS0uOTkyIDFIMTN2OC4wMDhjMCAuNTM2LS40NDguOTkyLTEgLjk5Mi0uNTU3IDAtMS0uNDQ1LTEtLjk5MlYxM0gyLjk5MUMyLjQ1NSAxMyAyIDEyLjU1MiAyIDEyYzAtLjU1Ny40NDQtMSAuOTkxLTFIMTF6Ii8+PC9zdmc+);
 
     color: #a8abad;
+}
+
+.counter__button_type_minus.disabled
+{
+    border-color: #f0f4f7;
 }
 
 .counter__button_type_minus:after
 {
-    font-size: 36px;
-
+    width: 10px;
+    height: 1px;
     position: absolute;
-    top: -15px;
-    left: 8px;
+    top: 11px;
+    left: 6px;
+    content: '';
 
-    content: '-';
+    background-color: black;
+}
 
-    color: #a8abad;
+.counter__button_type_minus.disabled:after
+{
+    width: 10px;
+    height: 1px;
+    position: absolute;
+    top: 11px;
+    left: 6px;
+    content: '';
+
+    background-color: #ccd4da;
 }
 
 .counter__delete
 {
-    width: 22px;
-    height: 27px;
+    width: 19px;
+    height: 22px;
 
     cursor: pointer;
 

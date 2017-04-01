@@ -15,6 +15,7 @@ const Product = ({ images, feature, articul, name, info, ratio, price, nalichie,
 
         addToCart(product);
     };
+
     if (view === 'tile') {
         return (
             <li className='category__item product layout' key={id}>
@@ -33,7 +34,7 @@ const Product = ({ images, feature, articul, name, info, ratio, price, nalichie,
                 <Raiting count={ratio} />
                 <div className='product__price text text_size_l text_weight_bold'>{NewPrice} P</div>
                 <div className='product__about layout'>
-                    <div className='product__nalichie text text_size_s text_weight_bold text_color_grey '>{nalichie}</div>
+                    <div className='product__nalichie text text_size_s text_weight_bold text_color_grey'>{nalichie}</div>
                     <Link className='product__link text text_size_s text_weight_bold text_color_grey ' to={'/catalog/' + catalogId + '/' + articul}>Подробнее</Link>
                 </div>
                 <button className='product__buy text text_weight_semibold text_color_white text_size_s' onClick={addProductToCart}>В корзину</button>

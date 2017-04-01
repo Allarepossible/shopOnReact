@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import { map, reduce } from 'lodash';
 
 import Socials from '../navigation/Socials'
 
-const NavItems = ({ name, link, cart }) => {
-    const counter = name === 'Корзина' ? ' (' + cart.length + ')' : '';
+const NavItems = ({ name, link, cartSize }) => {
+    const counter = name === 'Корзина' ? ' (' + cartSize + ')' : '';
 
     return (
         <li className='navigation__item'>
@@ -15,6 +16,7 @@ const NavItems = ({ name, link, cart }) => {
 };
 
 const Header = ({ cart }) => {
+    const cartSize = reduce(map(cart, 'count'), (sum, i) => i + sum,0);
     const nav = [{
         name: 'Контакты',
         link: '/contacts'
@@ -54,7 +56,7 @@ const Header = ({ cart }) => {
                                         key={i}
                                         name={el.name}
                                         link={el.link}
-                                        cart={cart}
+                                        cartSize={cartSize}
                                     />;
                                 })
                             }

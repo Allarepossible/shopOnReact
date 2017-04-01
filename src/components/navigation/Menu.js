@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { find, sortBy } from 'lodash';
 
 import MenuItem from './MenuItem';
 
-const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
+const Menu = ({ catalogs, ownProps, changeView, sort }) => {
     const changeCatalog = (e) => {
         const activeCategoryId = e.currentTarget.getAttribute('data');
-        const activeCatalog = catalogs.filter((catalog) => catalog.id === activeCategoryId)[0];
-        const sortProducts = activeCatalog.products.sort((a,b) => a[sort.name] - b[sort.name])
+        const activeCatalog = find(catalogs, {'id': activeCategoryId});
+        const sortProducts = sortBy(activeCatalog.products, [sort.name]);
 
         changeView(sortProducts, activeCatalog.filters);
     };
@@ -17,7 +18,7 @@ const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
             <div className='container'>
                 <ul className='menu__list'>
                     {
-                        catalogsName.map((catalog, i) => {
+                        catalogs.map((catalog, i) => {
                             return <MenuItem
                                 key={i}
                                 name={catalog.name}
@@ -36,13 +37,8 @@ const Menu = ({ catalogsName, catalogs, ownProps, changeView, sort }) => {
 
 export default connect(
     (state, ownProps) => ({
-        sort: state.sort.find((item) => item.active),
+        sort: find(state.sort, 'active'),
         catalogs: state.catalogs,
-        catalogsName: state.catalogs.map((catalog) => {
-            return {
-                name: catalog.name,
-                id: catalog.id}
-        }),
         ownProps
     }),
     dispatch => ({

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { find } from 'lodash';
 
 const SlideShow = ({ product, products, changeSlide}) => {
     let bigImage = product.images[product.activeIndex].image;
@@ -34,7 +35,7 @@ const SlideShow = ({ product, products, changeSlide}) => {
 export default connect(
     (state, ownProps) => ({
         products: state.products,
-        product: state.products[ownProps.id] || state.catalogs.find(catalog => catalog.id === ownProps.catalogId).products[ownProps.id]
+        product: find(state.products, {'articul': ownProps.articul}) || find(find(state.catalogs, {'id': ownProps.catalogId}).products, {'articul': ownProps.articul})
     }),
     dispatch => ({
         changeSlide: (product, products) => {

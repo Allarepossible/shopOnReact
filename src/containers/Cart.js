@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { groupBy, reduce, partition, forIn, assign, uniqBy, find, drop, concat } from 'lodash';
+import { find, reduce, map } from 'lodash';
 
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
@@ -12,65 +12,54 @@ const normalizePrice = (price) => {
     return String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
 };
 
-const CartItem = ({ image, name, articul, nalichie, catalog, price, count, deleteProduct, cart, changeCountOfProductInCart }) => {
+const CartItem = ({ image, name, articul, nalichie, catalog, price, count, deleteProduct, changeCountOfProductInCart }) => {
     const deleteProductFromCart = () => {
-        const newCart = partition(cart, ['articul', articul])[1];
-
-        deleteProduct(newCart);
+        deleteProduct(articul);
     };
 
     const decreaseCount = () => {
-        if (count < 2) {
-            deleteProductFromCart();
-        } else {
-            const newCart = concat(drop(partition(cart, ['articul', articul])[0]), partition(cart, ['articul', articul])[1])
-
-            deleteProduct(newCart);
+        if (count > 1) {
+            changeCountOfProductInCart(articul);
         }
     };
 
     const changeCount = () => {
-
     };
 
     const increaseCount = () => {
-        const product = find(cart, ['articul', articul]);
-
-        changeCountOfProductInCart(product);
+        changeCountOfProductInCart(articul, '+');
     };
+
+    const disabledClass = count === 1 ? ' disabled' : '';
 
     return (
         <li className='cart__item'>
-            <Link className='products__link' to={'/catalog/' + catalog + '/' + articul}>
+            <Link className='cart__link' to={'/catalog/' + catalog + '/' + articul}>
                 <div className='photo'>
                     <img className='big-photo' src={image} alt={name} />
                 </div>
             </Link>
-                <div className='articul'>
-                    <span className='art'> Артикул </span>
-                    <span className='art_number'>{articul}</span>
-                </div>
-                <div className='products__title'>{name}</div>
-                <div className='products_nallichie'>{nalichie}</div>
-                <div className="counter">
-                    <i className="counter__button counter__button_type_minus" onClick={decreaseCount} />
-                    <input type='text' className='counter__input' value={count} onChange={changeCount} />
-                    <i className="counter__button counter__button_type_plus" onClick={increaseCount} />
-                    <i className='counter__delete' onClick={deleteProductFromCart} />
-                </div>
-                <div className='products__price'>{normalizePrice(price)} P</div>
+            <div className='cart__articul articul'>
+                <span className='text text_color_grey text_weight_bold text_size_s'> Артикул </span>
+                <span className='text text_weight_bold'>{articul}</span>
+            </div>
+            <div className='cart__title'>{name}</div>
+            <div className='cart__nalichie product__nalichie text text_size_s text_weight_bold text_color_grey'>{nalichie}</div>
+            <div className="counter">
+                <i className={"counter__button counter__button_type_minus" + disabledClass} onClick={decreaseCount} />
+                <input type='text' className='counter__input' value={count} onChange={changeCount} />
+                <i className="counter__button counter__button_type_plus" onClick={increaseCount} />
+                <i className='counter__delete' onClick={deleteProductFromCart} />
+            </div>
+            <div className='cart__price text text_weight_semibold text_size_l'>{normalizePrice(price)} P</div>
         </li>
     )
 };
 
 const Cart = ({ cart, deleteProduct, changeCountOfProductInCart }) => {
-    forIn(groupBy(cart, 'articul'), (value) => {
-        return assign(value[0], {count: value.length});
-    });
-    const products = uniqBy(cart, 'articul');
-
-    const commonPrice = reduce(cart, (result, product) => {
-        return result + product.price;
+    const products = map(cart, 'product');
+    const commonPrice = reduce(cart, (result, {product, count}) => {
+        return result + product.price * count;
     }, 0);
 
     return (
@@ -87,12 +76,14 @@ const Cart = ({ cart, deleteProduct, changeCountOfProductInCart }) => {
                                 {
                                     cart.length > 0 &&
                                     products.map((el, index) => {
+                                        const count = find(cart, ['articul', el.articul]).count;
+
                                         return <CartItem
                                             key={index}
                                             image={el.images[0].image}
                                             name={el.name}
                                             price={el.price}
-                                            count={el.count}
+                                            count={count}
                                             articul={el.articul}
                                             info={el.info}
                                             nalichie={el.nalichie}
@@ -126,15 +117,18 @@ export default connect(
         cart: state.cart
     }),
     dispatch => ({
-        deleteProduct: (newCart) => {
-            const payload = newCart;
+        deleteProduct: (articul) => {
+            const payload = articul;
 
             dispatch({ type: 'DELETE_PRODUCT', payload });
         },
-        changeCountOfProductInCart: (product) => {
-            const payload = product;
-
-            dispatch({ type: 'CHANGE_COUNT_PRODUCT', payload });
+        changeCountOfProductInCart: (articul, type) => {
+            const payload = articul;
+            if (type === '+') {
+                dispatch({ type: 'INCREASE_COUNT_PRODUCT', payload });
+            } else {
+                dispatch({ type: 'DECREASE_COUNT_PRODUCT', payload });
+            }
         }
     })
 )(Cart);
