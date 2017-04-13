@@ -42,7 +42,7 @@ const Header = ({ cart }) => {
             <div className='header__bottom'>
                 <div className='header__container container'>
                     <Link to='/'>
-                        <img src='images/logo/logo.png' alt='Cooltech' className='header__logo'/>
+                        <img src='/images/logo/logo.png' alt='Cooltech' className='header__logo'/>
                     </Link>
                     <form action='' className='header__search search'>
                         <input type='text' className='search__input' placeholder='Что будем искать'/>

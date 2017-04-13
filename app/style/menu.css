@@ -1,0 +1,38 @@
+.menu
+{
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.menu__list
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__link
+{
+    padding: 15px;
+    font-size: 16px;
+    display: block;
+
+    text-decoration: none;
+
+    color: #484848;
+    cursor: pointer;
+}
+
+.menu__link:hover
+{
+    background-color: #e4e2e2;
+}
+
+.menu__link-active
+{
+    font-family: 'OpenSansSemiBold', Arial, sans-serif;
+
+    background-color: #ff6e35;
+
+    color: #fff;
+}

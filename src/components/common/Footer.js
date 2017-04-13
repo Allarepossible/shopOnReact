@@ -17,7 +17,7 @@ const Footer = ({ catalogs, catalogsName, changeView}) => {
         <footer className='footer'>
             <div className='container'>
                 <div className='footer__content'>
-                    <img src='images/logo/logo_footer.png' alt='' className='footer__logo'/>
+                    <img src='/images/logo/logo_footer.png' alt='' className='footer__logo'/>
                     <div className="footer__right">
                         <Socials className={'footer_socials'} />
                         <div className='footer_nav'>

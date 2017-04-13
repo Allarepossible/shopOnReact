@@ -1,0 +1,33 @@
+.breadcrumbs
+{
+    margin-bottom: 20px;
+}
+
+.breadcrumbs__list
+{
+    display: flex;
+}
+
+.breadcrumbs__item:before
+{
+    display: inline-block;
+
+    margin: 1px 8px;
+
+    content: '>';
+}
+
+.breadcrumbs__item:first-child:before
+{
+    display: none;
+}
+
+.breadcrumbs__link
+{
+    font-family: 'OpenSansSemiBold', Arial, sans-serif;
+    font-size: 13px;
+
+    text-decoration: none;
+
+    color: #333;
+}

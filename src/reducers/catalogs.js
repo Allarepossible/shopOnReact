@@ -2,16 +2,16 @@ const initialState = [
     {
         id: 'tablets',
         name: 'Планшеты',
-        img: 'images/img/tablets/ASUS-Transformer-Book-1.jpeg',
+        img: '/images/img/tablets/ASUS-Transformer-Book-1.jpeg',
         products: [
             {
                 name :'Samsung Galaxy Tab A 10.1',
                 id: 1,
                 catalog: 'tablets',
                 images: [
-                    {image: 'images/img/tablets/Samsung-Galaxy-Tab-1.jpeg'},
-                    {image: 'images/img/tablets/Samsung-Galaxy-Tab-2.jpeg'},
-                    {image: 'images/img/tablets/Samsung-Galaxy-Tab-3.jpeg'}
+                    {image: '/images/img/tablets/Samsung-Galaxy-Tab-1.jpeg'},
+                    {image: '/images/img/tablets/Samsung-Galaxy-Tab-2.jpeg'},
+                    {image: '/images/img/tablets/Samsung-Galaxy-Tab-3.jpeg'}
                 ],
                 activeIndex: 0,
                 date:124325,
@@ -39,9 +39,9 @@ const initialState = [
                 activeIndex: 0,
                 date:1242325,
                 images: [
-                    {image: 'images/img/tablets/ASUS-Transformer-Book-1.jpeg'},
-                    {image: 'images/img/tablets/ASUS-Transformer-Book-2.jpeg'},
-                    {image: 'images/img/tablets/ASUS-Transformer-Book-3.jpeg'}
+                    {image: '/images/img/tablets/ASUS-Transformer-Book-1.jpeg'},
+                    {image: '/images/img/tablets/ASUS-Transformer-Book-2.jpeg'},
+                    {image: '/images/img/tablets/ASUS-Transformer-Book-3.jpeg'}
                 ],
                 articul: 1001,
                 oc: 'Windows 10',
@@ -67,9 +67,9 @@ const initialState = [
                 activeIndex: 0,
                 date:1124325,
                 images: [
-                    {image: 'images/img/tablets/Prestigio-MultiPad-1.jpeg'},
-                    {image: 'images/img/tablets/Prestigio-MultiPad-2.jpeg'},
-                    {image: 'images/img/tablets/Prestigio-MultiPad-3.jpeg'}
+                    {image: '/images/img/tablets/Prestigio-MultiPad-1.jpeg'},
+                    {image: '/images/img/tablets/Prestigio-MultiPad-2.jpeg'},
+                    {image: '/images/img/tablets/Prestigio-MultiPad-3.jpeg'}
                 ],
                 articul: 1002,
                 oc: 'Android',
@@ -95,9 +95,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12432455,
                 images: [
-                    {image: 'images/img/tablets/Lenovo-TAB-2-1.jpeg'},
-                    {image: 'images/img/tablets/Lenovo-TAB-2-2.jpeg'},
-                    {image: 'images/img/tablets/Lenovo-TAB-2-3.jpeg'}
+                    {image: '/images/img/tablets/Lenovo-TAB-2-1.jpeg'},
+                    {image: '/images/img/tablets/Lenovo-TAB-2-2.jpeg'},
+                    {image: '/images/img/tablets/Lenovo-TAB-2-3.jpeg'}
                 ],
                 articul: 1003,
                 oc: 'Android',
@@ -123,9 +123,9 @@ const initialState = [
                 activeIndex: 0,
                 date:1243825,
                 images: [
-                    {image: 'images/img/tablets/Apple-iPad-Pro-9.7-1.jpeg'},
-                    {image: 'images/img/tablets/Apple-iPad-Pro-9.7-2.jpeg'},
-                    {image: 'images/img/tablets/Apple-iPad-Pro-9.7-3.jpeg'}
+                    {image: '/images/img/tablets/Apple-iPad-Pro-9.7-1.jpeg'},
+                    {image: '/images/img/tablets/Apple-iPad-Pro-9.7-2.jpeg'},
+                    {image: '/images/img/tablets/Apple-iPad-Pro-9.7-3.jpeg'}
                 ],
                 articul: 1004,
                 oc: 'WindowsPhone',
@@ -154,9 +154,9 @@ const initialState = [
                 brands: 'Senseit',
                 color: 'black',
                 images: [
-                    {image: 'images/img/tablets/Lenovo-Tab-3-TB3-1.jpeg'},
-                    {image: 'images/img/tablets/Lenovo-Tab-3-TB3-2.jpeg'},
-                    {image: 'images/img/tablets/Lenovo-Tab-3-TB3-3.jpeg'}
+                    {image: '/images/img/tablets/Lenovo-Tab-3-TB3-1.jpeg'},
+                    {image: '/images/img/tablets/Lenovo-Tab-3-TB3-2.jpeg'},
+                    {image: '/images/img/tablets/Lenovo-Tab-3-TB3-3.jpeg'}
                 ],
                 articul: 1005,
                 feature : [
@@ -220,16 +220,16 @@ const initialState = [
 
         id: 'mobiles',
         name: 'Мобильные телефоны',
-        img: 'images/img/mobiles/Microsoft-Lumia-640-s1.jpg',
+        img: '/images/img/mobiles/Microsoft-Lumia-640-s1.jpg',
         products: [
             {
                 name :'Samsung GT-I9301I  GALAXY S 3',
                 id: 1,
                 catalog: 'mobiles',
                 images: [
-                    {image: 'images/img/mobiles/Samsung-GT-I9301I-s1.jpg'},
-                    {image: 'images/img/mobiles/Samsung-GT-I9301I-s2.jpg'},
-                    {image: 'images/img/mobiles/Samsung-GT-I9301I-s3.jpg'}
+                    {image: '/images/img/mobiles/Samsung-GT-I9301I-s1.jpg'},
+                    {image: '/images/img/mobiles/Samsung-GT-I9301I-s2.jpg'},
+                    {image: '/images/img/mobiles/Samsung-GT-I9301I-s3.jpg'}
                 ],
                 activeIndex: 0,
                 date:12432575,
@@ -257,9 +257,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12432556,
                 images: [
-                    {image: 'images/img/mobiles/Microsoft-Lumia-640-s1.jpg'},
-                    {image: 'images/img/mobiles/Microsoft-Lumia-640-s2.jpg'},
-                    {image: 'images/img/mobiles/Microsoft-Lumia-640-s3.jpg'}
+                    {image: '/images/img/mobiles/Microsoft-Lumia-640-s1.jpg'},
+                    {image: '/images/img/mobiles/Microsoft-Lumia-640-s2.jpg'},
+                    {image: '/images/img/mobiles/Microsoft-Lumia-640-s3.jpg'}
                 ],
                 articul: 2001,
                 oc: 'WindowsPhone',
@@ -285,9 +285,9 @@ const initialState = [
                 activeIndex: 0,
                 date:124325567,
                 images: [
-                    {image: 'images/img/mobiles/Archos-50-Oxygen-Plus-s1.jpg'},
-                    {image: 'images/img/mobiles/Archos-50-Oxygen-Plus-s2.jpg'},
-                    {image: 'images/img/mobiles/Archos-50-Oxygen-Plus-s3.jpg'}
+                    {image: '/images/img/mobiles/Archos-50-Oxygen-Plus-s1.jpg'},
+                    {image: '/images/img/mobiles/Archos-50-Oxygen-Plus-s2.jpg'},
+                    {image: '/images/img/mobiles/Archos-50-Oxygen-Plus-s3.jpg'}
                 ],
                 articul: 2002,
                 oc: 'Android',
@@ -313,9 +313,9 @@ const initialState = [
                 activeIndex: 0,
                 date: 12354325,
                 images: [
-                    {image: 'images/img/mobiles/Philips-S398-Black-s1.jpg'},
-                    {image: 'images/img/mobiles/Philips-S398-Black-s2.jpg'},
-                    {image: 'images/img/mobiles/Philips-S398-Black-s3.jpg'}
+                    {image: '/images/img/mobiles/Philips-S398-Black-s1.jpg'},
+                    {image: '/images/img/mobiles/Philips-S398-Black-s2.jpg'},
+                    {image: '/images/img/mobiles/Philips-S398-Black-s3.jpg'}
                 ],
                 articul: 2003,
                 oc: 'Android',
@@ -341,9 +341,9 @@ const initialState = [
                 activeIndex: 0,
                 date: 12437625,
                 images: [
-                    {image: 'images/img/mobiles/Microsoft-Lumia-430-RM-10-s1.jpg'},
-                    {image: 'images/img/mobiles/Microsoft-Lumia-430-RM-10-s2.jpg'},
-                    {image: 'images/img/mobiles/Microsoft-Lumia-430-RM-10-s3.jpg'}
+                    {image: '/images/img/mobiles/Microsoft-Lumia-430-RM-10-s1.jpg'},
+                    {image: '/images/img/mobiles/Microsoft-Lumia-430-RM-10-s2.jpg'},
+                    {image: '/images/img/mobiles/Microsoft-Lumia-430-RM-10-s3.jpg'}
                 ],
                 articul: 2004,
                 oc: 'WindowsPhone',
@@ -372,9 +372,9 @@ const initialState = [
                 brands: 'Senseit',
                 color: 'black',
                 images: [
-                    {image: 'images/img/mobiles/Senseit-L301-Black-s1.jpg'},
-                    {image: 'images/img/mobiles/Senseit-L301-Black-s2.jpg'},
-                    {image: 'images/img/mobiles/Senseit-L301-Black-s3.jpg'}
+                    {image: '/images/img/mobiles/Senseit-L301-Black-s1.jpg'},
+                    {image: '/images/img/mobiles/Senseit-L301-Black-s2.jpg'},
+                    {image: '/images/img/mobiles/Senseit-L301-Black-s3.jpg'}
                 ],
                 articul: 2005,
                 feature : [
@@ -397,9 +397,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12435425,
                 images: [
-                    {image: 'images/img/mobiles/HIGHSCREEN-WinWin-Black-s1.jpg'},
-                    {image: 'images/img/mobiles/HIGHSCREEN-WinWin-Black-s2.jpg'},
-                    {image: 'images/img/mobiles/HIGHSCREEN-WinWin-Black-s3.jpg'}
+                    {image: '/images/img/mobiles/HIGHSCREEN-WinWin-Black-s1.jpg'},
+                    {image: '/images/img/mobiles/HIGHSCREEN-WinWin-Black-s2.jpg'},
+                    {image: '/images/img/mobiles/HIGHSCREEN-WinWin-Black-s3.jpg'}
                 ],
                 articul: 2006,
                 oc: 'Windows Phone',
@@ -425,9 +425,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12476325,
                 images: [
-                    {image: 'images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s1.jpg'},
-                    {image: 'images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s2.jpg'},
-                    {image: 'images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s3.jpg'}
+                    {image: '/images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s1.jpg'},
+                    {image: '/images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s2.jpg'},
+                    {image: '/images/img/mobiles/Alcatel-OT4013D-PIXI3-(2SIM)-s3.jpg'}
                 ],
                 articul: 2007,
                 oc: 'Android',
@@ -453,9 +453,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12432875,
                 images: [
-                    {image: 'images/img/mobiles/Fly-IQ434-Era-Nano-5-s1.jpg'},
-                    {image: 'images/img/mobiles/Fly-IQ434-Era-Nano-5-s2.jpg'},
-                    {image: 'images/img/mobiles/Fly-IQ434-Era-Nano-5-s3.jpg'}
+                    {image: '/images/img/mobiles/Fly-IQ434-Era-Nano-5-s1.jpg'},
+                    {image: '/images/img/mobiles/Fly-IQ434-Era-Nano-5-s2.jpg'},
+                    {image: '/images/img/mobiles/Fly-IQ434-Era-Nano-5-s3.jpg'}
                 ],
                 articul: 2008,
                 oc: 'IOS',
@@ -481,9 +481,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12432875,
                 images: [
-                    {image: 'images/img/mobiles/Apple-iPhone-5S-1.jpeg'},
-                    {image: 'images/img/mobiles/Apple-iPhone-5S-2.jpeg'},
-                    {image: 'images/img/mobiles/Apple-iPhone-5S-3.jpeg'}
+                    {image: '/images/img/mobiles/Apple-iPhone-5S-1.jpeg'},
+                    {image: '/images/img/mobiles/Apple-iPhone-5S-2.jpeg'},
+                    {image: '/images/img/mobiles/Apple-iPhone-5S-3.jpeg'}
                 ],
                 articul: 2009,
                 oc: 'IOS',
@@ -550,16 +550,16 @@ const initialState = [
 
         id: 'mp3',
         name: 'Mp3 плееры',
-        img: 'images/img/mp3/Apple-iPod-nano-7-1.jpeg',
+        img: '/images/img/mp3/Apple-iPod-nano-7-1.jpeg',
         products: [
             {
                 name :'Apple iPod nano 7',
                 id: 1,
                 catalog: 'mp3',
                 images: [
-                    {image: 'images/img/mp3/Apple-iPod-nano-7-1.jpeg'},
-                    {image: 'images/img/mp3/Apple-iPod-nano-7-2.jpeg'},
-                    {image: 'images/img/mp3/Apple-iPod-nano-7-3.jpeg'}
+                    {image: '/images/img/mp3/Apple-iPod-nano-7-1.jpeg'},
+                    {image: '/images/img/mp3/Apple-iPod-nano-7-2.jpeg'},
+                    {image: '/images/img/mp3/Apple-iPod-nano-7-3.jpeg'}
                 ],
                 activeIndex: 0,
                 date:12874325,
@@ -587,9 +587,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12443325,
                 images: [
-                    {image: 'images/img/mp3/Sony-NWZ-B183F-1.jpeg'},
-                    {image: 'images/img/mp3/Sony-NWZ-B183F-2.jpeg'},
-                    {image: 'images/img/mp3/Sony-NWZ-B183F-3.jpeg'}
+                    {image: '/images/img/mp3/Sony-NWZ-B183F-1.jpeg'},
+                    {image: '/images/img/mp3/Sony-NWZ-B183F-2.jpeg'},
+                    {image: '/images/img/mp3/Sony-NWZ-B183F-3.jpeg'}
                 ],
                 articul: 3001,
                 oc: 'WindowsPhone',
@@ -615,9 +615,9 @@ const initialState = [
                 activeIndex: 0,
                 date:124356325,
                 images: [
-                    {image: 'images/img/mp3/Digma-B3-8Gb-1.jpeg'},
-                    {image: 'images/img/mp3/Digma-B3-8Gb-2.jpeg'},
-                    {image: 'images/img/mp3/Digma-B3-8Gb-3.jpeg'}
+                    {image: '/images/img/mp3/Digma-B3-8Gb-1.jpeg'},
+                    {image: '/images/img/mp3/Digma-B3-8Gb-2.jpeg'},
+                    {image: '/images/img/mp3/Digma-B3-8Gb-3.jpeg'}
                 ],
                 articul: 3002,
                 oc: 'Android',
@@ -643,9 +643,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12432425,
                 images: [
-                    {image: 'images/img/mp3/Fiio-X3-II-1.jpeg'},
-                    {image: 'images/img/mp3/Fiio-X3-II-2.jpeg'},
-                    {image: 'images/img/mp3/Fiio-X3-II-3.jpeg'}
+                    {image: '/images/img/mp3/Fiio-X3-II-1.jpeg'},
+                    {image: '/images/img/mp3/Fiio-X3-II-2.jpeg'},
+                    {image: '/images/img/mp3/Fiio-X3-II-3.jpeg'}
                 ],
                 articul: 3003,
                 oc: 'Android',
@@ -671,9 +671,9 @@ const initialState = [
                 activeIndex: 0,
                 date:124325325,
                 images: [
-                    {image: 'images/img/mp3/Apple-iPod-touch-6-1.jpeg'},
-                    {image: 'images/img/mp3/Apple-iPod-touch-6-2.jpeg'},
-                    {image: 'images/img/mp3/Apple-iPod-touch-6-3.jpeg'}
+                    {image: '/images/img/mp3/Apple-iPod-touch-6-1.jpeg'},
+                    {image: '/images/img/mp3/Apple-iPod-touch-6-2.jpeg'},
+                    {image: '/images/img/mp3/Apple-iPod-touch-6-3.jpeg'}
                 ],
                 articul: 3004,
                 oc: 'WindowsPhone',
@@ -702,9 +702,9 @@ const initialState = [
                 brands: 'Senseit',
                 color: 'black',
                 images: [
-                    {image: 'images/img/mp3/Fiio-X1-1.jpeg'},
-                    {image: 'images/img/mp3/Fiio-X1-2.jpeg'},
-                    {image: 'images/img/mp3/Fiio-X1-3.jpeg'}
+                    {image: '/images/img/mp3/Fiio-X1-1.jpeg'},
+                    {image: '/images/img/mp3/Fiio-X1-2.jpeg'},
+                    {image: '/images/img/mp3/Fiio-X1-3.jpeg'}
                 ],
                 articul: 3005,
                 feature : [
@@ -727,9 +727,9 @@ const initialState = [
                 activeIndex: 0,
                 date:12432125,
                 images: [
-                    {image: 'images/img/mp3/Sony-NWZ-WS613-1.jpeg'},
-                    {image: 'images/img/mp3/Sony-NWZ-WS613-2.jpeg'},
-                    {image: 'images/img/mp3/Sony-NWZ-WS613-3.jpeg'}
+                    {image: '/images/img/mp3/Sony-NWZ-WS613-1.jpeg'},
+                    {image: '/images/img/mp3/Sony-NWZ-WS613-2.jpeg'},
+                    {image: '/images/img/mp3/Sony-NWZ-WS613-3.jpeg'}
                 ],
                 articul: 3006,
                 oc: 'Windows Phone',
@@ -789,16 +789,16 @@ const initialState = [
 
         id: 'computers',
         name: 'Компьютеры',
-        img: 'images/img/computers/PRO-099070-Intel-Core-1.jpg',
+        img: '/images/img/computers/PRO-099070-Intel-Core-1.jpg',
         products: [
             {
                 name :'Компьютер PRO-099070',
                 id: 1,
                 catalog: 'computers',
                 images: [
-                    {image: 'images/img/computers/PRO-099070-Intel-Core-1.jpg'},
-                    {image: 'images/img/computers/PRO-099070-Intel-Core-2.jpg'},
-                    {image: 'images/img/computers/PRO-099070-Intel-Core-3.jpg'}
+                    {image: '/images/img/computers/PRO-099070-Intel-Core-1.jpg'},
+                    {image: '/images/img/computers/PRO-099070-Intel-Core-2.jpg'},
+                    {image: '/images/img/computers/PRO-099070-Intel-Core-3.jpg'}
                 ],
                 activeIndex: 0, date:124325,
                 articul: 4000,
@@ -824,9 +824,7 @@ const initialState = [
                 catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/computers/RIWER-590330-1.jpg'},
-                    {image: 'images/img/computers/RIWER-590330-1.jpg'},
-                    {image: 'images/img/computers/RIWER-590330-1.jpg'}
+                    {image: '/images/img/computers/RIWER-590330-1.jpg'}
                 ],
                 articul: 4001,
                 oc: 'WindowsPhone',
@@ -851,9 +849,9 @@ const initialState = [
                 catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/computers/GT51CA-RU002T-1.jpg'},
-                    {image: 'images/img/computers/GT51CA-RU002T-2.jpg'},
-                    {image: 'images/img/computers/GT51CA-RU002T-3.jpg'}
+                    {image: '/images/img/computers/GT51CA-RU002T-1.jpg'},
+                    {image: '/images/img/computers/GT51CA-RU002T-2.jpg'},
+                    {image: '/images/img/computers/GT51CA-RU002T-3.jpg'}
                 ],
                 articul: 4002,
                 oc: 'Android',
@@ -878,9 +876,9 @@ const initialState = [
                 catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/computers/Apple-Mac-mini-1.jpeg'},
-                    {image: 'images/img/computers/Apple-Mac-mini-2.jpeg'},
-                    {image: 'images/img/computers/Apple-Mac-mini-3.jpeg'}
+                    {image: '/images/img/computers/Apple-Mac-mini-1.jpeg'},
+                    {image: '/images/img/computers/Apple-Mac-mini-2.jpeg'},
+                    {image: '/images/img/computers/Apple-Mac-mini-3.jpeg'}
                 ],
                 articul: 4003,
                 oc: 'Android',
@@ -905,9 +903,9 @@ const initialState = [
                 catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/computers/MicroXperts-1.jpg'},
-                    {image: 'images/img/computers/MicroXperts-2.jpg'},
-                    {image: 'images/img/computers/MicroXperts-3.jpg'}
+                    {image: '/images/img/computers/MicroXperts-1.jpg'},
+                    {image: '/images/img/computers/MicroXperts-2.jpg'},
+                    {image: '/images/img/computers/MicroXperts-3.jpg'}
                 ],
                 articul: 4004,
                 oc: 'WindowsPhone',
@@ -935,9 +933,9 @@ const initialState = [
                 brands: 'Senseit',
                 color: 'black',
                 images: [
-                    {image: 'images/img/computers/RS-1114-1.jpg'},
-                    {image: 'images/img/computers/RS-1114-2.jpg'},
-                    {image: 'images/img/computers/RS-1114-3.jpg'}
+                    {image: '/images/img/computers/RS-1114-1.jpg'},
+                    {image: '/images/img/computers/RS-1114-2.jpg'},
+                    {image: '/images/img/computers/RS-1114-3.jpg'}
                 ],
                 articul: 4005,
                 feature : [
@@ -959,9 +957,9 @@ const initialState = [
                 catalog: 'computers',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/computers/LENOVO-Erazer-X310-1.jpeg'},
-                    {image: 'images/img/computers/LENOVO-Erazer-X310-2.jpeg'},
-                    {image: 'images/img/computers/LENOVO-Erazer-X310-3.jpeg'}
+                    {image: '/images/img/computers/LENOVO-Erazer-X310-1.jpeg'},
+                    {image: '/images/img/computers/LENOVO-Erazer-X310-2.jpeg'},
+                    {image: '/images/img/computers/LENOVO-Erazer-X310-3.jpeg'}
                 ],
                 articul: 4006,
                 oc: 'Windows Phone',
@@ -1028,16 +1026,15 @@ const initialState = [
 
         id: 'accessorizes',
         name: 'Аксессуары',
-        img: 'images/img/accessorizes/Continent-CC-1.jpeg',
+        img: '/images/img/accessorizes/Continent-CC-1.jpeg',
         products: [
             {
                 name :'Continent CC-01',
                 id: 1,
                 catalog: 'accessorizes',
                 images: [
-                    {image: 'images/img/accessorizes/Continent-CC-1.jpeg'},
-                    {image: 'images/img/accessorizes/Continent-CC-2.jpeg'},
-                    {image: 'images/img/accessorizes/Continent-CC-1.jpeg'}
+                    {image: '/images/img/accessorizes/Continent-CC-1.jpeg'},
+                    {image: '/images/img/accessorizes/Continent-CC-2.jpeg'}
                 ],
                 activeIndex: 0, date:124325,
                 articul: 5000,
@@ -1063,9 +1060,8 @@ const initialState = [
                 catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/accessorizes/Drifter-Backpack-16-1.jpeg'},
-                    {image: 'images/img/accessorizes/Drifter-Backpack-16-2.jpeg'},
-                    {image: 'images/img/accessorizes/Drifter-Backpack-16-1.jpeg'}
+                    {image: '/images/img/accessorizes/Drifter-Backpack-16-1.jpeg'},
+                    {image: '/images/img/accessorizes/Drifter-Backpack-16-2.jpeg'}
                 ],
                 articul: 5001,
                 oc: 'WindowsPhone',
@@ -1090,9 +1086,9 @@ const initialState = [
                 catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/accessorizes/KS-is-1.jpg'},
-                    {image: 'images/img/accessorizes/KS-is-2.jpg'},
-                    {image: 'images/img/accessorizes/KS-is-3.jpg'}
+                    {image: '/images/img/accessorizes/KS-is-1.jpg'},
+                    {image: '/images/img/accessorizes/KS-is-2.jpg'},
+                    {image: '/images/img/accessorizes/KS-is-3.jpg'}
                 ],
                 articul: 5002,
                 oc: 'Android',
@@ -1117,9 +1113,9 @@ const initialState = [
                 catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/accessorizes/Lenovo-Thinkpad-1.jpg'},
-                    {image: 'images/img/accessorizes/Lenovo-Thinkpad-2.jpg'},
-                    {image: 'images/img/accessorizes/Lenovo-Thinkpad-3.jpg'}
+                    {image: '/images/img/accessorizes/Lenovo-Thinkpad-1.jpg'},
+                    {image: '/images/img/accessorizes/Lenovo-Thinkpad-2.jpg'},
+                    {image: '/images/img/accessorizes/Lenovo-Thinkpad-3.jpg'}
                 ],
                 articul: 5003,
                 oc: 'Android',
@@ -1144,9 +1140,9 @@ const initialState = [
                 catalog: 'accessorizes',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/accessorizes/Notebook-Backpack-1.jpeg'},
-                    {image: 'images/img/accessorizes/Notebook-Backpack-2.jpeg'},
-                    {image: 'images/img/accessorizes/Notebook-Backpack-3.jpeg'}
+                    {image: '/images/img/accessorizes/Notebook-Backpack-1.jpeg'},
+                    {image: '/images/img/accessorizes/Notebook-Backpack-2.jpeg'},
+                    {image: '/images/img/accessorizes/Notebook-Backpack-3.jpeg'}
                 ],
                 articul: 5004,
                 oc: 'WindowsPhone',
@@ -1213,16 +1209,16 @@ const initialState = [
 
         id: 'nouts',
         name: 'Ноутбуки',
-        img: 'images/img/nouts/Apple-MacBook-Air-13-1.jpeg',
+        img: '/images/img/nouts/Apple-MacBook-Air-13-1.jpeg',
         products: [
             {
                 name :'Apple MacBook Air 13',
                 id: 1,
                 catalog: 'nouts',
                 images: [
-                    {image: 'images/img/nouts/Apple-MacBook-Air-13-1.jpeg'},
-                    {image: 'images/img/nouts/Apple-MacBook-Air-13-2.jpeg'},
-                    {image: 'images/img/nouts/Apple-MacBook-Air-13-3.jpeg'}
+                    {image: '/images/img/nouts/Apple-MacBook-Air-13-1.jpeg'},
+                    {image: '/images/img/nouts/Apple-MacBook-Air-13-2.jpeg'},
+                    {image: '/images/img/nouts/Apple-MacBook-Air-13-3.jpeg'}
                 ],
                 activeIndex: 0, date:124325,
                 articul: 6000,
@@ -1248,9 +1244,9 @@ const initialState = [
                 catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/nouts/ASUS-VivoBook-Max-1.jpeg'},
-                    {image: 'images/img/nouts/ASUS-VivoBook-Max-2.jpeg'},
-                    {image: 'images/img/nouts/ASUS-VivoBook-Max-3.jpeg'}
+                    {image: '/images/img/nouts/ASUS-VivoBook-Max-1.jpeg'},
+                    {image: '/images/img/nouts/ASUS-VivoBook-Max-2.jpeg'},
+                    {image: '/images/img/nouts/ASUS-VivoBook-Max-3.jpeg'}
                 ],
                 articul: 6001,
                 oc: 'WindowsPhone',
@@ -1275,9 +1271,9 @@ const initialState = [
                 catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/nouts/DELL-INSPIRON-5567-1.jpeg'},
-                    {image: 'images/img/nouts/DELL-INSPIRON-5567-2.jpeg'},
-                    {image: 'images/img/nouts/DELL-INSPIRON-5567-3.jpeg'}
+                    {image: '/images/img/nouts/DELL-INSPIRON-5567-1.jpeg'},
+                    {image: '/images/img/nouts/DELL-INSPIRON-5567-2.jpeg'},
+                    {image: '/images/img/nouts/DELL-INSPIRON-5567-3.jpeg'}
                 ],
                 articul: 6002,
                 oc: 'Android',
@@ -1302,9 +1298,9 @@ const initialState = [
                 catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-1.jpeg'},
-                    {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-2.jpeg'},
-                    {image: 'images/img/nouts/Lenovo-IdeaPad-AMD-3.jpeg'}
+                    {image: '/images/img/nouts/Lenovo-IdeaPad-AMD-1.jpeg'},
+                    {image: '/images/img/nouts/Lenovo-IdeaPad-AMD-2.jpeg'},
+                    {image: '/images/img/nouts/Lenovo-IdeaPad-AMD-3.jpeg'}
                 ],
                 articul: 6003,
                 oc: 'Android',
@@ -1329,9 +1325,9 @@ const initialState = [
                 catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/nouts/DELL-Vostro-5468-1.jpeg'},
-                    {image: 'images/img/nouts/DELL-Vostro-5468-2.jpeg'},
-                    {image: 'images/img/nouts/DELL-Vostro-5468-3.jpeg'}
+                    {image: '/images/img/nouts/DELL-Vostro-5468-1.jpeg'},
+                    {image: '/images/img/nouts/DELL-Vostro-5468-2.jpeg'},
+                    {image: '/images/img/nouts/DELL-Vostro-5468-3.jpeg'}
                 ],
                 articul: 6004,
                 oc: 'WindowsPhone',
@@ -1359,9 +1355,9 @@ const initialState = [
                 brands: 'Senseit',
                 color: 'black',
                 images: [
-                    {image: 'images/img/nouts/MSI-GP72-7RD-Leopard-1.jpeg'},
-                    {image: 'images/img/nouts/MSI-GP72-7RD-Leopard-2.jpeg'},
-                    {image: 'images/img/nouts/MSI-GP72-7RD-Leopard-3.jpeg'}
+                    {image: '/images/img/nouts/MSI-GP72-7RD-Leopard-1.jpeg'},
+                    {image: '/images/img/nouts/MSI-GP72-7RD-Leopard-2.jpeg'},
+                    {image: '/images/img/nouts/MSI-GP72-7RD-Leopard-3.jpeg'}
                 ],
                 articul: 6005,
                 feature : [
@@ -1383,9 +1379,9 @@ const initialState = [
                 catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/nouts/HP-ProBook-430-G4-1.jpeg'},
-                    {image: 'images/img/nouts/HP-ProBook-430-G4-2.jpeg'},
-                    {image: 'images/img/nouts/HP-ProBook-430-G4-3.jpeg'}
+                    {image: '/images/img/nouts/HP-ProBook-430-G4-1.jpeg'},
+                    {image: '/images/img/nouts/HP-ProBook-430-G4-2.jpeg'},
+                    {image: '/images/img/nouts/HP-ProBook-430-G4-3.jpeg'}
                 ],
                 articul: 6006,
                 oc: 'Windows Phone',
@@ -1410,9 +1406,9 @@ const initialState = [
                 catalog: 'nouts',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/nouts/Sony-VAIO-Pro-1.jpeg'},
-                    {image: 'images/img/nouts/Sony-VAIO-Pro-2.jpeg'},
-                    {image: 'images/img/nouts/Sony-VAIO-Pro-3.jpeg'}
+                    {image: '/images/img/nouts/Sony-VAIO-Pro-1.jpeg'},
+                    {image: '/images/img/nouts/Sony-VAIO-Pro-2.jpeg'},
+                    {image: '/images/img/nouts/Sony-VAIO-Pro-3.jpeg'}
                 ],
                 articul: 6007,
                 oc: 'Android',
@@ -1479,16 +1475,16 @@ const initialState = [
 
         id: 'technics',
         name: 'Бытовая техника',
-        img: 'images/img/technics/Indesit-IWUB-4085-1.jpeg',
+        img: '/images/img/technics/Indesit-IWUB-4085-1.jpeg',
         products: [
             {
                 name :'Indesit IWUB 4085',
                 id: 1,
                 catalog: 'technics',
                 images: [
-                    {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'},
-                    {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'},
-                    {image: 'images/img/technics/Indesit-IWUB-4085-1.jpeg'}
+                    {image: '/images/img/technics/Indesit-IWUB-4085-1.jpeg'},
+                    {image: '/images/img/technics/Indesit-IWUB-4085-1.jpeg'},
+                    {image: '/images/img/technics/Indesit-IWUB-4085-1.jpeg'}
                 ],
                 activeIndex: 0, date:124325,
                 articul: 7000,
@@ -1514,9 +1510,9 @@ const initialState = [
                 catalog: 'technics',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/technics/Shivaki-SVC-1748-1.jpeg'},
-                    {image: 'images/img/technics/Shivaki-SVC-1748-2.jpeg'},
-                    {image: 'images/img/technics/Shivaki-SVC-1748-3.jpeg'}
+                    {image: '/images/img/technics/Shivaki-SVC-1748-1.jpeg'},
+                    {image: '/images/img/technics/Shivaki-SVC-1748-2.jpeg'},
+                    {image: '/images/img/technics/Shivaki-SVC-1748-3.jpeg'}
                 ],
                 articul: 7001,
                 oc: 'WindowsPhone',
@@ -1541,9 +1537,9 @@ const initialState = [
                 catalog: 'technics',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/technics/Hansa-BK316-3-1.jpeg'},
-                    {image: 'images/img/technics/Hansa-BK316-3-2.jpeg'},
-                    {image: 'images/img/technics/Hansa-BK316-3-3.jpeg'}
+                    {image: '/images/img/technics/Hansa-BK316-3-1.jpeg'},
+                    {image: '/images/img/technics/Hansa-BK316-3-2.jpeg'},
+                    {image: '/images/img/technics/Hansa-BK316-3-3.jpeg'}
                 ],
                 articul: 7002,
                 oc: 'Android',
@@ -1568,9 +1564,9 @@ const initialState = [
                 catalog: 'technics',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/technics/Brother-4234D-1.jpeg'},
-                    {image: 'images/img/technics/Brother-4234D-2.jpeg'},
-                    {image: 'images/img/technics/Brother-4234D-3.jpeg'}
+                    {image: '/images/img/technics/Brother-4234D-1.jpeg'},
+                    {image: '/images/img/technics/Brother-4234D-2.jpeg'},
+                    {image: '/images/img/technics/Brother-4234D-3.jpeg'}
                 ],
                 articul: 7003,
                 oc: 'Android',
@@ -1637,16 +1633,16 @@ const initialState = [
 
         id: 'watch',
         name: 'Умные Часы',
-        img: 'images/img/watch/Apple-Watch-Series-2-1.jpeg',
+        img: '/images/img/watch/Apple-Watch-Series-2-1.jpeg',
         products: [
             {
                 name :'Xiaomi Mi Band 2',
                 id: 1,
                 catalog: 'watch',
                 images: [
-                    {image: 'images/img/watch/Xiaomi-Mi-Band-2-1.jpeg'},
-                    {image: 'images/img/watch/Xiaomi-Mi-Band-2-2.jpeg'},
-                    {image: 'images/img/watch/Xiaomi-Mi-Band-2-3.jpeg'}
+                    {image: '/images/img/watch/Xiaomi-Mi-Band-2-1.jpeg'},
+                    {image: '/images/img/watch/Xiaomi-Mi-Band-2-2.jpeg'},
+                    {image: '/images/img/watch/Xiaomi-Mi-Band-2-3.jpeg'}
                 ],
                 activeIndex: 0, date:124325,
                 articul: 8000,
@@ -1672,9 +1668,9 @@ const initialState = [
                 catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/watch/Smart-Baby-Watch-Q50-1.jpeg'},
-                    {image: 'images/img/watch/Smart-Baby-Watch-Q50-2.jpeg'},
-                    {image: 'images/img/watch/Smart-Baby-Watch-Q50-3.jpeg'}
+                    {image: '/images/img/watch/Smart-Baby-Watch-Q50-1.jpeg'},
+                    {image: '/images/img/watch/Smart-Baby-Watch-Q50-2.jpeg'},
+                    {image: '/images/img/watch/Smart-Baby-Watch-Q50-3.jpeg'}
                 ],
                 articul: 8001,
                 oc: 'WindowsPhone',
@@ -1699,9 +1695,9 @@ const initialState = [
                 catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/watch/Apple-Watch-Series-2-1.jpeg'},
-                    {image: 'images/img/watch/Apple-Watch-Series-2-2.jpeg'},
-                    {image: 'images/img/watch/Apple-Watch-Series-2-3.jpeg'}
+                    {image: '/images/img/watch/Apple-Watch-Series-2-1.jpeg'},
+                    {image: '/images/img/watch/Apple-Watch-Series-2-2.jpeg'},
+                    {image: '/images/img/watch/Apple-Watch-Series-2-3.jpeg'}
                 ],
                 articul: 8002,
                 oc: 'Android',
@@ -1726,9 +1722,9 @@ const initialState = [
                 catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/watch/Smart-Baby-Watch-Q80-1.jpeg'},
-                    {image: 'images/img/watch/Smart-Baby-Watch-Q80-2.jpeg'},
-                    {image: 'images/img/watch/Smart-Baby-Watch-Q80-3.jpeg'}
+                    {image: '/images/img/watch/Smart-Baby-Watch-Q80-1.jpeg'},
+                    {image: '/images/img/watch/Smart-Baby-Watch-Q80-2.jpeg'},
+                    {image: '/images/img/watch/Smart-Baby-Watch-Q80-3.jpeg'}
                 ],
                 articul: 8003,
                 oc: 'Android',
@@ -1753,9 +1749,9 @@ const initialState = [
                 catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/watch/Samsung-Gear-S3-Frontier-1.jpeg'},
-                    {image: 'images/img/watch/Samsung-Gear-S3-Frontier-2.jpeg'},
-                    {image: 'images/img/watch/Samsung-Gear-S3-Frontier-3.jpeg'}
+                    {image: '/images/img/watch/Samsung-Gear-S3-Frontier-1.jpeg'},
+                    {image: '/images/img/watch/Samsung-Gear-S3-Frontier-2.jpeg'},
+                    {image: '/images/img/watch/Samsung-Gear-S3-Frontier-3.jpeg'}
                 ],
                 articul: 8004,
                 oc: 'WindowsPhone',
@@ -1783,9 +1779,9 @@ const initialState = [
                 brands: 'Senseit',
                 color: 'black',
                 images: [
-                    {image: 'images/img/watch/Samsung-Gear-S3-Classic-1.jpeg'},
-                    {image: 'images/img/watch/Samsung-Gear-S3-Classic-2.jpeg'},
-                    {image: 'images/img/watch/Samsung-Gear-S3-Classic-3.jpeg'}
+                    {image: '/images/img/watch/Samsung-Gear-S3-Classic-1.jpeg'},
+                    {image: '/images/img/watch/Samsung-Gear-S3-Classic-2.jpeg'},
+                    {image: '/images/img/watch/Samsung-Gear-S3-Classic-3.jpeg'}
                 ],
                 articul: 8005,
                 feature : [
@@ -1807,9 +1803,9 @@ const initialState = [
                 catalog: 'watch',
                 activeIndex: 0, date:124325,
                 images: [
-                    {image: 'images/img/watch/Apple-Watch-Series-2-42mm-1.jpeg'},
-                    {image: 'images/img/watch/Apple-Watch-Series-2-42mm-2.jpeg'},
-                    {image: 'images/img/watch/Apple-Watch-Series-2-42mm-3.jpeg'}
+                    {image: '/images/img/watch/Apple-Watch-Series-2-42mm-1.jpeg'},
+                    {image: '/images/img/watch/Apple-Watch-Series-2-42mm-2.jpeg'},
+                    {image: '/images/img/watch/Apple-Watch-Series-2-42mm-3.jpeg'}
                 ],
                 articul: 8006,
                 oc: 'Windows Phone',
@@ -1873,6 +1869,7 @@ const initialState = [
         ],
     },
 ];
+
 export default function catalogs(state = initialState, action) {
     return state;
 }

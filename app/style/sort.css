@@ -1,0 +1,95 @@
+.sort
+{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+    margin-bottom: 20px;
+
+    border: 1px solid #dee1e4;
+    border-radius: 5px;
+    background-color: rgba(217, 229, 234, .6);
+    background-clip: padding-box;
+}
+
+.sort__item
+{
+    display: flex;
+}
+
+
+.sort__item-title
+{
+    font-size: 14px;
+    line-height: 36px;
+
+    margin-right: 5px;
+
+    color: #5d656c;
+}
+
+.sort__item-select
+{
+    margin-left: 10px;
+    padding: 8px 0;
+}
+
+.sort__item-view
+{
+    display: flex;
+    margin-left: 10px;
+}
+
+.views__item
+{
+
+    padding: 12px 18px;
+
+    border-left: 1px solid #ccc;
+}
+
+.views__item:first-child
+{
+    border: none;
+}
+
+.views__view,
+.views__view:hover
+{
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgQAAAAQBAMAAACb9HoBAAAAFVBMVEUAAABERERERERbZ3BbZ3Clu8Slu8SF77IWAAAAB3RSTlMAAP8A/wD/DJr2tAAAAHlJREFUeNrtlcENgDAMA/3oAl2BWToLQzELs7BCViAV/ddF/DgrUj8nq7KiuDRFVerUVPtAjzm6dTTnMl1zDNc2XuuvjwzXot+LCIggIwgpTHYZje9R+R9gC/wI6jjzhlbRPj5qudqqbAHnkAhoBBqBRqAROIdE8EI3fw4xU/V1oMsAAAAASUVORK5CYII=');
+
+}
+
+.views__view_type_column
+{
+    background-position: -86px 0;
+}
+.views__view_type_column:hover,
+.views__view_type_column.active
+{
+    background-position: 0 0;
+}
+
+.views__view_type_tile
+{
+    background-position: -258px 0;
+}
+.views__view_type_tile:hover,
+.views__view_type_tile.active
+{
+    background-position: -172px 0;
+}
+
+.views__view_type_line
+{
+    background-position: -430px 0;
+}
+.views__view_type_line:hover,
+.views__view_type_line.active
+{
+    background-position: -344px 0;
+}
