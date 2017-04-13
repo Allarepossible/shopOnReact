@@ -125,7 +125,6 @@ export default connect(
         changeCountOfProductInCart: (articul, type) => {
             const payload = articul;
             if (type === '+') {
-                dispatch({ type: 'INCREASE_COUNT_PRODUCT', payload });
             } else {
                 dispatch({ type: 'DECREASE_COUNT_PRODUCT', payload });
             }
