@@ -6,7 +6,6 @@ import {createStore, applyMiddleware} from 'redux';
 import {Router, Route, hashHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import thunk from 'redux-thunk';
-
 import Cart from './containers/Cart';
 import Shop from './containers/Shop';
 import Search from './containers/Search';
