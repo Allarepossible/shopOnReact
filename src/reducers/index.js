@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import {combineReducers} from 'redux';
+import {routerReducer} from 'react-router-redux';
 
 import catalogs from './catalogs';
 import products from './products';
@@ -19,5 +19,5 @@ export default combineReducers({
     views,
     sort,
     cart,
-    activeFilters
-})
+    activeFilters,
+});

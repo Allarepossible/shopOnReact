@@ -2,27 +2,25 @@ const initialState = 0;
 
 export default function products(state = initialState, action) {
     if (action.type === 'CHANGE_CATEGORY') {
-        state = action.payload;
+        const newState = action.payload;
 
         return [
-            ...state
+            ...newState,
         ];
-    } else if (action.type === 'CHANGE_SLIDE') {
-        state = action.payload2;
-        state['id' === action.payload.id] = action.payload;
+    } if (action.type === 'CHANGE_SLIDE') {
+        const newState = action.payload2;
+        newState[action.payload.id === 'id'] = action.payload;
 
         return [
-            ...state
+            ...newState,
         ];
-    } else if (action.type === 'SORT_PRODUCTS') {
-
+    } if (action.type === 'SORT_PRODUCTS') {
         return [
-            ...action.payload
+            ...action.payload,
         ];
-    } else if (action.type === 'SET_STATE') {
-        state = action.payload;
+    } if (action.type === 'SET_STATE') {
         return [
-            ...action.payload
+            ...action.payload,
         ];
     }
     return state;
