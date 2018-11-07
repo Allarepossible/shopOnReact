@@ -2,11 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Flex from '../Flex';
-
-const Text = styled.p`
-    margin: 0;
-    font-size: 1em;
-`;
+import Text from '../Text';
 
 const FeatureItem = styled(Flex)`
     padding: 1px 3px;
@@ -19,7 +15,7 @@ const FeatureItem = styled(Flex)`
 `;
 
 const FeatureList = styled.div`
-    width: 95%;
+    width: 195px;
     border: 1px solid #eee;
     margin-bottom: 15px;
 `;

@@ -3,16 +3,19 @@ import {Link} from 'react-router';
 import {find} from 'lodash';
 import styled, {withTheme} from 'styled-components';
 
+import Text from '../Text';
+import Box from '../Box';
 import Flex from '../Flex';
 import Button from '../Button';
-import SlideShow from '../products/SlideShow';
-import Features from '../products/Features';
-import Raiting from '../products/Raiting';
+import SlideShow from '../SlideShow';
+import Raiting from '../Raiting';
+import Features from '../Features';
 
 const ProductSnippetStyle = styled(Flex)`
     border: 1px solid #dee1e4;
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, .6);
+    border-radius: ${({theme}) => theme.borderRadius[4]}px;
+    background-color: ${({theme}) => theme.colors.white};
+    padding: 20px;
 
     &:hover {
         z-index: 3;
@@ -20,22 +23,10 @@ const ProductSnippetStyle = styled(Flex)`
     }
 `;
 
-const ColumnProductSnippet = styled(ProductSnippetStyle)`
-    width: 235px;
-    margin-bottom: 15px;
-    padding: 20px;
-    align-items: center;
-    flex-direction: column;
-`;
-
 const LineProductSnippet = styled(ProductSnippetStyle)`
-    align-items: flex-start;
     flex-direction: row;
-
-    width: 100%;
-    margin-bottom: 0;
-    padding: 20px;
-
+    align-items: flex-start;
+    
     border-bottom: none;
     border-radius: 0;
     
@@ -48,35 +39,16 @@ const LineProductSnippet = styled(ProductSnippetStyle)`
     }
 `;
 
-const TileProductSnippet = styled(LineProductSnippet)`
-    align-items: center;
-    padding: 10px;
-    .list {
-        margin-bottom: 0;
-        display: block;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 80px;
-    }
-
+const Title = styled(Text)`
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80px;
 `;
 
-const Title = styled.span`
-    text-decoration: none;
-    margin-bottom: 15px;
-    font-weight: bold;
-`;
-
-const Price = styled.span`
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-`;
-
-const About = styled(Flex)` 
-    width: 90%;
-    margin-bottom: 15px;
+const Info = styled(Box)`
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `;
 
 const StyledLink = styled(Link)`
@@ -85,11 +57,6 @@ const StyledLink = styled(Link)`
     color: #7f7f7f;
 `;
 
-const Articul = styled.span`
-    font-weight: bold;
-    font-size: 12px;
-    color: #7f7f7f;
-`;
 
 const Content = styled(Flex)`
     width: 50%;
@@ -142,7 +109,7 @@ const ProductSnippet = ({
 
     if (view === 'tile') {
         return (
-            <ColumnProductSnippet>
+            <ProductSnippetStyle alignItems='center' flexDirection='column' mb={16}>
                 <SlideShow
                     key={id}
                     id={id}
@@ -153,16 +120,16 @@ const ProductSnippet = ({
                     activeIndex={activeIndex}
                     catalogId={catalogId}
                 />
-                <Title>{name}</Title>
+                <Text fontWeight='bold' mb={15} fontSize='s'>{name}</Text>
                 <Features features={feature} />
                 <Raiting count={ratio} />
-                <Price>{NewPrice} ₽</Price>
-                <About>
+                <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
+                <Flex justifyContent='space-between' mb={20}>
                     <Stock>{nalichie}</Stock>
                     <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
-                </About>
+                </Flex>
                 <Button type="primary" onClick={addProductToCart}>В корзину</Button>
-            </ColumnProductSnippet>
+            </ProductSnippetStyle>
         );
     } if (view === 'column') {
         return (
@@ -178,19 +145,19 @@ const ProductSnippet = ({
                         activeIndex={activeIndex}
                         catalogId={catalogId}
                     />
-                    <Articul>Артикул {articul}</Articul>
+                    <Text fontWeight='bold' color='grey' fontSize='s'>Артикул {articul}</Text>
                 </Flex>
                 <Content flexDirection='column'>
-                    <Title>{name}</Title>
-                    <div className="product__info">{info}</div>
+                    <Text fontWeight='bold' mb={15} fontSize='s'>{name}</Text>
+                    <Box mb={30}>{info}</Box>
                     <Raiting count={ratio} />
-                    <About>
+                    <Flex justifyContent='space-between'>
                         <Stock>{nalichie}</Stock>
                         <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
-                    </About>
+                    </Flex>
                 </Content>
                 <Flex flexDirection='column'>
-                    <Price>{NewPrice} ₽</Price>
+                    <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
                     <Button type="primary" onClick={addProductToCart}>В корзину</Button>
                 </Flex>
             </LineProductSnippet>
@@ -198,14 +165,14 @@ const ProductSnippet = ({
     }
 
     return (
-        <TileProductSnippet justifyContent='space-between'>
-            <Articul>Артикул {articul}</Articul>
-            <Title className="list">{name}</Title>
-            <div className="product__info text_size_s">{info}</div>
+        <LineProductSnippet justifyContent='space-between' alignItems='center' p={10}>
+            <Text fontWeight='bold' color='grey' fontSize='s'>Артикул {articul}</Text>
+            <Title fontWeight='bold' fontSize='s'>{name}</Title>
+            <Info maxWidth='250px' mb={0} overflow='hidden'>{info}</Info>
             <Stock>{nalichie}</Stock>
-            <Price className="list">{NewPrice} ₽</Price>
+            <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
             <Button type="primary" onClick={addProductToCart}>В корзину</Button>
-        </TileProductSnippet>
+        </LineProductSnippet>
     );
 };
 

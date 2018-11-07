@@ -4,7 +4,8 @@ import {tint, shade} from 'polished';
 const BASE_COLORS = {
     black: '#000',
     white: '#fff',
-    gray: '#7f7f7f',
+    grey: '#7f7f7f',
+    greyish: '#f4f4f4',
     primary: '#ff6e35',
     secondary: '#e84100',
     danger: '#F14C61',

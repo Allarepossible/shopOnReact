@@ -6,9 +6,9 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import Menu from '../components/navigation/Menu';
 import Breadcrumbs from '../components/navigation/Breadcrumbs';
-import Features from '../components/products/Features';
-import Raiting from '../components/products/Raiting';
-import SlideShow from '../components/products/SlideShow';
+import Features from '../components/Features';
+import Raiting from '../components/Raiting';
+import SlideShow from '../components/SlideShow';
 
 const ProductPage = ({
     catalog, ownProps, products, setState, addToCart,
