@@ -9,7 +9,10 @@
     "lint-fixup": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
   },
   "dependencies": {
+    "clean-tag": "^2.0.2",
     "lodash": "^4.17.4",
+    "polished": "^2.3.0",
+    "ramda": "^0.25.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-redux": "^5.0.3",
@@ -19,6 +22,7 @@
     "redux-devtools-extension": "^2.13.0",
     "redux-thunk": "^2.2.0",
     "styled-components": "^4.0.3",
+    "styled-system": "^3.1.11",
     "url-loader": "^1.1.2"
   },
   "devDependencies": {

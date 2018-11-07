@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Product from './Product';
+import ProductSnippet from '../../containers/ProductSnippet';
 
 const ProductsList = ({products, views, catalogId}) => {
     const activeView = views.filter(view => view.active)[0].name;
@@ -13,7 +13,7 @@ const ProductsList = ({products, views, catalogId}) => {
                     products.filter(product => product.name).map((el, index) => {
                         if (index < 9) {
                             return (
-                                <Product
+                                <ProductSnippet
                                     key={index}
                                     id={index}
                                     name={el.name}

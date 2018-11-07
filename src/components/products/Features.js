@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {Layout} from '../layout/Layout';
+import Flex from '../Flex';
 
 const Text = styled.p`
     margin: 0;
     font-size: 1em;
 `;
 
-const FeatureItem = styled(Layout)`
+const FeatureItem = styled(Flex)`
     padding: 1px 3px;
     
     background-color: #e6e6e6;
@@ -25,7 +25,7 @@ const FeatureList = styled.div`
 `;
 
 const Feature = ({name, value}) => (
-    <FeatureItem>
+    <FeatureItem justifyContent='space-between'>
         <Text>{name}</Text>
         <Text>{value}</Text>
     </FeatureItem>

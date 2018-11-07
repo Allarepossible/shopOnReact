@@ -1,31 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {connect} from 'react-redux';
 import {find} from 'lodash';
-import styled from 'styled-components';
+import styled, {withTheme} from 'styled-components';
 
-import {Layout, LayoutColumn} from '../layout/Layout';
-import SlideShow from './SlideShow';
-import Features from './Features';
-import Raiting from './Raiting';
+import Flex from '../Flex';
+import Button from '../Button';
+import SlideShow from '../products/SlideShow';
+import Features from '../products/Features';
+import Raiting from '../products/Raiting';
 
-const Button = styled.button`
-    padding: 6px 15px;
-    font-weight: bold;
-    font-size: 12px;
-    color: #fff;
-    
-    cursor: pointer;
-
-    border-radius: 5px;
-    background-color: #ff6e35;
-
-    &:hover {
-        background-color: #e84100;
-    }
-`;
-
-const ProductSnippet = styled(Layout)`
+const ProductSnippetStyle = styled(Flex)`
     border: 1px solid #dee1e4;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, .6);
@@ -36,7 +20,7 @@ const ProductSnippet = styled(Layout)`
     }
 `;
 
-const ColumnProductSnippet = styled(ProductSnippet)`
+const ColumnProductSnippet = styled(ProductSnippetStyle)`
     width: 235px;
     margin-bottom: 15px;
     padding: 20px;
@@ -44,7 +28,7 @@ const ColumnProductSnippet = styled(ProductSnippet)`
     flex-direction: column;
 `;
 
-const LineProductSnippet = styled(ProductSnippet)`
+const LineProductSnippet = styled(ProductSnippetStyle)`
     align-items: flex-start;
     flex-direction: row;
 
@@ -90,7 +74,7 @@ const Price = styled.span`
     margin-bottom: 15px;
 `;
 
-const About = styled(Layout)`
+const About = styled(Flex)` 
     width: 90%;
     margin-bottom: 15px;
 `;
@@ -107,7 +91,7 @@ const Articul = styled.span`
     color: #7f7f7f;
 `;
 
-const Content = styled(LayoutColumn)`
+const Content = styled(Flex)`
     width: 50%;
 `;
 
@@ -132,7 +116,7 @@ const Stock = styled.span`
     }
 `;
 
-const Product = ({
+const ProductSnippet = ({
     images,
     feature,
     articul,
@@ -177,13 +161,13 @@ const Product = ({
                     <Stock>{nalichie}</Stock>
                     <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
                 </About>
-                <Button onClick={addProductToCart}>В корзину</Button>
+                <Button type="primary" onClick={addProductToCart}>В корзину</Button>
             </ColumnProductSnippet>
         );
     } if (view === 'column') {
         return (
-            <LineProductSnippet>
-                <LayoutColumn>
+            <LineProductSnippet justifyContent='space-between'>
+                <Flex flexDirection='column'>
                     <SlideShow
                         key={id}
                         id={id}
@@ -195,8 +179,8 @@ const Product = ({
                         catalogId={catalogId}
                     />
                     <Articul>Артикул {articul}</Articul>
-                </LayoutColumn>
-                <Content>
+                </Flex>
+                <Content flexDirection='column'>
                     <Title>{name}</Title>
                     <div className="product__info">{info}</div>
                     <Raiting count={ratio} />
@@ -205,36 +189,24 @@ const Product = ({
                         <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
                     </About>
                 </Content>
-                <LayoutColumn>
+                <Flex flexDirection='column'>
                     <Price>{NewPrice} ₽</Price>
-                    <Button onClick={addProductToCart}>В корзину</Button>
-                </LayoutColumn>
+                    <Button type="primary" onClick={addProductToCart}>В корзину</Button>
+                </Flex>
             </LineProductSnippet>
         );
     }
 
     return (
-        <TileProductSnippet>
+        <TileProductSnippet justifyContent='space-between'>
             <Articul>Артикул {articul}</Articul>
             <Title className="list">{name}</Title>
             <div className="product__info text_size_s">{info}</div>
             <Stock>{nalichie}</Stock>
             <Price className="list">{NewPrice} ₽</Price>
-            <Button onClick={addProductToCart}>В корзину</Button>
+            <Button type="primary" onClick={addProductToCart}>В корзину</Button>
         </TileProductSnippet>
     );
 };
 
-const mapStateToProps = state => ({
-    catalogs: state.catalogs,
-});
-
-const mapDispatchToProps = dispatch => ({
-    addToCart: product => {
-        const payload = product;
-
-        dispatch({type: 'ADD_TO_CART', payload});
-    },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Product);
+export default withTheme(ProductSnippet);
