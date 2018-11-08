@@ -2,9 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {find, reduce, map} from 'lodash';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
 import Menu from '../components/navigation/Menu';
 import Breadcrumbs from '../components/navigation/Breadcrumbs';
 

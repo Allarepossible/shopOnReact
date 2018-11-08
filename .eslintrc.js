@@ -91,6 +91,8 @@ module.exports = {
         'import/newline-after-import': ['error', {
             count: 1,
         }],
+        'import/no-unresolved': 0,
+        'import/extensions': 0,
         'import/prefer-default-export': 'off',
         'func-style': 'off',
         'no-param-reassign': ['error', {

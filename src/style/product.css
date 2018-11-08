@@ -52,22 +52,6 @@
    padding-bottom: 50px;
 }
 
-.product-page .product__slideshow
-{
-    width: 250px;
-}
-
-.product-page .slideshow__wrap-img
-{
-    width: 250px;
-    height: 250px;
-}
-
-.product-page .slideshow__item
-{
-    width: 60px;
-    height: 60px;
-}
 
 .product-page .product-page__center
 {

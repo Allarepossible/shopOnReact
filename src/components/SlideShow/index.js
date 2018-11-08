@@ -2,26 +2,50 @@ import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import {find} from 'lodash';
-
-import Box from '../Box';
-import Flex from '../Flex';
+import Box from 'components/Box';
+import Flex from 'components/Flex';
 
 const SlideShowStyle = styled.div`
-    width: 138px;
+    width: ${({type}) => type === 'small' ? 138 : 250}px;
     margin-bottom: 15px;
 `;
 
 const WrapImg = styled(Flex)`
-    width: 138px;
-    height: 138px;
+    width: ${({type}) => type === 'small' ? 138 : 250}px;
+    height: ${({type}) => type === 'small' ? 138 : 250}px;
     margin-bottom: 15px;
 
     border: 1px solid #dee1e4;
     border-radius: 2px;
     background-color: #fff;
 `;
-:
-const SlideShow = ({product, products, changeSlide}) => {
+
+const Img = styled.img`
+    max-width: 95%;
+    max-height: 95%;
+`;
+
+const Item = styled(Box)`
+    position: relative;
+    cursor: pointer;
+
+    width: ${({type}) => type === 'small' ? 33 : 60}px;
+    height: ${({type}) => type === 'small' ? 33 : 60}px;
+
+    border: 1px solid #dee1e4;
+    border-radius: 2px;
+    background-color: #fff;
+    
+    &:hover {
+        border-color: #333;
+    }
+    
+    &.active, &.active:hover {
+        border-color: #ff6e35;
+    }
+`;
+
+const SlideShow = ({product, products, changeSlide, type}) => {
     const bigImage = product.images[product.activeIndex].image;
 
     const selectMiniImage = e => {
@@ -31,20 +55,27 @@ const SlideShow = ({product, products, changeSlide}) => {
     };
 
     return (
-        <SlideShowStyle>
-            <WrapImg justifyContent='center' alignItems='center'>
-                <Box maxWidth='95%' maxHeight='95%' src={bigImage} alt={product.name} />
+        <SlideShowStyle type={type}>
+            <WrapImg justifyContent='center' alignItems='center' type={type}>
+                <Img src={bigImage} alt={product.name} type={type} />
             </WrapImg>
             <Flex justifyContent='space-around'>
                 {
                     product.images.map((image, i) => {
                         const active = i === Number(product.activeIndex) ? ' active' : '';
+
                         return (
-                            <div className={`slideshow__item${active}`} key={i}>
-                                <a className='slideshow__link' onClick={selectMiniImage} data={i}>
-                                    <img className='slideshow__preview' src={image.image} alt="" />
-                                </a>
-                            </div>
+                            <Item className={active} key={i} type={type}>
+                                <Flex
+                                    justifyContent='center'
+                                    alignItems='center'
+                                    height='100%'
+                                    onClick={selectMiniImage}
+                                    data={i}
+                                >
+                                    <Img src={image.image} alt="" type={type} />
+                                </Flex>
+                            </Item>
                         );
                     })
                 }
@@ -55,7 +86,8 @@ const SlideShow = ({product, products, changeSlide}) => {
 
 const findInCatalog = ({catalogId, articul}, {catalogs}) => find(find(catalogs, {id: catalogId}).products, {articul});
 
-const mapStateToProps = (state, {articul, catalogId}) => ({
+const mapStateToProps = (state, {articul, catalogId, type}) => ({
+    type,
     products: state.products,
     product: find(state.products, {articul}) || findInCatalog({articul, catalogId}, state),
 });

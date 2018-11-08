@@ -6,9 +6,13 @@ import {
     flex,
     fontSize,
     maxWidth,
+    maxHeight,
+    height,
+    width,
     minWidth,
     size,
     ratio,
+    textAlign,
     verticalAlign,
     background,
     backgroundImage,
@@ -37,9 +41,13 @@ const Box = styled(tag.div)`
   ${flex}
   ${fontSize}
   ${maxWidth}
+  ${maxHeight}
+  ${height}
+  ${width}
   ${minWidth}
   ${size}
   ${ratio}
+  ${textAlign}
   ${verticalAlign}
   ${background}
   ${backgroundImage}

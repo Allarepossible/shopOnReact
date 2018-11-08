@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Products from 'components/CategoryList';
+import Information from 'components/Information';
 
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
 import Menu from '../components/navigation/Menu';
 import Breadcrumbs from '../components/navigation/Breadcrumbs';
 import Sort from '../components/filters/Sort';
 import PathProducts from '../components/navigation/PathProducts';
-import Information from '../components/Information';
-import Products from '../components/products/Products';
 import Filters from '../components/filters/Filters';
 
 const Search = ({

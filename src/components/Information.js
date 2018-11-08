@@ -1,16 +1,15 @@
 import React from 'react';
 import styled, {withTheme} from 'styled-components';
+import Box from 'components/Box';
+import Text from 'components/Text';
 
-import Text from './Text';
-
-const InfoContainer = styled.div`
+const InfoContainer = styled(Box)`
     margin: 0 auto;
     width: ${({theme}) => theme.maxWidths.main};
-    margin-bottom: 30px;
 `;
 
 const Information = () => (
-    <InfoContainer>
+    <InfoContainer mb={30}>
         <Text is='h2' fontSize='l' fontWeight='bold' textAlign='center'>Важная информация</Text>
         <Text is='p' textAlign='justify'>Повседневная практика показывает, что сложившаяся
             внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.

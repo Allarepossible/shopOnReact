@@ -34,13 +34,13 @@ module.exports = {
         ],
     },
     resolve: {
-        modules: [path.resolve(__dirname, './src'), 'node_modules'],
+        modules: [path.resolve(__dirname, '/src'), 'node_modules'],
         extensions: ['.js', '.jsx', '.json'],
         alias: {
-            components: path.resolve(__dirname, './src/components'),
-            containers: path.resolve(__dirname, './src/containers'),
-            reducers: path.resolve(__dirname, './src/reducers'),
-            actions: path.resolve(__dirname, './src/actions'),
+            components: path.resolve(__dirname, 'src/components'),
+            containers: path.resolve(__dirname, 'src/containers'),
+            reducers: path.resolve(__dirname, 'src/reducers'),
+            actions: path.resolve(__dirname, 'src/actions'),
         },
     },
     plugins: [

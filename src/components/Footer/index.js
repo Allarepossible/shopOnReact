@@ -1,8 +1,32 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
+import Text from 'components/Text';
+import Flex from 'components/Flex';
+import Box from 'components/Box';
+import Socials from 'components/Socials';
 
 import MenuItem from '../navigation/MenuItem';
-import Socials from '../navigation/Socials';
+
+const FooterContainer = styled(Box)`
+    padding: 30px 0 5px;
+    background-image: url('/images/footer.png');
+    min-width: 1256px;
+`;
+
+const Container = styled(Box)`
+    margin: 0 auto;
+    width: ${({theme}) => theme.maxWidths.main};
+`;
+
+const Copyright = styled(Text)`
+    padding-top: 10px;
+    border-top: 1px solid #494949;
+`;
+
+const Logo = styled.img`
+    height: 40px;
+`;
 
 class Footer extends Component {
     constructor(props) {
@@ -24,32 +48,34 @@ class Footer extends Component {
         const {catalogsName} = this.props;
 
         return (
-            <footer className="footer">
-                <div className="container">
-                    <div className="footer__content">
-                        <img src="images/logo/logo_footer.png" alt="" className="footer__logo" />
-                        <div className="footer__right">
-                            <Socials className="footer_socials" />
-                            <div className="footer_nav">
-                                <ul className="footer_nav__list">
+            <FooterContainer>
+                <Container>
+                    <Flex justifyContent='space-between' mb={30}>
+                        <Logo src="images/logo/logo_footer.png" alt="" />
+                        <Flex justifyContent='space-between' alignItems='flex-end' flexDirection='column'>
+                            <Socials type='footer' />
+                            <Flex justifyContent='flex-end'>
+                                <Flex flexWrap='wrap' justifyContent='flex-end'>
                                     {
                                         catalogsName.map(catalog => (
                                             <MenuItem
                                                 key={catalog.name}
                                                 name={catalog.name}
                                                 id={catalog.id}
-                                                className="footer_nav"
+                                                type="footer"
                                                 changeCatalog={this.changeCatalog}
                                             />
                                         ))
                                     }
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="footer__copyright">All rights reserved. 2015. no copy alowed</div>
-                </div>
-            </footer>
+                                </Flex>
+                            </Flex>
+                        </Flex>
+                    </Flex>
+                    <Copyright fontSize='xs' textAlign='center' color='white'>
+                        All rights reserved. 2015. no copy alowed
+                    </Copyright>
+                </Container>
+            </FooterContainer>
         );
     }
 }

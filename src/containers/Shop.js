@@ -1,10 +1,10 @@
 import React from 'react';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Information from 'components/Information';
 
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
 import Menu from '../components/navigation/Menu';
 import Breadcrumbs from '../components/navigation/Breadcrumbs';
-import Information from '../components/Information';
 
 const Shop = () => (
     <div>

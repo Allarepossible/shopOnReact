@@ -2,20 +2,18 @@ import React from 'react';
 import {Link} from 'react-router';
 import {find} from 'lodash';
 import styled, {withTheme} from 'styled-components';
-
-import Text from '../Text';
-import Box from '../Box';
-import Flex from '../Flex';
-import Button from '../Button';
-import SlideShow from '../SlideShow';
-import Raiting from '../Raiting';
-import Features from '../Features';
+import Text from 'components/Text';
+import Box from 'components/Box';
+import Flex from 'components/Flex';
+import Button from 'components/Button';
+import SlideShow from 'components/SlideShow';
+import Raiting from 'components/Raiting';
+import Features from 'components/Features';
 
 const ProductSnippetStyle = styled(Flex)`
     border: 1px solid #dee1e4;
     border-radius: ${({theme}) => theme.borderRadius[4]}px;
     background-color: ${({theme}) => theme.colors.white};
-    padding: 20px;
 
     &:hover {
         z-index: 3;
@@ -109,8 +107,9 @@ const ProductSnippet = ({
 
     if (view === 'tile') {
         return (
-            <ProductSnippetStyle alignItems='center' flexDirection='column' mb={16}>
+            <ProductSnippetStyle alignItems='center' flexDirection='column' mb={16} p={20}>
                 <SlideShow
+                    type='small'
                     key={id}
                     id={id}
                     images={images}
@@ -120,11 +119,13 @@ const ProductSnippet = ({
                     activeIndex={activeIndex}
                     catalogId={catalogId}
                 />
-                <Text fontWeight='bold' mb={15} fontSize='s'>{name}</Text>
+                <Box maxWidth='184px' mb={15} textAlign='center'>
+                    <Text fontWeight='bold' fontSize='m'>{name}</Text>
+                </Box>
                 <Features features={feature} />
                 <Raiting count={ratio} />
                 <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
-                <Flex justifyContent='space-between' mb={20}>
+                <Flex justifyContent='space-between' mb={20} width='90%'>
                     <Stock>{nalichie}</Stock>
                     <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
                 </Flex>
@@ -133,9 +134,10 @@ const ProductSnippet = ({
         );
     } if (view === 'column') {
         return (
-            <LineProductSnippet justifyContent='space-between'>
+            <LineProductSnippet justifyContent='space-between' p={20}>
                 <Flex flexDirection='column'>
                     <SlideShow
+                        type='small'
                         key={id}
                         id={id}
                         images={images}
@@ -170,7 +172,7 @@ const ProductSnippet = ({
             <Title fontWeight='bold' fontSize='s'>{name}</Title>
             <Info maxWidth='250px' mb={0} overflow='hidden'>{info}</Info>
             <Stock>{nalichie}</Stock>
-            <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
+            <Text fontWeight='bold' fontSize='l'>{NewPrice} ₽</Text>
             <Button type="primary" onClick={addProductToCart}>В корзину</Button>
         </LineProductSnippet>
     );
