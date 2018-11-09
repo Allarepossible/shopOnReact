@@ -3,9 +3,8 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-
-import Menu from '../components/navigation/Menu';
-import Breadcrumbs from '../components/navigation/Breadcrumbs';
+import Menu from 'components/Menu';
+import Breadcrumbs from 'components/Breadcrumbs';
 
 const StaticPage = ({catalog, catalogs, changeView}) => {
     const changeCatalog = e => {

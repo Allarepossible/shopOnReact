@@ -3,49 +3,7 @@
 /*******      view column & line       ********/
 
 
-.path_products
-{
-    display: flex;
-    justify-content: flex-end;
-}
 
-.path__list
-{
-    display: flex;
-}
-
-.path__item
-{
-    margin-left: 1px;
-}
-
-.path__link
-{
-    font-family: 'OpenSansSemiBold', Arial, sans-serif;
-    font-size: 11px;
-
-    padding: 4px 8px;
-
-    text-decoration: none;
-
-    color: #7f7f7f;
-    border: 1px solid #dee1e4;
-    border-radius: 3px;
-    background-color: #fbfbfb;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, .004);
-}
-.path__link-active
-{
-    border: 1px solid #c8c8c8;
-    background-color: #e0e0e0;
-}
-.path__link:hover
-{
-    border: 1px solid #c8c8c8;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12), inset 0 1px 0 1px rgba(255, 255, 255, .004);
-    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12), inset 0 1px 0 1px rgba(255, 255, 255, .004);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12), inset 0 1px 0 1px rgba(255, 255, 255, .004);
-}
 
 .product-page
 {

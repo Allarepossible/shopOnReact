@@ -4,9 +4,8 @@ import {Link} from 'react-router';
 import {find, reduce, map} from 'lodash';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-
-import Menu from '../components/navigation/Menu';
-import Breadcrumbs from '../components/navigation/Breadcrumbs';
+import Menu from 'components/Menu';
+import Breadcrumbs from 'components/Breadcrumbs';
 
 const normalizePrice = price => String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
 

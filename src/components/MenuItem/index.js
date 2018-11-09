@@ -39,15 +39,17 @@ const MenuItem = ({
     return (
         <Box ml={ml}>
             {
-                type === 'menu' ? (<MenuLink
-                    to={`/catalog/${id}`}
-                    className={active && 'active'}
-                    onClick={changeCatalog}
-                    data={id}
-                    activeClassName="active"
-                >
-                    {name}
-                </MenuLink>) : (
+                type === 'menu' ? (
+                    <MenuLink
+                        to={`/catalog/${id}`}
+                        className={active && 'active'}
+                        onClick={changeCatalog}
+                        data={id}
+                        activeClassName="active"
+                    >
+                        {name}
+                    </MenuLink>
+                ) : (
                     <FooterLink
                         to={`/catalog/${id}`}
                         className={active}

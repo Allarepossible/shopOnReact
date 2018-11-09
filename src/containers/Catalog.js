@@ -2,13 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Menu from 'components/navigation/Menu';
-import Sort from 'components/filters/Sort';
-import Breadcrumbs from 'components/navigation/Breadcrumbs';
-import PathProducts from 'components/navigation/PathProducts';
+import Menu from 'components/Menu';
+import Path from 'components/Path';
+import SortBar from 'components/SortBar';
+import Breadcrumbs from 'components/Breadcrumbs';
 import Information from 'components/Information';
 import CategoryList from 'components/CategoryList';
-import Filters from 'components/filters/Filters';
+import Filters from 'components/Filters';
 
 const Catalog = ({
     products, catalog, filters, setState,
@@ -36,7 +36,7 @@ const Catalog = ({
                                 />
                             </aside>
                             <div className="right_content">
-                                <Sort />
+                                <SortBar />
                                 <div className="content">
                                     <CategoryList
                                         catalogId={catalog.id}
@@ -44,7 +44,7 @@ const Catalog = ({
                                     />
                                     {
                                         products.length > 9
-                                        && <PathProducts />
+                                        && <Path />
                                     }
                                 </div>
                             </div>

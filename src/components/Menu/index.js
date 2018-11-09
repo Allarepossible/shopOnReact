@@ -4,8 +4,7 @@ import {find, sortBy} from 'lodash';
 import styled from 'styled-components';
 import Flex from 'components/Flex';
 import Box from 'components/Box';
-
-import MenuItem from './MenuItem';
+import MenuItem from 'components/MenuItem';
 
 const Container = styled(Box)`
     margin: 0 auto;

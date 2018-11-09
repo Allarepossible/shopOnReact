@@ -4,12 +4,11 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Products from 'components/CategoryList';
 import Information from 'components/Information';
-
-import Menu from '../components/navigation/Menu';
-import Breadcrumbs from '../components/navigation/Breadcrumbs';
-import Sort from '../components/filters/Sort';
-import PathProducts from '../components/navigation/PathProducts';
-import Filters from '../components/filters/Filters';
+import Menu from 'components/Menu';
+import Path from 'components/Path';
+import Breadcrumbs from 'components/Breadcrumbs';
+import SortBar from 'components/SortBar';
+import Filters from 'components/Filters';
 
 const Search = ({
     products, catalog, filters, setState,
@@ -34,14 +33,14 @@ const Search = ({
                                 />
                             </aside>
                             <div className="right_content">
-                                <Sort />
+                                <SortBar />
                                 <div className="content">
                                     <div className="content">
                                         <Products
                                             catalogId={catalog.id}
                                         />
                                     </div>
-                                    <PathProducts />
+                                    <Path />
                                 </div>
                             </div>
                         </div>

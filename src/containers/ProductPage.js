@@ -3,12 +3,11 @@ import {connect} from 'react-redux';
 import {find} from 'lodash';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-
-import Menu from '../components/navigation/Menu';
-import Breadcrumbs from '../components/navigation/Breadcrumbs';
-import Features from '../components/Features';
-import Raiting from '../components/Raiting';
-import SlideShow from '../components/SlideShow';
+import Menu from 'components/Menu';
+import Breadcrumbs from 'components/Breadcrumbs';
+import Features from 'components/Features';
+import Raiting from 'components/Raiting';
+import SlideShow from 'components/SlideShow';
 
 const ProductPage = ({
     catalog, ownProps, products, setState, addToCart,

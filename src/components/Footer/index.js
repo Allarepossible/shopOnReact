@@ -5,8 +5,7 @@ import Text from 'components/Text';
 import Flex from 'components/Flex';
 import Box from 'components/Box';
 import Socials from 'components/Socials';
-
-import MenuItem from '../navigation/MenuItem';
+import MenuItem from 'components/MenuItem';
 
 const FooterContainer = styled(Box)`
     padding: 30px 0 5px;
