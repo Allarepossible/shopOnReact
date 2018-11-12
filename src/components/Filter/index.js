@@ -155,8 +155,8 @@ const Select = ({id, name}) => (
 );
 
 const Color = ({name}) => (
-    <Flex width='25%' height='60px' justifyContent='center' alignItems='center'>
-        <ColorLink backgroundcolor={COLORS[name]}/>
+    <Flex width='20%' height='60px' justifyContent='center' alignItems='center'>
+        <ColorLink background={COLORS[name]}/>
     </Flex>
 );
 
@@ -193,7 +193,6 @@ const RangeBox = () => {
 };
 
 const Filter = ({filter, changeFilter}) => {
-    console.log('---------', filter)
     const active = filter.open === 'yes' ? 'active' : '';
 
     const onTitleClick = () => {
