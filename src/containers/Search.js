@@ -19,23 +19,23 @@ const Search = ({
 
     return (
         <div>
-            <div className="wrapper">
+            <div className='wrapper'>
                 <Header />
                 <Menu />
-                <div className="layout">
-                    <div className="container">
+                <div className='layout'>
+                    <div className='container'>
                         <Breadcrumbs catalog={[{name: 'Поиск', link: '/search'}]} />
-                        <h1 className="h1 text text_color_grey text_weight_bold">{catalog.name}</h1>
-                        <div className="layout">
-                            <aside className="sidebar">
+                        <h1 className='h1 text text_color_grey text_weight_bold'>{catalog.name}</h1>
+                        <div className='layout'>
+                            <aside className='sidebar'>
                                 <Filters
                                     filters={filters}
                                 />
                             </aside>
-                            <div className="right_content">
+                            <div className='right_content'>
                                 <SortBar />
-                                <div className="content">
-                                    <div className="content">
+                                <div className='content'>
+                                    <div className='content'>
                                         <Products
                                             catalogId={catalog.id}
                                         />

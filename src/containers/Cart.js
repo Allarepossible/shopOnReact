@@ -32,25 +32,25 @@ const CartItem = ({
     const disabledClass = count === 1 ? ' disabled' : '';
 
     return (
-        <li className="cart__item">
-            <Link className="cart__link" to={`/catalog/${catalog}/${articul}`}>
-                <div className="photo">
-                    <img className="big-photo" src={image} alt={name} />
+        <li className='cart__item'>
+            <Link className='cart__link' to={`/catalog/${catalog}/${articul}`}>
+                <div className='photo'>
+                    <img className='big-photo' src={image} alt={name} />
                 </div>
             </Link>
-            <div className="cart__articul articul">
-                <span className="text text_color_grey text_weight_bold text_size_s"> Артикул </span>
-                <span className="text text_weight_bold">{articul}</span>
+            <div className='cart__articul articul'>
+                <span className='text text_color_grey text_weight_bold text_size_s'> Артикул </span>
+                <span className='text text_weight_bold'>{articul}</span>
             </div>
-            <div className="cart__title">{name}</div>
-            <div className="cart__nalichie text_size_s text_weight_bold text_color_grey">{nalichie}</div>
-            <div className="counter">
+            <div className='cart__title'>{name}</div>
+            <div className='cart__nalichie text_size_s text_weight_bold text_color_grey'>{nalichie}</div>
+            <div className='counter'>
                 <i className={`counter__button counter__button_type_minus${disabledClass}`} onClick={decreaseCount} />
-                <input type="text" className="counter__input" value={count} onChange={changeCount} />
-                <i className="counter__button counter__button_type_plus" onClick={increaseCount} />
-                <i className="counter__delete" onClick={deleteProductFromCart} />
+                <input type='text' className='counter__input' value={count} onChange={changeCount} />
+                <i className='counter__button counter__button_type_plus' onClick={increaseCount} />
+                <i className='counter__delete' onClick={deleteProductFromCart} />
             </div>
-            <div className="cart__price text text_weight_semibold text_size_l">
+            <div className='cart__price text text_weight_semibold text_size_l'>
                 {normalizePrice(price)}
                 {' '}
 P
@@ -65,15 +65,15 @@ const Cart = ({cart, deleteProduct, changeCountOfProductInCart}) => {
 
     return (
         <div>
-            <div className="wrapper">
+            <div className='wrapper'>
                 <Header />
                 <Menu />
-                <div className="layout">
-                    <div className="container">
+                <div className='layout'>
+                    <div className='container'>
                         <Breadcrumbs catalog={[{name: 'Корзина', link: '/cart'}]} />
-                        <h1 className="h1 text text_color_grey text_weight_bold">Корзина</h1>
-                        <div className="container cart">
-                            <ul className="cart__list">
+                        <h1 className='h1 text text_color_grey text_weight_bold'>Корзина</h1>
+                        <div className='container cart'>
+                            <ul className='cart__list'>
                                 {
                                     cart.length > 0
                                     && products.map((el, index) => {
@@ -99,13 +99,13 @@ const Cart = ({cart, deleteProduct, changeCountOfProductInCart}) => {
                                 }
                                 {
                                     cart.length === 0
-                                    && <div className="empty-cart">Корзина пуста!</div>
+                                    && <div className='empty-cart'>Корзина пуста!</div>
                                 }
                             </ul>
                             {
                                 cart.length > 0
                                 && (
-                                    <div className="common-price">
+                                    <div className='common-price'>
                                         Итоговая цена:
                                         {normalizePrice(commonPrice)}
                                     </div>

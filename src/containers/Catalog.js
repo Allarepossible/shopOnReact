@@ -20,24 +20,24 @@ const Catalog = ({
 
     return (
         <div>
-            <div className="wrapper">
+            <div className='wrapper'>
                 <Header />
                 <Menu active={catalog.id} />
-                <div className="layout">
-                    <div className="container">
+                <div className='layout'>
+                    <div className='container'>
                         <Breadcrumbs
                             catalog={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
                         />
-                        <h1 className="h1 text text_color_grey text_weight_bold">{catalog.name}</h1>
-                        <div className="layout">
-                            <aside className="layout sidebar">
+                        <h1 className='h1 text text_color_grey text_weight_bold'>{catalog.name}</h1>
+                        <div className='layout'>
+                            <aside className='layout sidebar'>
                                 <Filters
                                     filters={filters}
                                 />
                             </aside>
-                            <div className="right_content">
+                            <div className='right_content'>
                                 <SortBar />
-                                <div className="content">
+                                <div className='content'>
                                     <CategoryList
                                         catalogId={catalog.id}
                                         countOfProducts={products.length}

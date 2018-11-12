@@ -47,6 +47,10 @@ const FilterItem = styled(Box)`
     display: block;
 
     margin-top: 16px;
+    
+    input {
+        display: none;
+    }
 `;
 
 const LabelRadio = styled.label`
@@ -76,8 +80,6 @@ const LabelRadio = styled.label`
 `;
 
 const InputRadio = styled.input`
-    width: 0;
-    
     &:checked + .radio:before {
         font-size: 42px;
         line-height: 13px;
@@ -147,7 +149,7 @@ const COLORS = {
 
 const Select = ({id, name}) => (
     <FilterItem>
-        <InputRadio type="radio" id={id} name="available" />
+        <InputRadio type='radio' id={id} name='available' />
         <LabelRadio htmlFor={id} className='radio'>
             {name}
         </LabelRadio>
@@ -175,15 +177,15 @@ const RangeBox = () => {
             <Flex justifyContent='space-between'>
                 <span>от</span>
                 <Input
-                    type="text"
-                    id="price-range1"
+                    type='text'
+                    id='price-range1'
                     value={value.minValue}
                     onChange={changeValue}
                 />
                 <span>до</span>
                 <Input
-                    type="text"
-                    id="price-range2"
+                    type='text'
+                    id='price-range2'
                     value={value.maxValue}
                     onChange={changeValue}
                 />
@@ -208,7 +210,7 @@ const Filter = ({filter, changeFilter}) => {
         <FiltersItem>
             <Title className={active} onClick={onTitleClick}>
                 {filter.name}
-                <i className="manage-filter" key={filter.id} />
+                <i className='manage-filter' key={filter.id} />
             </Title>
             {
                 filter.open === 'yes'
@@ -249,7 +251,7 @@ const Filter = ({filter, changeFilter}) => {
                         }
                         {
                             filter.reset === true
-                        && <Reset href="#">Сбросить фильтр</Reset>
+                        && <Reset href='#'>Сбросить фильтр</Reset>
                         }
                     </Flex>
                 )

@@ -38,7 +38,7 @@ const Breadcrumbs = ({catalog}) => {
             <Container>
                 <Flex>
                     {
-                        breadcrumbs.map((el, i) => (
+                        breadcrumbs.map((el) => (
                             <Breadcrumb
                                 key={el.name}
                                 name={el.name}

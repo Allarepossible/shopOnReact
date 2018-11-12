@@ -17,23 +17,23 @@ const StaticPage = ({catalog, catalogs, changeView}) => {
 
     return (
         <div>
-            <div className="wrapper">
+            <div className='wrapper'>
                 <Header />
                 <Menu />
-                <div className="layout">
-                    <div className="container">
+                <div className='layout'>
+                    <div className='container'>
                         <Breadcrumbs catalog={[{name: 'Каталог', link: '/catalog/'}]} />
-                        <h1 className="h1 text text_color_grey text_weight_bold">Каталог</h1>
-                        <div className="layout">
-                            <ul className="catalog__list">
+                        <h1 className='h1 text text_color_grey text_weight_bold'>Каталог</h1>
+                        <div className='layout'>
+                            <ul className='catalog__list'>
                                 {
                                     catalogs.map((item, i) => (
-                                        <li className="catalog__item" key={i}>
-                                            <Link className="catalog__link" to={`/catalog/${item.link}`} onClick={changeCatalog} data={item.link}>
-                                                <div className="catalog__wrap">
-                                                    <img className="catalog__img" src={item.img} alt={item.name} />
+                                        <li className='catalog__item' key={i}>
+                                            <Link className='catalog__link' to={`/catalog/${item.link}`} onClick={changeCatalog} data={item.link}>
+                                                <div className='catalog__wrap'>
+                                                    <img className='catalog__img' src={item.img} alt={item.name} />
                                                 </div>
-                                                <span className="catalog__name">{item.name}</span>
+                                                <span className='catalog__name'>{item.name}</span>
                                             </Link>
                                         </li>
                                     ))

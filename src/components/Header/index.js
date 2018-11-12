@@ -133,18 +133,18 @@ const Header = ({cart}) => {
                     <Socials />
                     <Flex width='40%' justifyContent='space-between'>
                         <Address>ул. Маяковская 6, офис 17</Address>
-                        <Phone href="tel://+7(921)123-12-13">+7 (921) 123-12-12</Phone>
+                        <Phone href='tel://+7(921)123-12-13'>+7 (921) 123-12-12</Phone>
                     </Flex>
                 </Container>
             </Top>
             <Flex justifyContent='space-between'>
                 <Container justifyContent='space-between' pt={30} pb={30}>
-                    <Link to="/">
-                        <Logo src="images/logo/logo.png" alt="Cooltech" />
+                    <Link to='/'>
+                        <Logo src='images/logo/logo.png' alt='Cooltech' />
                     </Link>
                     <Form action="">
-                        <Input type="text" placeholder="Что будем искать" />
-                        <Button type="submit" href="/search">Найти</Button>
+                        <Input type='text' placeholder='Что будем искать' />
+                        <Button type='submit' href='/search'>Найти</Button>
                     </Form>
                     <Box width='30%'>
                         <Flex justifyContent='space-between'>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import Box from 'components/Box';
 
 const LabelCheckBox = styled.label`
     position: relative;
@@ -56,13 +57,24 @@ const InputCheckBox = styled.input`
     }
 `;
 
+
+const FilterItem = styled(Box)`
+    display: block;
+
+    margin-top: 16px;
+    
+    input {
+        display: none;
+    }
+`;
+
 const CheckboxFilter = ({ownProps}) => (
-    <li className="filter__item">
-        <InputCheckBox type="checkbox" id={ownProps.name} />
+    <FilterItem>
+        <InputCheckBox type='checkbox' id={ownProps.name} />
         <LabelCheckBox htmlFor={ownProps.name}>
             {ownProps.name}
         </LabelCheckBox>
-    </li>
+    </FilterItem>
 );
 
 const mapStateToProps = (state, ownProps) => ({

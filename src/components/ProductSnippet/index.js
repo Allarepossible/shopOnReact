@@ -129,7 +129,7 @@ const ProductSnippet = ({
                     <Stock>{nalichie}</Stock>
                     <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
                 </Flex>
-                <Button type="primary" onClick={addProductToCart}>В корзину</Button>
+                <Button type='primary' onClick={addProductToCart}>В корзину</Button>
             </ProductSnippetStyle>
         );
     } if (view === 'column') {
@@ -160,7 +160,7 @@ const ProductSnippet = ({
                 </Content>
                 <Flex flexDirection='column'>
                     <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
-                    <Button type="primary" onClick={addProductToCart}>В корзину</Button>
+                    <Button type='primary' onClick={addProductToCart}>В корзину</Button>
                 </Flex>
             </LineProductSnippet>
         );
@@ -173,7 +173,7 @@ const ProductSnippet = ({
             <Info maxWidth='250px' mb={0} overflow='hidden'>{info}</Info>
             <Stock>{nalichie}</Stock>
             <Text fontWeight='bold' fontSize='l'>{NewPrice} ₽</Text>
-            <Button type="primary" onClick={addProductToCart}>В корзину</Button>
+            <Button type='primary' onClick={addProductToCart}>В корзину</Button>
         </LineProductSnippet>
     );
 };

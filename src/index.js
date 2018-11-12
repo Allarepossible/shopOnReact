@@ -25,12 +25,12 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
         <Provider store={store}>
             <Router history={history}>
-                <Route path="/" component={Shop} />
-                <Route path="/search" component={Search} />
-                <Route path="/cart" component={Cart} />
-                <Route path="/catalog" component={StaticPage} />
-                <Route path="/catalog/:catalogId" component={Catalog} />
-                <Route path="/catalog/:catalogId/:productId" component={ProductPage} />
+                <Route path='/' component={Shop} />
+                <Route path='/search' component={Search} />
+                <Route path='/cart' component={Cart} />
+                <Route path='/catalog' component={StaticPage} />
+                <Route path='/catalog/:catalogId' component={Catalog} />
+                <Route path='/catalog/:catalogId/:productId' component={ProductPage} />
             </Router>
         </Provider>
     </ThemeProvider>,

@@ -16,7 +16,6 @@ import {
     verticalAlign,
     background,
     backgroundImage,
-    backgroundColor,
     backgroundSize,
     backgroundPosition,
     backgroundRepeat,
@@ -52,7 +51,6 @@ const Box = styled(tag.div)`
   ${verticalAlign}
   ${background}
   ${backgroundImage}
-  ${backgroundColor}
   ${backgroundSize}
   ${backgroundPosition}
   ${backgroundRepeat}

@@ -73,7 +73,7 @@ const SlideShow = ({product, products, changeSlide, type}) => {
                                     onClick={selectMiniImage}
                                     data={i}
                                 >
-                                    <Img src={image.image} alt="" type={type} />
+                                    <Img src={image.image} alt='' type={type} />
                                 </Flex>
                             </Item>
                         );
