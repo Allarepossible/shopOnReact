@@ -44,59 +44,64 @@ const Title = styled(Text)`
 
 
 const FilterItem = styled(Box)`
-    display: block;
+    display: flex;
+    align-items: center;
 
     margin-top: 16px;
     
-    input {
+    >input {
         display: none;
+    }
+    
+    >input + label {
+        &:before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 9px;
+        
+            display: inline-block;
+        
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        
+            content: '';
+        
+            background-color: #fff;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .2);
+        }
+    }  
+      
+    >input:checked + label {
+        &:before {
+            font-size: 20px;
+            line-height: 13px;
+            
+            position: absolute;
+            padding-left: 2px;
+            
+            box-sizing: border-box;
+            
+            width: 20px;
+            height: 20px;
+        
+            content: '●';
+        
+            color: #ff6e35;
+            border: 2px solid #ff6e35;
+            border-radius: 50%;
+            box-shadow: none;
+        }
     }
 `;
 
 const LabelRadio = styled.label`
     font-size: 14px;
+    line-height: 20px;
     position: relative;
-    display: inline-block;
     padding-left: 29px;
     cursor: pointer;
-    
-    &:before {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-radius: 9px;
-    
-        display: inline-block;
-    
-        width: 19px;
-        height: 19px;
-        margin-right: 10px;
-    
-        content: '';
-    
-        background-color: #fff;
-        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .2);
-    }
-`;
-
-const InputRadio = styled.input`
-    &:checked + .radio:before {
-        font-size: 42px;
-        line-height: 13px;
-    
-        position: absolute;
-    
-        box-sizing: border-box;
-        width: 19px;
-        height: 19px;
-    
-        content: '\2022';
-    
-        color: #ff6e35;
-        border: 2px solid #ff6e35;
-        border-radius: 50%;
-        box-shadow: none;
-    }
 `;
 
 const Reset = styled.a`
@@ -147,10 +152,10 @@ const COLORS = {
     brown: '#7f401d',
 };
 
-const Select = ({id, name}) => (
+const Select = ({name}) => (
     <FilterItem>
-        <InputRadio type='radio' id={id} name='available' />
-        <LabelRadio htmlFor={id} className='radio'>
+        <input type='radio' id={name} name='available' />
+        <LabelRadio htmlFor={name} className='radio'>
             {name}
         </LabelRadio>
     </FilterItem>
@@ -228,10 +233,9 @@ const Filter = ({filter, changeFilter}) => {
                         }
                         {
                             filter.type === 'select'
-                        && filter.values.map((el, i) => (
+                        && filter.values.map(el => (
                             <Select
-                                key={i}
-                                id={i}
+                                key={el}
                                 name={el}
                             />
                         ))

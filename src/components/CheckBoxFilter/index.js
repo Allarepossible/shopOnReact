@@ -3,12 +3,42 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 import Box from 'components/Box';
 
-const LabelCheckBox = styled.label`
+const LabelCheckBox = styled.label` 
     position: relative;
-
     cursor: pointer;
+`;
+
+
+const FilterItem = styled(Box)`
+    display: flex;
+
+    margin-top: 16px;
     
-    &:before {
+    input {
+        display: none;
+    }
+    
+    input:checked + label:before {
+        width: 19px;
+        height: 19px;
+    
+        background: #ff6e35;
+        box-shadow: none;
+    }
+    
+    input:checked + label:after {
+        font-size: 13px;
+        
+        position: absolute;
+        top: 2px;
+        left: 5px;
+    
+        content: '✔';
+    
+        color: #fff;
+    }
+    
+    label:before {
         left: 0;
 
         display: inline-block;
@@ -21,56 +51,13 @@ const LabelCheckBox = styled.label`
         content: '';
     
         border-radius: 3px;
-        -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
-        -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
         box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .3);
-    }
-`;
-
-const InputCheckBox = styled.input`
-    display: none;
-    
-    &:checked .checkbox:before {
-        width: 19px;
-        height: 19px;
-    
-        background: #ff6e35;
-        box-shadow: none;
-    }
-    
-    &:checked .checkbox:after {
-        font-size: 10px;
-
-        position: absolute;
-        top: 2px;
-        left: 4px;
-    
-        width: 8px;
-        height: 6px;
-    
-        content: '';
-        transform: rotate(125deg) skew(0, 0);
-    
-        color: #fff;
-        border-top: 3px solid #fff;
-        border-right: 3px solid #fff;
-    }
-`;
-
-
-const FilterItem = styled(Box)`
-    display: block;
-
-    margin-top: 16px;
-    
-    input {
-        display: none;
     }
 `;
 
 const CheckboxFilter = ({ownProps}) => (
     <FilterItem>
-        <InputCheckBox type='checkbox' id={ownProps.name} />
+        <input type='checkbox' id={ownProps.name} />
         <LabelCheckBox htmlFor={ownProps.name}>
             {ownProps.name}
         </LabelCheckBox>
