@@ -57,20 +57,20 @@ const Catalog = ({
         </div>
     );
 };
+const mapStateToProps = (state, ownProps) => ({
+    products: state.products,
+    catalog: state.catalogs.find(catalog => catalog.id === ownProps.params.catalogId),
+    filters: state.filters,
+});
 
-export default connect(
-    (state, ownProps) => ({
-        products: state.products,
-        catalog: state.catalogs.find(catalog => catalog.id === ownProps.params.catalogId),
-        filters: state.filters,
-    }),
-    dispatch => ({
-        setState: (products, filters) => {
-            const payload = products;
-            const payload2 = filters;
+const mapDispatchToProps = dispatch => ({
+    setState: (products, filters) => {
+        const payload = products;
+        const payload2 = filters;
 
-            dispatch({type: 'SET_STATE', payload});
-            dispatch({type: 'SET_FILTERS', payload2});
-        },
-    })
-)(Catalog);
+        dispatch({type: 'SET_STATE', payload});
+        dispatch({type: 'SET_FILTERS', payload2});
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Catalog);

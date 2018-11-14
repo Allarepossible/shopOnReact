@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import {find, reduce, map} from 'lodash';import styled, {withTheme} from 'styled-components';
+import {find, reduce, map} from 'lodash';
+import styled from 'styled-components';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
@@ -17,8 +18,7 @@ const Container = styled(Box)`
     width: ${({theme}) => theme.maxWidths.main};
 `;
 
-const CartItemStyle = styled(Box)`
-    display: flex;
+const CartItemStyle = styled(Flex)`
     align-items: center;
     justify-content: space-between;
 
@@ -31,9 +31,7 @@ const CartItemStyle = styled(Box)`
     background-color: rgba(255, 255, 255, .6);
 `;
 
-const CartItemImage = styled(Box)`
-    display: flex;
-
+const CartItemImage = styled(Flex)`
     width: 70px;
     height: 70px;
 
@@ -194,8 +192,8 @@ const Cart = ({cart, deleteProduct, changeCountOfProductInCart}) => {
             <Flex>
                 <Container>
                     <Breadcrumbs catalog={[{name: 'Корзина', link: '/cart'}]} />
-                    <Text fontWeight='bold' color='grey' is='h1'>Корзина</Text>
-                    <Container>
+                    <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>Корзина</Text>
+                    <Container mb='150px'>
                         <Flex flexDirection='column'>
                             {
                                 cart.length > 0
