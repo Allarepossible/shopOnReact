@@ -146,6 +146,6 @@ const mapDispatchToProps = dispatch => ({
         const payload = sortProducts;
         dispatch({type: 'SORT_PRODUCTS', payload});
     },
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SortBar);

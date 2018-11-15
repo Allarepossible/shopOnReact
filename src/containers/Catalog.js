@@ -9,6 +9,15 @@ import Breadcrumbs from 'components/Breadcrumbs';
 import Information from 'components/Information';
 import CategoryList from 'components/CategoryList';
 import Filters from 'components/Filters';
+import styled from 'styled-components';
+import Box from 'components/Box';
+import Flex from 'components/Flex';
+import Text from 'components/Text';
+
+const Container = styled(Box)`
+    margin: 0 auto;
+    width: ${({theme}) => theme.maxWidths.main};
+`;
 
 const Catalog = ({
     products, catalog, filters, setState,
@@ -19,42 +28,38 @@ const Catalog = ({
     }
 
     return (
-        <div>
-            <div className='wrapper'>
-                <Header />
-                <Menu active={catalog.id} />
-                <div className='layout'>
-                    <div className='container'>
-                        <Breadcrumbs
-                            catalog={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
-                        />
-                        <h1 className='h1 text text_color_grey text_weight_bold'>{catalog.name}</h1>
-                        <div className='layout'>
-                            <aside className='layout sidebar'>
-                                <Filters
-                                    filters={filters}
-                                />
-                            </aside>
-                            <div className='right_content'>
-                                <SortBar />
-                                <div className='content'>
-                                    <CategoryList
-                                        catalogId={catalog.id}
-                                        countOfProducts={products.length}
-                                    />
-                                    {
-                                        products.length > 9
-                                        && <Path />
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <Information />
-            </div>
+        <Flex flexDirection='column'>
+            <Header />
+            <Menu active={catalog.id} />
+            <Flex>
+                <Container>
+                    <Breadcrumbs
+                        catalog={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
+                    />
+                    <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>{catalog.name}</Text>
+                    <Flex justifyContent='space-between'>
+                        <Flex flexDirection='column' width='30%'>
+                            <Filters
+                                filters={filters}
+                            />
+                        </Flex>
+                        <Flex flexDirection='column' width='67%'>
+                            <SortBar />
+                            <CategoryList
+                                catalogId={catalog.id}
+                                countOfProducts={products.length}
+                            />
+                            {
+                                products.length > 9
+                                && <Path />
+                            }
+                        </Flex>
+                    </Flex>
+                </Container>
+            </Flex>
+            <Information />
             <Footer />
-        </div>
+        </Flex>
     );
 };
 const mapStateToProps = (state, ownProps) => ({

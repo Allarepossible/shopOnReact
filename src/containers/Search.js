@@ -9,6 +9,15 @@ import Path from 'components/Path';
 import Breadcrumbs from 'components/Breadcrumbs';
 import SortBar from 'components/SortBar';
 import Filters from 'components/Filters';
+import styled from 'styled-components';
+import Box from 'components/Box';
+import Flex from 'components/Flex';
+import Text from 'components/Text';
+
+const Container = styled(Box)`
+    margin: 0 auto;
+    width: ${({theme}) => theme.maxWidths.main};
+`;
 
 const Search = ({
     products, catalog, filters, setState,
@@ -18,38 +27,32 @@ const Search = ({
     }
 
     return (
-        <div>
-            <div className='wrapper'>
-                <Header />
-                <Menu />
-                <div className='layout'>
-                    <div className='container'>
-                        <Breadcrumbs catalog={[{name: 'Поиск', link: '/search'}]} />
-                        <h1 className='h1 text text_color_grey text_weight_bold'>{catalog.name}</h1>
-                        <div className='layout'>
-                            <aside className='sidebar'>
-                                <Filters
-                                    filters={filters}
-                                />
-                            </aside>
-                            <div className='right_content'>
-                                <SortBar />
-                                <div className='content'>
-                                    <div className='content'>
-                                        <Products
-                                            catalogId={catalog.id}
-                                        />
-                                    </div>
-                                    <Path />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <Information />
-            </div>
+        <Flex flexDirection='column'>
+            <Header />
+            <Menu />
+            <Flex>
+                <Container>
+                    <Breadcrumbs catalog={[{name: 'Поиск', link: '/search'}]} />
+                    <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>{catalog.name}</Text>
+                    <Flex>
+                        <Flex flexDirection='column' width='30%'>
+                            <Filters
+                                filters={filters}
+                            />
+                        </Flex>
+                        <Flex flexDirection='column' width='67%'>
+                            <SortBar />
+                            <Products
+                                catalogId={catalog.id}
+                            />
+                            <Path />
+                        </Flex>
+                    </Flex>
+                </Container>
+            </Flex>
+            <Information />
             <Footer />
-        </div>
+        </Flex>
     );
 };
 
