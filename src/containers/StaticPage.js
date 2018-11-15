@@ -1,21 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Menu from 'components/Menu';
-import Breadcrumbs from 'components/Breadcrumbs';
 import styled from 'styled-components';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
 
 import Page from './Page';
-
-const Container = styled(Box)`
-    margin: 0 auto;
-    width: ${({theme}) => theme.maxWidths.main};
-`;
 
 const CatalogLink = styled(Link)`
     font-size: 16px;
@@ -58,25 +49,21 @@ const StaticPage = ({catalog, catalogs, changeView}) => {
     };
 
     return (
-        <Page>
-            <Container>
-                <Breadcrumbs catalog={[{name: 'Каталог', link: '/catalog/'}]} />
-                <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>Каталог</Text>
-                <Flex marginBottom='100px' justifyContent='space-between' flexWrap='wrap'>
-                    {
-                        catalogs.map((item, i) => (
-                            <Box mb={3} key={i}>
-                                <CatalogLink to={`/catalog/${item.link}`} onClick={changeCatalog} data={item.link}>
-                                    <Wrap>
-                                        <Image src={item.img} alt={item.name} />
-                                    </Wrap>
-                                    <Text>{item.name}</Text>
-                                </CatalogLink>
-                            </Box>
-                        ))
-                    }
-                </Flex>
-            </Container>
+        <Page title='Каталог' breadcrumbs={[{name: 'Каталог', link: '/catalog/'}]}>
+            <Flex mb='100px' justifyContent='space-between' flexWrap='wrap'>
+                {
+                    catalogs.map((item, i) => (
+                        <Box mb={3} key={i}>
+                            <CatalogLink to={`/catalog/${item.link}`} onClick={changeCatalog} data={item.link}>
+                                <Wrap>
+                                    <Image src={item.img} alt={item.name} />
+                                </Wrap>
+                                <Text>{item.name}</Text>
+                            </CatalogLink>
+                        </Box>
+                    ))
+                }
+            </Flex>
         </Page>
     );
 };

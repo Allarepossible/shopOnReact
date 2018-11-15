@@ -6,16 +6,10 @@ import styled from 'styled-components';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
-import Breadcrumbs from 'components/Breadcrumbs';
 
 import Page from './Page';
 
 const normalizePrice = price => String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
-
-const Container = styled(Box)`
-    margin: 0 auto;
-    width: ${({theme}) => theme.maxWidths.main};
-`;
 
 const CartItemStyle = styled(Flex)`
     align-items: center;
@@ -172,10 +166,7 @@ const CartItem = ({
                 <Button className='plus' onClick={increaseCount} />
                 <Delete onClick={deleteProductFromCart} />
             </Flex>
-            <div className='cart__price text text_weight_semibold text_size_l'>
-                {normalizePrice(price)}
-                {' '}P
-            </div>
+            <Text size='l'>{normalizePrice(price)} ₽</Text>
         </CartItemStyle>
     );
 };
@@ -185,53 +176,47 @@ const Cart = ({cart, deleteProduct, changeCountOfProductInCart}) => {
     const commonPrice = reduce(cart, (result, {product, count}) => result + product.price * count, 0);
 
     return (
-        <Page>
-            <Flex>
-                <Container>
-                    <Breadcrumbs catalog={[{name: 'Корзина', link: '/cart'}]} />
-                    <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>Корзина</Text>
-                    <Container mb='150px'>
-                        <Flex flexDirection='column'>
-                            {
-                                cart.length > 0
-                                && products.map((el, index) => {
-                                    const count = find(cart, ['articul', el.articul]).count;
+        <Page title='Корзина' breadcrumbs={[{name: 'Корзина', link: '/cart'}]}>
+            <Box mb='150px'>
+                <Flex flexDirection='column'>
+                    {
+                        cart.length > 0
+                        && products.map((el, index) => {
+                            const count = find(cart, ['articul', el.articul]).count;
 
-                                    return (
-                                        <CartItem
-                                            key={index}
-                                            image={el.images[0].image}
-                                            name={el.name}
-                                            price={el.price}
-                                            count={count}
-                                            articul={el.articul}
-                                            info={el.info}
-                                            nalichie={el.nalichie}
-                                            catalog={el.catalog}
-                                            cart={cart}
-                                            deleteProduct={deleteProduct}
-                                            changeCountOfProductInCart={changeCountOfProductInCart}
-                                        />
-                                    );
-                                })
-                            }
-                            {
-                                cart.length === 0
-                                && <Empty>Корзина пуста!</Empty>
-                            }
-                        </Flex>
-                        {
-                            cart.length > 0
-                            && (
-                                <Price>
-                                    Итоговая цена:
-                                    {normalizePrice(commonPrice)}
-                                </Price>
-                            )
-                        }
-                    </Container>
-                </Container>
-            </Flex>
+                            return (
+                                <CartItem
+                                    key={index}
+                                    image={el.images[0].image}
+                                    name={el.name}
+                                    price={el.price}
+                                    count={count}
+                                    articul={el.articul}
+                                    info={el.info}
+                                    nalichie={el.nalichie}
+                                    catalog={el.catalog}
+                                    cart={cart}
+                                    deleteProduct={deleteProduct}
+                                    changeCountOfProductInCart={changeCountOfProductInCart}
+                                />
+                            );
+                        })
+                    }
+                    {
+                        cart.length === 0
+                        && <Empty>Корзина пуста!</Empty>
+                    }
+                </Flex>
+                {
+                    cart.length > 0
+                    && (
+                        <Price>
+                            Итоговая цена:
+                            {normalizePrice(commonPrice)}
+                        </Price>
+                    )
+                }
+            </Box>
         </Page>
     );
 };

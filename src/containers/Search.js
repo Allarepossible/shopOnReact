@@ -1,22 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Products from 'components/CategoryList';
-import Information from 'components/Information';
 import Path from 'components/Path';
-import Breadcrumbs from 'components/Breadcrumbs';
 import SortBar from 'components/SortBar';
 import Filters from 'components/Filters';
-import styled from 'styled-components';
-import Box from 'components/Box';
 import Flex from 'components/Flex';
-import Text from 'components/Text';
 
 import Page from './Page';
-
-const Container = styled(Box)`
-    margin: 0 auto;
-    width: ${({theme}) => theme.maxWidths.main};
-`;
 
 const Search = ({
     products, catalog, filters, setState,
@@ -26,28 +16,23 @@ const Search = ({
     }
 
     return (
-        <Page>
-            <Flex>
-                <Container>
-                    <Breadcrumbs catalog={[{name: 'Поиск', link: '/search'}]} />
-                    <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>{catalog.name}</Text>
-                    <Flex>
-                        <Flex flexDirection='column' width='30%'>
-                            <Filters
-                                filters={filters}
-                            />
-                        </Flex>
-                        <Flex flexDirection='column' width='67%'>
-                            <SortBar />
-                            <Products
-                                catalogId={catalog.id}
-                            />
-                            <Path />
-                        </Flex>
-                    </Flex>
-                </Container>
+        <Page
+            withInformation='true'
+            title={catalog.name}
+            breadcrumbs={[{name: 'Поиск', link: '/search'}]}
+        >
+            <Flex flexDirection='column' width='30%'>
+                <Filters
+                    filters={filters}
+                />
             </Flex>
-            <Information />
+            <Flex flexDirection='column' width='67%'>
+                <SortBar />
+                <Products
+                    catalogId={catalog.id}
+                />
+                <Path />
+            </Flex>
         </Page>
     );
 };
