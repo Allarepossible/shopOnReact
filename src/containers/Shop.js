@@ -8,15 +8,15 @@ import Text from 'components/Text';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 
+import Page from './Page';
+
 const Container = styled(Box)`
     margin: 0 auto;
     width: ${({theme}) => theme.maxWidths.main};
 `;
 
 const Shop = () => (
-    <Flex flexDirection='column'>
-        <Header />
-        <Menu />
+    <Page>
         <Flex>
             <Container>
                 <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>Главная</Text>
@@ -25,8 +25,7 @@ const Shop = () => (
                 </Flex>
             </Container>
         </Flex>
-        <Footer />
-    </Flex>
+    </Page>
 );
 
 export default Shop;

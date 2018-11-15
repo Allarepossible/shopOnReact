@@ -10,6 +10,8 @@ import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
 
+import Page from './Page';
+
 const Container = styled(Box)`
     margin: 0 auto;
     width: ${({theme}) => theme.maxWidths.main};
@@ -56,9 +58,7 @@ const StaticPage = ({catalog, catalogs, changeView}) => {
     };
 
     return (
-        <Flex flexDirection='column'>
-            <Header />
-            <Menu />
+        <Page>
             <Container>
                 <Breadcrumbs catalog={[{name: 'Каталог', link: '/catalog/'}]} />
                 <Text fontWeight='bold' color='grey' is='h1' fontSize='xl' mb={3}>Каталог</Text>
@@ -77,8 +77,7 @@ const StaticPage = ({catalog, catalogs, changeView}) => {
                     }
                 </Flex>
             </Container>
-            <Footer />
-        </Flex>
+        </Page>
     );
 };
 

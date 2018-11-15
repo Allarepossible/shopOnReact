@@ -6,10 +6,9 @@ import styled from 'styled-components';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Menu from 'components/Menu';
 import Breadcrumbs from 'components/Breadcrumbs';
+
+import Page from './Page';
 
 const normalizePrice = price => String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
 
@@ -186,9 +185,7 @@ const Cart = ({cart, deleteProduct, changeCountOfProductInCart}) => {
     const commonPrice = reduce(cart, (result, {product, count}) => result + product.price * count, 0);
 
     return (
-        <Flex flexDirection='column'>
-            <Header />
-            <Menu />
+        <Page>
             <Flex>
                 <Container>
                     <Breadcrumbs catalog={[{name: 'Корзина', link: '/cart'}]} />
@@ -235,9 +232,7 @@ const Cart = ({cart, deleteProduct, changeCountOfProductInCart}) => {
                     </Container>
                 </Container>
             </Flex>
-
-            <Footer />
-        </Flex>
+        </Page>
     );
 };
 

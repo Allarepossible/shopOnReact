@@ -16,7 +16,6 @@ import StaticPage from './containers/StaticPage';
 import ProductPage from './containers/ProductPage';
 import reducer from './reducers';
 import theme from './theme';
-import './index.css';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 const history = syncHistoryWithStore(hashHistory, store);

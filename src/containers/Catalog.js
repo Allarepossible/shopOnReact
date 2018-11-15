@@ -1,8 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Menu from 'components/Menu';
 import Path from 'components/Path';
 import SortBar from 'components/SortBar';
 import Breadcrumbs from 'components/Breadcrumbs';
@@ -13,6 +10,8 @@ import styled from 'styled-components';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
+
+import Page from './Page';
 
 const Container = styled(Box)`
     margin: 0 auto;
@@ -28,9 +27,7 @@ const Catalog = ({
     }
 
     return (
-        <Flex flexDirection='column'>
-            <Header />
-            <Menu active={catalog.id} />
+        <Page>
             <Flex>
                 <Container>
                     <Breadcrumbs
@@ -58,8 +55,7 @@ const Catalog = ({
                 </Container>
             </Flex>
             <Information />
-            <Footer />
-        </Flex>
+        </Page>
     );
 };
 const mapStateToProps = (state, ownProps) => ({

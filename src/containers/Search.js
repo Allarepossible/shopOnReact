@@ -1,10 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
 import Products from 'components/CategoryList';
 import Information from 'components/Information';
-import Menu from 'components/Menu';
 import Path from 'components/Path';
 import Breadcrumbs from 'components/Breadcrumbs';
 import SortBar from 'components/SortBar';
@@ -13,6 +10,8 @@ import styled from 'styled-components';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
+
+import Page from './Page';
 
 const Container = styled(Box)`
     margin: 0 auto;
@@ -27,9 +26,7 @@ const Search = ({
     }
 
     return (
-        <Flex flexDirection='column'>
-            <Header />
-            <Menu />
+        <Page>
             <Flex>
                 <Container>
                     <Breadcrumbs catalog={[{name: 'Поиск', link: '/search'}]} />
@@ -51,8 +48,7 @@ const Search = ({
                 </Container>
             </Flex>
             <Information />
-            <Footer />
-        </Flex>
+        </Page>
     );
 };
 

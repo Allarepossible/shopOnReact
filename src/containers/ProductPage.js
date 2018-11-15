@@ -1,9 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {find} from 'lodash';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Menu from 'components/Menu';
 import Breadcrumbs from 'components/Breadcrumbs';
 import Features from 'components/Features';
 import Raiting from 'components/Raiting';
@@ -13,6 +10,8 @@ import styled from 'styled-components';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 import Text from 'components/Text';
+
+import Page from './Page';
 
 const Container = styled(Box)`
     margin: 0 auto;
@@ -34,9 +33,7 @@ const ProductPage = ({
     };
 
     return (
-        <Flex flexDirection='column'>
-            <Header />
-            <Menu />
+        <Page>
             <Flex pb='50px'>
                 <Container>
                     <Breadcrumbs
@@ -76,8 +73,7 @@ const ProductPage = ({
                     </Flex>
                 </Container>
             </Flex>
-            <Footer />
-        </Flex>
+        </Page>
     );
 };
 const mapStateToProps = (state, ownProps) => ({
