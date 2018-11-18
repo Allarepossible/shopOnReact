@@ -35,11 +35,7 @@ const ProductPage = ({
                 <Flex justifyContent='space-between'>
                     <SlideShow
                         images={product.images}
-                        bigImage={product.images[product.activeIndex]}
-                        articul={product.articul}
                         name={product.name}
-                        activeIndex={product.activeIndex}
-                        catalogId={product.catalogId}
                     />
                     <Flex
                         flexDirection='column'

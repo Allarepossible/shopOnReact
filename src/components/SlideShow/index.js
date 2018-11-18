@@ -1,18 +1,16 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, {Component} from 'react';
 import styled from 'styled-components';
-import {find} from 'lodash';
 import Box from 'components/Box';
 import Flex from 'components/Flex';
 
 const SlideShowStyle = styled.div`
-    width: ${({type}) => type === 'small' ? 138 : 250}px;
+    width: ${({type}) => (type === 'small' ? 138 : 250)}px;
     margin-bottom: 15px;
 `;
 
 const WrapImg = styled(Flex)`
-    width: ${({type}) => type === 'small' ? 138 : 250}px;
-    height: ${({type}) => type === 'small' ? 138 : 250}px;
+    width: ${({type}) => (type === 'small' ? 138 : 250)}px;
+    height: ${({type}) => (type === 'small' ? 138 : 250)}px;
     margin-bottom: 15px;
 
     border: 1px solid #dee1e4;
@@ -29,76 +27,65 @@ const Item = styled(Box)`
     position: relative;
     cursor: pointer;
 
-    width: ${({type}) => type === 'small' ? 33 : 60}px;
-    height: ${({type}) => type === 'small' ? 33 : 60}px;
+    width: ${({type}) => (type === 'small' ? 33 : 60)}px;
+    height: ${({type}) => (type === 'small' ? 33 : 60)}px;
 
-    border: 1px solid #dee1e4;
+    border: 1px solid;
+    border-color: ${({active}) => (active ? '#ff6e35' : '#dee1e4')};
     border-radius: 2px;
     background-color: #fff;
     
     &:hover {
-        border-color: #333;
-    }
-    
-    &.active, &.active:hover {
-        border-color: #ff6e35;
+        border-color: ${({active}) => (active ? '#ff6e35' : '#333')};
     }
 `;
 
-const SlideShow = ({product, products, changeSlide, type}) => {
-    const bigImage = product.images[product.activeIndex].image;
+class SlideShow extends Component {
+    constructor(props) {
+        super(props);
 
-    const selectMiniImage = e => {
-        const active = e.currentTarget.getAttribute('data');
-        product.activeIndex = active;
-        changeSlide(product, products);
-    };
+        this.state = {
+            activeImage: 0,
+        };
 
-    return (
-        <SlideShowStyle type={type}>
-            <WrapImg justifyContent='center' alignItems='center' type={type}>
-                <Img src={bigImage} alt={product.name} type={type} />
-            </WrapImg>
-            <Flex justifyContent='space-around'>
-                {
-                    product.images.map((image, i) => {
-                        const active = i === Number(product.activeIndex) ? ' active' : '';
+        this.onClickPreview = this.onClickPreview.bind(this);
+    }
 
-                        return (
-                            <Item className={active} key={i} type={type}>
+    onClickPreview(e) {
+        const activeIndex = e.currentTarget.getAttribute('index');
+
+        this.setState({activeImage: activeIndex});
+    }
+
+    render() {
+        const {images, type, name} = this.props;
+        const bigImage = images[this.state.activeImage].image;
+
+        return (
+            <SlideShowStyle type={type}>
+                <WrapImg justifyContent='center' alignItems='center' type={type}>
+                    <Img src={bigImage} alt={name} type={type} />
+                </WrapImg>
+                <Flex justifyContent='space-around'>
+                    {
+                        images.map((image, i) => (
+                            <Item active={i === Number(this.state.activeImage) ? 'yes' : undefined} key={i} type={type}>
                                 <Flex
                                     justifyContent='center'
                                     alignItems='center'
                                     height='100%'
-                                    onClick={selectMiniImage}
-                                    data={i}
+                                    onClick={this.onClickPreview}
+                                    index={i}
                                 >
                                     <Img src={image.image} alt='' type={type} />
                                 </Flex>
                             </Item>
-                        );
-                    })
-                }
-            </Flex>
-        </SlideShowStyle>
-    );
-};
+                        ))
+                    }
+                </Flex>
+            </SlideShowStyle>
+        );
+    }
+}
 
-const findInCatalog = ({catalogId, articul}, {catalogs}) => find(find(catalogs, {id: catalogId}).products, {articul});
-
-const mapStateToProps = (state, {articul, catalogId, type}) => ({
-    type,
-    products: state.products,
-    product: find(state.products, {articul}) || findInCatalog({articul, catalogId}, state),
-});
-
-const mapDispatchToProps = dispatch => ({
-    changeSlide: (product, products) => {
-        const payload = product;
-        const payload2 = products;
-
-        dispatch({type: 'CHANGE_SLIDE', payload, payload2});
-    },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SlideShow);
+export default SlideShow;

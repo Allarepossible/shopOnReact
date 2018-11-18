@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Path from 'components/Path';
 import SortBar from 'components/SortBar';
 import CategoryList from 'components/CategoryList';
 import Filters from 'components/Filters';
@@ -8,44 +7,50 @@ import Flex from 'components/Flex';
 
 import Page from './Page';
 
-const Catalog = ({
-    products, catalog, filters, setState,
-}) => {
-    const catalogLink = `/catalog/${catalog.id}`;
-    if (products === 0) {
-        setState(catalog.products, catalog.filters);
+class Catalog extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            products: props.products,
+            filters: props.filters,
+        };
     }
 
-    return (
-        <Page
-            withInformation={true}
-            title={catalog.name}
-            breadcrumbs={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
-        >
-            <Flex justifyContent='space-between'>
-                <Flex flexDirection='column' width='30%'>
-                    <Filters
-                        filters={filters}
-                    />
+    render() {
+        const {products, catalog, filters, setState} = this.props;
+        const catalogLink = `/catalog/${catalog.id}`;
+        if (products === 0) {
+            setState(catalog.products, catalog.filters);
+        }
+
+        return (
+            <Page
+                withInformation={true}
+                title={catalog.name}
+                breadcrumbs={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
+            >
+                <Flex justifyContent='space-between'>
+                    <Flex flexDirection='column' width='30%'>
+                        <Filters
+                            filters={filters}
+                        />
+                    </Flex>
+                    <Flex flexDirection='column' width='67%'>
+                        <SortBar />
+                        <CategoryList
+                            catalogId={catalog.id}
+                        />
+                    </Flex>
                 </Flex>
-                <Flex flexDirection='column' width='67%'>
-                    <SortBar />
-                    <CategoryList
-                        catalogId={catalog.id}
-                        countOfProducts={products.length}
-                    />
-                    {
-                        products.length > 9
-                        && <Path />
-                    }
-                </Flex>
-            </Flex>
-        </Page>
-    );
-};
-const mapStateToProps = (state, ownProps) => ({
+            </Page>
+        );
+    }
+}
+
+const mapStateToProps = (state, {params}) => ({
     products: state.products,
-    catalog: state.catalogs.find(catalog => catalog.id === ownProps.params.catalogId),
+    catalog: state.catalogs.find(catalog => catalog.id === params.catalogId),
     filters: state.filters,
 });
 

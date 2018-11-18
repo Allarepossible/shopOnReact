@@ -90,8 +90,6 @@ const ProductSnippet = ({
     ratio,
     price,
     nalichie,
-    id,
-    activeIndex,
     catalogId,
     addToCart,
     catalogs,
@@ -110,14 +108,8 @@ const ProductSnippet = ({
             <ProductSnippetStyle alignItems='center' flexDirection='column' mb={16} p={20}>
                 <SlideShow
                     type='small'
-                    key={id}
-                    id={id}
                     images={images}
-                    bigImage={images[activeIndex]}
-                    articul={articul}
                     name={name}
-                    activeIndex={activeIndex}
-                    catalogId={catalogId}
                 />
                 <Box maxWidth='184px' mb={15} textAlign='center'>
                     <Text fontWeight='bold' fontSize='m'>{name}</Text>
@@ -138,14 +130,8 @@ const ProductSnippet = ({
                 <Flex flexDirection='column'>
                     <SlideShow
                         type='small'
-                        key={id}
-                        id={id}
                         images={images}
-                        bigImage={images[activeIndex]}
-                        articul={articul}
                         name={name}
-                        activeIndex={activeIndex}
-                        catalogId={catalogId}
                     />
                     <Text fontWeight='bold' color='grey' fontSize='s'>Артикул {articul}</Text>
                 </Flex>
