@@ -1,46 +1,72 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, {Component, Fragment} from 'react';
+import SortBar from 'components/SortBar';
 import ProductSnippet from 'containers/ProductSnippet';
 import Flex from 'components/Flex';
 
-const CategoryList = ({
-    products, views, catalogId,
-}) => {
-    const activeView = views.filter(view => view.active)[0].name;
-    const justifyContent = activeView === 'tile' && 'space-between';
-    const flexWrap = activeView === 'tile' && 'wrap';
-    const flexDirection = activeView !== 'tile' && 'column';
+class CategoryList extends Component {
+    constructor(props) {
+        super(props);
 
-    return (
-        <Flex mb={30} flexWrap={flexWrap} flexDirection={flexDirection} justifyContent={justifyContent}>
-            {
-                products.filter(product => product.name).map((el, index) => (
-                    <ProductSnippet
-                        key={index}
-                        id={index}
-                        name={el.name}
-                        info={el.info}
-                        price={el.price}
-                        nalichie={el.nalichie}
-                        ratio={el.ratio}
-                        articul={el.articul}
-                        images={el.images}
-                        feature={el.feature}
-                        activeIndex={el.activeIndex}
-                        view={activeView}
-                        catalogId={catalogId}
-                    />
-                ))
-            }
-        </Flex>
-    );
-};
+        this.state = {
+            view: 'tile',
+            sort: 'date',
+            products: props.products,
+        };
 
-const mapStateToProps = (state, {catalogId, countOfProducts}) => ({
-    catalogId,
-    countOfProducts,
-    views: state.views,
-    products: state.products,
-});
+        this.changeViewProducts = this.changeViewProducts.bind(this);
+        this.changeSortProduct = this.changeSortProduct.bind(this);
+    }
 
-export default connect(mapStateToProps)(CategoryList);
+    changeViewProducts(e) {
+        const activeView = e.currentTarget.getAttribute('data-view');
+
+        this.setState({view: activeView});
+    }
+
+    changeSortProduct(e) {
+        const activeSort = e.target.value;
+        const sortedProducts = this.props.products.sort((a, b) => a[activeSort] - b[activeSort]);
+
+        this.setState({sort: activeSort});
+        this.setState({products: sortedProducts});
+    }
+
+    render() {
+        const {products, view} = this.state;
+        const justifyContent = view === 'tile' && 'space-between';
+        const flexWrap = view === 'tile' && 'wrap';
+        const flexDirection = view !== 'tile' && 'column';
+
+        return (
+            <Fragment>
+                <SortBar
+                    activeView={this.state.view}
+                    changeViewProducts={this.changeViewProducts}
+                    changeSortProduct={this.changeSortProduct}
+                />
+                <Flex mb={30} flexWrap={flexWrap} flexDirection={flexDirection} justifyContent={justifyContent}>
+                    {
+                        products.filter(product => product.name).map((el, index) => (
+                            <ProductSnippet
+                                key={index}
+                                id={index}
+                                name={el.name}
+                                info={el.info}
+                                price={el.price}
+                                nalichie={el.nalichie}
+                                ratio={el.ratio}
+                                articul={el.articul}
+                                images={el.images}
+                                feature={el.feature}
+                                activeIndex={el.activeIndex}
+                                view={view}
+                            />
+                        ))
+                    }
+                </Flex>
+            </Fragment>
+        );
+    }
+}
+
+export default CategoryList;

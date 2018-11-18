@@ -32,7 +32,7 @@ const FooterLink = styled(Link)`
 
 
 const MenuItem = ({
-    name, id, active, changeCatalog, type,
+    name, id, active, type,
 }) => {
     const ml = type === 'footer' ? 20 : 0;
 
@@ -43,7 +43,6 @@ const MenuItem = ({
                     <MenuLink
                         to={`/catalog/${id}`}
                         className={active && 'active'}
-                        onClick={changeCatalog}
                         data={id}
                         activeClassName="active"
                     >
@@ -53,7 +52,6 @@ const MenuItem = ({
                     <FooterLink
                         to={`/catalog/${id}`}
                         className={active}
-                        onClick={changeCatalog}
                         data={id}
                     >
                         {name}

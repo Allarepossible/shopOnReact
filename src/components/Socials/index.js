@@ -6,11 +6,11 @@ const Link = styled(Flex)`
     justify-content: center;
     align-items: center;
 
-    width: ${({type}) => type === 'footer' ? 44 : 26}px;
-    height: ${({type}) => type === 'footer' ? 44 : 26}px;
+    width: ${({type}) => (type === 'footer' ? 44 : 26)}px;
+    height: ${({type}) => (type === 'footer' ? 44 : 26)}px;
 
     border-radius: 50%;
-    background-color: ${({type}) => type === 'footer' ? '#fff' : '#282828'};
+    background-color: ${({type}) => (type === 'footer' ? '#fff' : '#282828')};
     
     & + & {
         margin-left: 20px;

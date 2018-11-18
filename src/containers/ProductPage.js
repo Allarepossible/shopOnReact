@@ -26,11 +26,14 @@ const ProductPage = ({
     };
 
     return (
-        <Page title={product.name} breadcrumbs={[
-            {name: 'Каталог', link: '/catalog'},
-            {name: catalog.name, link: catalogLink},
-            {name: product.name, link: catalogLink + product.articul},
-        ]}>
+        <Page
+            title={product.name}
+            breadcrumbs={[
+                {name: 'Каталог', link: '/catalog'},
+                {name: catalog.name, link: catalogLink},
+                {name: product.name, link: catalogLink + product.articul},
+            ]}
+        >
             <Flex flexDirection='column' mb='50px'>
                 <Flex justifyContent='space-between'>
                     <SlideShow

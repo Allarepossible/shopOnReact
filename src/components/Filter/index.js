@@ -264,8 +264,8 @@ const Filter = ({filter, changeFilter}) => {
     );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-    filter: state.filters.filter(item => item.id === ownProps.id)[0],
+const mapStateToProps = (state, {filter}) => ({
+    filter,
 });
 
 const mapDispatchToProps = dispatch => ({

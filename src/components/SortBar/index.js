@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import styled from 'styled-components';
 import Box from 'components/Box';
 import Text from 'components/Text';
@@ -54,98 +53,51 @@ const View = styled(Box)`
     }
 `;
 
+const VIEWS = ['tile', 'column', 'line'];
+
 const ViewItem = ({
-    id, name, active, changeViewProducts,
+    name, active, changeViewProducts,
 }) => {
     const classname = active ? `${name} active` : name;
 
     return (
         <Item>
-            <div onClick={changeViewProducts} data={id}>
+            <div onClick={changeViewProducts} data-view={name}>
                 <View className={classname} />
             </div>
         </Item>
     );
 };
 
-const SortBar = ({
-    products, views, sorts, changeView, changeSort, sortProduct,
-}) => {
-    const changeViewProducts = e => {
-        const newActiveId = Number(e.currentTarget.getAttribute('data'));
-        const newViews = views.map((view, id) => {
-            view.active = id === newActiveId;
-
-            return view;
-        });
-
-        changeView(newViews);
-    };
-
-    const changeSortProducts = e => {
-        const activeSort = e.target.value;
-        const newSort = sorts.map(sort => {
-            sort.active = sort.name === activeSort;
-
-            return sort;
-        });
-        const sortedProducts = products.sort((a, b) => a[activeSort] - b[activeSort]);
-
-        changeSort(newSort);
-        sortProduct(sortedProducts);
-    };
-
-    return (
-        <Container>
-            <Flex>
-                <Text fontSize='s' color='grey' lineHeight='40px'>Сортировать по</Text>
-                <Box ml={3} pt={2} pb={2}>
-                    <select name="sort" onChange={changeSortProducts}>
-                        <option value="date">по новизне</option>
-                        <option value="ratio">по рейтингу</option>
-                        <option value="price">по цене</option>
-                    </select>
-                </Box>
+const SortBar = ({changeViewProducts, changeSortProducts, activeView}) => (
+    <Container>
+        <Flex>
+            <Text fontSize='s' color='grey' lineHeight='40px'>Сортировать по</Text>
+            <Box ml={3} pt={2} pb={2}>
+                <select name="sort" onChange={changeSortProducts}>
+                    <option value="date">по новизне</option>
+                    <option value="ratio">по рейтингу</option>
+                    <option value="price">по цене</option>
+                </select>
+            </Box>
+        </Flex>
+        <Flex>
+            <Text fontSize='s' color='grey' lineHeight='40px'>Вид каталога</Text>
+            <Flex ml={3}>
+                {
+                    VIEWS.map((view, index) => (
+                        <ViewItem
+                            key={index}
+                            id={index}
+                            name={view}
+                            active={activeView === view}
+                            changeViewProducts={changeViewProducts}
+                        />
+                    ))
+                }
             </Flex>
-            <Flex>
-                <Text fontSize='s' color='grey' lineHeight='40px'>Вид каталога</Text>
-                <Flex ml={3}>
-                    {
-                        views.map((view, index) => (
-                            <ViewItem
-                                key={index}
-                                id={index}
-                                name={view.name}
-                                active={view.active}
-                                changeViewProducts={changeViewProducts}
-                            />
-                        ))
-                    }
-                </Flex>
-            </Flex>
-        </Container>
-    );
-};
+        </Flex>
+    </Container>
+);
 
-const mapStateToProps = state => ({
-    products: state.products,
-    views: state.views,
-    sorts: state.sort,
-});
-
-const mapDispatchToProps = dispatch => ({
-    changeView: newViews => {
-        const payload = newViews;
-        dispatch({type: 'CHANGE_VIEW', payload});
-    },
-    changeSort: newSort => {
-        const payload = newSort;
-        dispatch({type: 'CHANGE_SORT', payload});
-    },
-    sortProduct: sortProducts => {
-        const payload = sortProducts;
-        dispatch({type: 'SORT_PRODUCTS', payload});
-    },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SortBar);
+export default SortBar;

@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import styled from 'styled-components';
 import Box from 'components/Box';
 
@@ -55,19 +54,13 @@ const FilterItem = styled(Box)`
     }
 `;
 
-const CheckboxFilter = ({ownProps}) => (
+const CheckboxFilter = ({name}) => (
     <FilterItem>
-        <input type='checkbox' id={ownProps.name} />
-        <LabelCheckBox htmlFor={ownProps.name}>
-            {ownProps.name}
+        <input type='checkbox' id={name} />
+        <LabelCheckBox htmlFor={name}>
+            {name}
         </LabelCheckBox>
     </FilterItem>
 );
 
-const mapStateToProps = (state, ownProps) => ({
-    activeFilters: state.activeFilters,
-    products: state.products,
-    ownProps,
-});
-
-export default connect(mapStateToProps)(CheckboxFilter);
+export default CheckboxFilter;

@@ -6,9 +6,7 @@ import products from './products';
 import activeSlide from './activeSlide';
 import activeFilters from './activeFilters';
 import filters from './filters';
-import sort from './sort';
 import cart from './cart';
-import views from './views';
 
 export default combineReducers({
     routing: routerReducer,
@@ -16,8 +14,6 @@ export default combineReducers({
     activeSlide,
     catalogs,
     filters,
-    views,
-    sort,
     cart,
     activeFilters,
 });
