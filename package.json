@@ -6,12 +6,16 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "lint": "./node_modules/.bin/eslint src",
-    "lint-fixup": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
+    "lint-fixup": "./node_modules/.bin/eslint src --ext .js,.jsx --fix",
+    "server": "node server/index.js",
+    "webpack-devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0"
   },
   "dependencies": {
     "@types/react": "^16.7.6",
     "@types/react-dom": "^16.0.9",
+    "body-parser": "^1.18.3",
     "clean-tag": "^2.0.2",
+    "express": "^4.16.4",
     "lodash": "^4.17.4",
     "polished": "^2.3.0",
     "ramda": "^0.25.0",
