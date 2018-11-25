@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import CheckboxFilter from 'components/CheckboxFilter';
 import styled from 'styled-components';
-import Box from 'components/Box';
-import Text from 'components/Text';
-import Flex from 'components/Flex';
+
+import Box from '../Box';
+import Text from '../Text';
+import Flex from '../Flex';
+import CheckboxFilter from '../CheckboxFilter';
 
 const FiltersItem = styled(Box)`
     padding: 10px 15px;

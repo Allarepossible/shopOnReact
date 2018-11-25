@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, {withTheme} from 'styled-components';
-import Box from 'components/Box';
-import Text from 'components/Text';
+
+import Box from './Box';
+import Text from './Text';
 
 const InfoContainer = styled(Box)`
     margin: 0 auto;

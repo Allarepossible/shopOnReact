@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import styled from 'styled-components';
-import Box from 'components/Box';
-import Flex from 'components/Flex';
-import Text from 'components/Text';
 
+import Box from '../components/Box';
+import Flex from '../components/Flex';
+import Text from '../components/Text';
 import Page from './Page';
 
 const CatalogLink = styled(Link)`

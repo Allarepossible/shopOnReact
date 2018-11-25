@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Flex from 'components/Flex';
-import Box from 'components/Box';
+
+import Flex from '../Flex';
+import Box from '../Box';
 
 const Star = styled(Box)`
     width: 16px;

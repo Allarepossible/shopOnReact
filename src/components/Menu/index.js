@@ -2,9 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {find, sortBy} from 'lodash';
 import styled from 'styled-components';
-import Flex from 'components/Flex';
-import Box from 'components/Box';
-import MenuItem from 'components/MenuItem';
+
+import Flex from '../Flex';
+import Box from '../Box';
+import MenuItem from '../MenuItem';
 
 const Container = styled(Box)`
     margin: 0 auto;

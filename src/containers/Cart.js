@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {find, reduce, map} from 'lodash';
 import styled from 'styled-components';
-import Box from 'components/Box';
-import Flex from 'components/Flex';
-import Text from 'components/Text';
 
+import Box from '../components/Box';
+import Flex from '../components/Flex';
+import Text from '../components/Text';
 import Page from './Page';
 
 const normalizePrice = price => String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');

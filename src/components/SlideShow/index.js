@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import Box from 'components/Box';
-import Flex from 'components/Flex';
+
+import Box from '../Box';
+import Flex from '../Flex';
 
 const SlideShowStyle = styled.div`
     width: ${({type}) => (type === 'small' ? 138 : 250)}px;

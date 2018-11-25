@@ -1,13 +1,13 @@
 import React from 'react';
-import Flex from 'components/Flex';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Menu from 'components/Menu';
-import Information from 'components/Information';
-import Breadcrumbs from 'components/Breadcrumbs';
-import Container from 'components/Container';
-import Text from 'components/Text';
 
+import Flex from '../components/Flex';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Menu from '../components/Menu';
+import Information from '../components/Information';
+import Breadcrumbs from '../components/Breadcrumbs';
+import Container from '../components/Container';
+import Text from '../components/Text';
 import GlobalStyle from '../global-styles.js';
 
 const Page = ({children, withInformation, title, breadcrumbs}) => (

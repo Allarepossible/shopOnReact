@@ -2,10 +2,11 @@ import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {map, reduce} from 'lodash';
-import Socials from 'components/Socials';
 import styled from 'styled-components';
-import Flex from 'components/Flex';
-import Box from 'components/Box';
+
+import Flex from '../Flex';
+import Socials from '../Socials';
+import Box from '../Box';
 
 const Top = styled(Flex)`
     border-bottom: 2px solid #ebedef;

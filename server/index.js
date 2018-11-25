@@ -1,41 +1,65 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+import qs from 'qs';
+import path from 'path';
+import Express from 'express';
+import React from 'react';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {renderToString} from 'react-dom/server';
 
-import {serverPort} from '../config.json';
-import * as db from './utils/DataBaseUtils';
+import {fetchCounter} from '../api/counter';
+import counterApp from '../src/reducers';
+import App from '../src/containers/App';
 
-// Initialization of express application
-const app = express();
+const app = Express();
+const port = 8080;
 
-// Set up connection of database
-db.setUpConnection();
-//db.createProducts();
+app.use('/static', Express.static('static'));
 
-// Using bodyParser middleware
-app.use(bodyParser.json());
-app.use(cors({origin: '*'}));
+const handleRender = (req, res) => {
+    fetchCounter(apiResult => {
+        // Read the counter from the request, if provided
+        const params = qs.parse(req.query);
+        const products = parseInt(params.counter, 10) || apiResult || 0;
+        console.log('====!!!!====', apiResult)
+        // Compile an initial state
+        let preloadedState = {products};
 
-app.get('/notes', (req, res) => {
-    db.listNotes().then(data => res.send(data));
-});
+        // Create a new Redux store instance
+        const store = createStore(counterApp, preloadedState)
 
-app.get('/categories', (req, res) => {
-    db.listCategories().then(data => res.send(data));
-});
+        // Render the component to a string
+        const html = renderToString(
+            <Provider store={store}>
+                <App />
+            </Provider>
+        );
 
-app.post('/notes', (req, res) => {
-    db.createNote(req.body).then(data => res.send(data));
-});
+        // Grab the initial state from our Redux store
+        const finalState = store.getState()
+        console.log('====!!!!!!!!!!!!!====', html)
+        // Send the rendered page back to the client
+        res.send(renderFullPage(html, finalState));
+    });
+}
 
-app.post('/categories', (req, res) => {
-    db.createCategory(req.body).then(data => res.send(data));
-});
+function renderFullPage(html, preloadedState) {
+    return `
+        <!doctype html>
+        <html>
+          <head>
+            <title>Redux Shop</title>
+          </head>
+          <body>
+            <div id="root">${html}</div>
+            <script>
+              window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+            </script>
+            <script src="/static/bundle.js"></script>
+          </body>
+        </html>
+    `;
+}
 
-app.delete('/notes/:id', (req, res) => {
-    db.deleteNote(req.params.id).then(data => res.send(data));
-});
+app.use(handleRender);
 
-const server = app.listen(serverPort, () => {
-    console.log(`Server is up and running on port ${serverPort}`);
-});
+app.listen(port)

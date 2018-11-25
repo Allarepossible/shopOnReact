@@ -1,14 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import CategoryList from 'components/CategoryList';
-import Filters from 'components/Filters';
-import Flex from 'components/Flex';
+
+import CategoryList from '../components/CategoryList';
+import Filters from '../components/Filters';
+import Flex from '../components/Flex';
 
 import Page from './Page';
 
 const Catalog = ({catalog}) => {
     const catalogLink = `/catalog/${catalog.id}`;
-console.log('===============', catalog, catalog.products)
+
     return (
         <Page
             withInformation={true}

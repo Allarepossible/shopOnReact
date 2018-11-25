@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import Text from 'components/Text';
-import Flex from 'components/Flex';
-import Box from 'components/Box';
-import Socials from 'components/Socials';
-import MenuItem from 'components/MenuItem';
+
+import Text from '../Text';
+import Flex from '../Flex';
+import Box from '../Box';
+import Socials from '../Socials';
+import MenuItem from '../MenuItem';
 
 const FooterContainer = styled(Box)`
     padding: 30px 0 5px;

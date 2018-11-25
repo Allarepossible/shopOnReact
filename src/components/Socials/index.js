@@ -1,6 +1,7 @@
 import React from 'react';
-import Flex from 'components/Flex';
 import styled from 'styled-components';
+
+import Flex from '../Flex';
 
 const Link = styled(Flex)`
     justify-content: center;

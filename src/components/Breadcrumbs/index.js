@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 import styled from 'styled-components';
-import Box from 'components/Box';
-import Flex from 'components/Flex';
+import Box from '../Box';
+import Flex from '../Flex';
 
 const Container = styled(Flex)`
     margin: 0 auto;

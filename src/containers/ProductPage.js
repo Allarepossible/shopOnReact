@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {find} from 'lodash';
-import Features from 'components/Features';
-import Raiting from 'components/Raiting';
-import SlideShow from 'components/SlideShow';
-import Button from 'components/Button';
-import Box from 'components/Box';
-import Flex from 'components/Flex';
-import Text from 'components/Text';
 
+import Features from '../components/Features';
+import Raiting from '../components/Raiting';
+import SlideShow from '../components/SlideShow';
+import Button from '../components/Button';
+import Box from '../components/Box';
+import Flex from '../components/Flex';
+import Text from '../components/Text';
 import Page from './Page';
 
 const ProductPage = ({

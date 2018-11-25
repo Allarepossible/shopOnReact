@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import styled from 'styled-components';
-import Box from 'components/Box';
+import Box from '../Box';
 
 const MenuLink = styled(Link)`
     padding: 15px;

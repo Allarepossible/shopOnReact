@@ -2,13 +2,14 @@ import React from 'react';
 import {Link} from 'react-router';
 import {find} from 'lodash';
 import styled, {withTheme} from 'styled-components';
-import Text from 'components/Text';
-import Box from 'components/Box';
-import Flex from 'components/Flex';
-import Button from 'components/Button';
-import SlideShow from 'components/SlideShow';
-import Raiting from 'components/Raiting';
-import Features from 'components/Features';
+
+import Text from '../Text';
+import Box from '../Box';
+import Flex from '../Flex';
+import Button from '../Button';
+import SlideShow from '../SlideShow';
+import Raiting from '../Raiting';
+import Features from '../Features';
 
 const ProductSnippetStyle = styled(Flex)`
     border: 1px solid #dee1e4;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Flex from 'components/Flex';
+
+import Flex from '../Flex';
 
 const Button = styled.button`
     font-size: 11px;

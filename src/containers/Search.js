@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Products from 'components/CategoryList';
-import Path from 'components/Path';
-import SortBar from 'components/SortBar';
-import Filters from 'components/Filters';
-import Flex from 'components/Flex';
+
+import Products from '../components/CategoryList';
+import Path from '../components/Path';
+import SortBar from '../components/SortBar';
+import Filters from '../components/Filters';
+import Flex from '../components/Flex';
 
 import Page from './Page';
 

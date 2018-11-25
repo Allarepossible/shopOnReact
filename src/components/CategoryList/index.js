@@ -1,7 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import SortBar from 'components/SortBar';
-import ProductSnippet from 'containers/ProductSnippet';
-import Flex from 'components/Flex';
+
+import Flex from '../Flex';
+import SortBar from '../SortBar';
+import ProductSnippet from '../../containers/ProductSnippet';
 
 class CategoryList extends Component {
     constructor(props) {

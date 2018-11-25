@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Flex from 'components/Flex';
-import Text from 'components/Text';
+
+import Flex from '../Flex';
+import Text from '../Text';
 
 const FeatureItem = styled(Flex)`
     padding: 1px 3px;
