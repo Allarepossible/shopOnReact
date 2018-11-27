@@ -6,7 +6,6 @@ import Path from '../components/Path';
 import SortBar from '../components/SortBar';
 import Filters from '../components/Filters';
 import Flex from '../components/Flex';
-
 import Page from './Page';
 
 const Search = ({

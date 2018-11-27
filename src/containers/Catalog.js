@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import CategoryList from '../components/CategoryList';
 import Filters from '../components/Filters';
 import Flex from '../components/Flex';
-
 import Page from './Page';
 
 const Catalog = ({catalog}) => {
