@@ -20,7 +20,6 @@ const handleRender = (req, res) => {
         // Read the counter from the request, if provided
         const params = qs.parse(req.query);
         const products = parseInt(params.counter, 10) || apiResult || 0;
-        console.log('====!!!!====', apiResult)
         // Compile an initial state
         let preloadedState = {products};
 
@@ -36,7 +35,6 @@ const handleRender = (req, res) => {
 
         // Grab the initial state from our Redux store
         const finalState = store.getState()
-        console.log('====!!!!!!!!!!!!!====', html)
         // Send the rendered page back to the client
         res.send(renderFullPage(html, finalState));
     });
