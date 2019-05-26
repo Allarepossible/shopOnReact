@@ -1,17 +1,10 @@
-import axios from 'axios';
+import data from './mockData';
 
-import {apiPrefix} from '../../config.json';
+export const fetchProducts = id => new Promise(resolve => {
+    resolve(data.find(catalog => catalog.id === id));
+});
 
-export default {
-    listNotes() {
-        return axios.get(`${apiPrefix}/notes`);
-    },
+export const fetchCatalogs = id => new Promise(resolve => {
+    resolve(data.find(catalog => catalog.id === id));
+});
 
-    createNote(data) {
-        return axios.post(`${apiPrefix}/notes`, data);
-    },
-
-    deleteNote(noteId) {
-        return axios.delete(`${apiPrefix}/notes/${noteId}`);
-    },
-};

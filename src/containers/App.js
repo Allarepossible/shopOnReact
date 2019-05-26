@@ -8,7 +8,6 @@ import Catalog from './Catalog';
 import StaticPage from './StaticPage';
 import ProductPage from './ProductPage';
 
-
 const App = () => (
     <Router history={browserHistory}>
         <div>
