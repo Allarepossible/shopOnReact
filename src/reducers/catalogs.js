@@ -1,18 +1,13 @@
-import {indexBy, prop, merge} from 'ramda';
-
 import {
-    FETCH_DATA_SUCCESS,
+    FETCH_CATALOGS_SUCCESS,
 } from '../actionTypes';
 
-const initialState = {};
+const initialState = [];
 
-export default function catalog(state = initialState, {type, payload}) {
+export default function catalogs(state = initialState, {type, payload}) {
     switch (type) {
-        case FETCH_DATA_SUCCESS:
-            console.log(payload)
-            const newValues = indexBy(prop('id'), payload);
-
-            return merge(state, newValues)
+        case FETCH_CATALOGS_SUCCESS:
+            return payload;
         default:
             return state;
     }

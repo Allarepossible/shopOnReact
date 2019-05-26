@@ -81,7 +81,7 @@ class Footer extends Component {
 }
 
 const mapStateToProps = state => ({
-    catalogs: state.catalogs,
+    catalogs: [],
     catalogsName: state.catalogs.map(catalog => ({
         name: catalog.name,
         id: catalog.id,

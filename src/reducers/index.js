@@ -2,6 +2,7 @@ import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
 import catalog from './catalog';
+import catalogs from './catalogs';
 import products from './products';
 import activeSlide from './activeSlide';
 import activeFilters from './activeFilters';
@@ -14,6 +15,7 @@ export default combineReducers({
     products,
     activeSlide,
     catalog,
+    catalogs,
     filters,
     cart,
     page,
