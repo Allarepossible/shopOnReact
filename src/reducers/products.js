@@ -1,27 +1,28 @@
+import {FETCH_DATA_SUCCESS} from '../actionTypes';
+
 const initialState = 0;
 
-export default function products(state = initialState, action) {
-    if (action.type === 'CHANGE_CATEGORY') {
-        const newState = action.payload;
-
-        return [
-            ...newState,
-        ];
-    } if (action.type === 'CHANGE_SLIDE') {
-        const newState = action.payload2;
-        newState[action.payload.id === 'id'] = action.payload;
-
-        return [
-            ...newState,
-        ];
-    } if (action.type === 'SORT_PRODUCTS') {
-        return [
-            ...action.payload,
-        ];
-    } if (action.type === 'SET_STATE') {
-        return [
-            ...action.payload,
-        ];
+export default function products(state = initialState, {type, payload}) {
+    switch (type) {
+        case 'CHANGE_CATEGORY':
+            return [
+                ...payload,
+            ];
+        case 'CHANGE_SLIDE':
+            return [
+                ...payload,
+            ];
+        case 'SORT_PRODUCTS':
+            return [
+                ...payload,
+            ];
+        case 'SET_STATE':
+            return [
+                ...payload,
+            ];
+        case FETCH_DATA_SUCCESS:
+            return payload.products;
+        default:
+            return state;
     }
-    return state;
 }

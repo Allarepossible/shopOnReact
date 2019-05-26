@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {isEmpty} from 'ramda';
 
 import CategoryList from '../components/CategoryList';
 import Filters from '../components/Filters';
@@ -8,42 +9,37 @@ import Page from './Page';
 import {fetchData} from '../actions';
 
 class Catalog extends Component {
-    constructor(props) {
-        super(props);
-        const {params} = props;
-
-        this.state = {
-            id: params.catalogId,
-        };
-    }
-
     componentDidMount() {
-        const {id} = this.state;
-        console.log('======', this.state)
+        const {id} = this.props;
+
         this.props.fetchData(id);
     }
 
     render() {
-        console.log(this.state, this.props)
-        const {catalog} = this.props;
-        //const catalogLink = `/catalog/${catalog.id}`;
+        const {catalog, products, filters} = this.props;
+        if (isEmpty(catalog)) {
+            return (
+                <div>Loading...</div>
+            )
+        }
+        const catalogLink = `/catalog/${catalog.id}`;
 
         return (
             <Page
                 withInformation={true}
-                //title={catalog.name}
-                // breadcrumbs={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
+                title={catalog.name}
+                breadcrumbs={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
             >
                 <Flex justifyContent='space-between'>
                     <Flex flexDirection='column' width='30%'>
-                        {/*<Filters*/}
-                        {/*    filters={catalog.filters}*/}
-                        {/*/>*/}
+                        <Filters
+                            filters={filters}
+                        />
                     </Flex>
                     <Flex flexDirection='column' width='67%'>
-                        {/*<CategoryList*/}
-                        {/*    products={catalog.products}*/}
-                        {/*/>*/}
+                        <CategoryList
+                            products={products}
+                        />
                     </Flex>
                 </Flex>
             </Page>
@@ -52,7 +48,10 @@ class Catalog extends Component {
 }
 
 const mapStateToProps = (state, {params}) => ({
-    id: params.id,
+    id: params.catalogId,
+    catalog: state.catalog,
+    products: state.products,
+    filters: state.filters,
 });
 
 const mapDispatchToProps = {

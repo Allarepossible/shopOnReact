@@ -1,17 +1,23 @@
+import {FETCH_DATA_SUCCESS} from '../actionTypes';
+
 const initialState = 0;
 
-export default function filters(state = initialState, action) {
-    if (action.type === 'CHANGE_FILTER') {
-        const newState = {};
-        newState[action.payload.id === 'id'] = action.payload;
+export default function products(state = initialState, {type, payload}) {
+    switch (type) {
+        case 'CHANGE_FILTER':
+            const newState = {};
+            newState[payload.id === 'id'] = payload;
 
-        return [
-            ...state,
-        ];
-    } if (action.type === 'SET_FILTERS') {
-        return action.payload2;
-    } if (action.type === 'ADD_ACTIVE_FILTER') {
-        return action.payload;
+            return [
+                ...state,
+            ];
+        case 'SET_FILTERS':
+            return payload;
+        case 'ADD_ACTIVE_FILTER':
+            return payload;
+        case FETCH_DATA_SUCCESS:
+            return payload.filters;
+        default:
+            return state;
     }
-    return state;
 }

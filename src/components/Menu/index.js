@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Flex from '../Flex';
 import Box from '../Box';
 import MenuItem from '../MenuItem';
+import {fetchData} from '../../actions';
 
 const Container = styled(Box)`
     margin: 0 auto;
@@ -13,16 +14,8 @@ const Container = styled(Box)`
 `;
 
 const Menu = ({
-    catalogs, ownProps, changeView, sort,
+    catalogs, ownProps, fetchData: fetch
 }) => {
-    const changeCatalog = e => {
-        const activeCategoryId = e.currentTarget.getAttribute('data');
-        const activeCatalog = find(catalogs, {id: activeCategoryId});
-        const sortProducts = sortBy(activeCatalog.products, [sort.name]);
-
-        changeView(sortProducts, activeCatalog.filters);
-    };
-
     return (
         <Flex background='white' mb={15}>
             <Container>
@@ -35,7 +28,7 @@ const Menu = ({
                                 id={catalog.id}
                                 active={ownProps.active === catalog.id}
                                 type="menu"
-                                changeCatalog={changeCatalog}
+                                changeCatalog={fetch}
                             />
                         ))
                     }
@@ -43,7 +36,7 @@ const Menu = ({
             </Container>
         </Flex>
     );
-};
+}
 
 const mapStateToProps = (state, ownProps) => ({
     sort: find(state.sort, 'active'),
@@ -51,14 +44,8 @@ const mapStateToProps = (state, ownProps) => ({
     ownProps,
 });
 
-const mapDispatchToProps = dispatch => ({
-    changeView: (products, filters) => {
-        const payload = products;
-        const payload2 = filters;
-
-        dispatch({type: 'CHANGE_CATEGORY', payload});
-        dispatch({type: 'SET_FILTERS', payload2});
-    },
-});
+const mapDispatchToProps = {
+    fetchData,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);
