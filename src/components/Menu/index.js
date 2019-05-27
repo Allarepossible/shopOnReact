@@ -13,30 +13,25 @@ const Container = styled(Box)`
     width: ${({theme}) => theme.maxWidths.main};
 `;
 
-const Menu = ({
-    catalogs, ownProps, fetchData: fetch
-}) => {
-    return (
-        <Flex background='white' mb={15}>
-            <Container>
-                <Flex justifyContent='space-between'>
-                    {
-                        catalogs.map((catalog, i) => (
-                            <MenuItem
-                                key={i}
-                                name={catalog.name}
-                                id={catalog.id}
-                                active={ownProps.active === catalog.id}
-                                type="menu"
-                                changeCatalog={fetch}
-                            />
-                        ))
-                    }
-                </Flex>
-            </Container>
-        </Flex>
-    );
-}
+const Menu = ({catalogs, ownProps}) => (
+    <Flex background='white' mb={15}>
+        <Container>
+            <Flex justifyContent='space-between'>
+                {
+                    catalogs.map((catalog, i) => (
+                        <MenuItem
+                            key={i}
+                            name={catalog.name}
+                            id={catalog.id}
+                            active={ownProps.active === catalog.id}
+                            type="menu"
+                        />
+                    ))
+                }
+            </Flex>
+        </Container>
+    </Flex>
+);
 
 const mapStateToProps = (state, ownProps) => ({
     sort: find(state.sort, 'active'),

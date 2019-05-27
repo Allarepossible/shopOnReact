@@ -16,7 +16,10 @@ class Catalog extends Component {
     }
 
     render() {
-        const {catalog, products, filters} = this.props;
+        const {catalog, filters} = this.props;
+        // if (this.props.id !== catalog.id) {
+        //     this.props.fetchData(this.props.id);
+        // }
         if (isEmpty(catalog)) {
             return (
                 <div>Loading...</div>
@@ -37,9 +40,7 @@ class Catalog extends Component {
                         />
                     </Flex>
                     <Flex flexDirection='column' width='67%'>
-                        <CategoryList
-                            products={products}
-                        />
+                        <CategoryList />
                     </Flex>
                 </Flex>
             </Page>
