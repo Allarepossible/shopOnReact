@@ -39,54 +39,28 @@ const Wrap = styled(Flex)`
     justify-content: center;
 `;
 
-const StaticPage = ({catalog, catalogs, changeView}) => {
-    const changeCatalog = e => {
-        const activeCategoryId = e.currentTarget.getAttribute('data');
-        const activeCatalog = catalog.filter(item => item.id === activeCategoryId)[0];
-        const sortProducts = activeCatalog.products;
-
-        changeView(sortProducts, activeCatalog.filters);
-    };
-
-    return (
-        <Page title='Каталог' breadcrumbs={[{name: 'Каталог', link: '/catalog/'}]}>
-            <Flex mb='100px' justifyContent='space-between' flexWrap='wrap'>
-                {
-                    catalogs.map((item, i) => (
-                        <Box mb={3} key={i}>
-                            <CatalogLink to={`/catalog/${item.link}`} onClick={changeCatalog} data={item.link}>
-                                <Wrap>
-                                    <Image src={item.img} alt={item.name} />
-                                </Wrap>
-                                <Text>{item.name}</Text>
-                            </CatalogLink>
-                        </Box>
-                    ))
-                }
-            </Flex>
-        </Page>
-    );
-};
+const StaticPage = ({catalogs}) => (
+    <Page title='Каталог' breadcrumbs={[{name: 'Каталог', link: '/catalog/'}]}>
+        <Flex mb='100px' justifyContent='space-between' flexWrap='wrap'>
+            {
+                catalogs.map((item, i) => (
+                    <Box mb={3} key={i}>
+                        <CatalogLink to={`/catalog/${item.link}`} data={item.link}>
+                            <Wrap>
+                                <Image src={item.img} alt={item.name} />
+                            </Wrap>
+                            <Text>{item.name}</Text>
+                        </CatalogLink>
+                    </Box>
+                ))
+            }
+        </Flex>
+    </Page>
+);
 
 const mapStateToProps = (state, ownProps) => ({
-    catalog: state.catalogs,
-    products: state.products,
-    catalogs: state.catalogs.map(catalog => ({
-        name: catalog.name,
-        link: catalog.id,
-        img: catalog.img,
-    })),
+    catalogs: state.catalogs,
     ownProps,
 });
 
-const mapDispatchToProps = dispatch => ({
-    changeView: (products, filters) => {
-        const payload = products;
-        const payload2 = filters;
-
-        dispatch({type: 'SET_FILTERS', payload2});
-        dispatch({type: 'CHANGE_CATEGORY', payload});
-    },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(StaticPage);
+export default connect(mapStateToProps)(StaticPage);

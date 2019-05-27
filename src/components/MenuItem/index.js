@@ -1,8 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import styled from 'styled-components';
 
 import Box from '../Box';
+import {fetchData} from '../../actions';
 
 const MenuLink = styled(Link)`
     padding: 15px;
@@ -33,7 +35,7 @@ const FooterLink = styled(Link)`
 
 
 const MenuItem = ({
-    name, id, active, type,
+    name, id, active, type, fetchData: fetch,
 }) => {
     const ml = type === 'footer' ? 20 : 0;
 
@@ -46,6 +48,7 @@ const MenuItem = ({
                         className={active && 'active'}
                         data={id}
                         activeClassName="active"
+                        onClick={fetch.bind(null, id)}
                     >
                         {name}
                     </MenuLink>
@@ -64,4 +67,10 @@ const MenuItem = ({
     );
 };
 
-export default MenuItem;
+
+const mapDispatchToProps = {
+    fetchData,
+};
+
+export default connect(null, mapDispatchToProps)(MenuItem);
+

@@ -12,7 +12,6 @@ class CategoryList extends Component {
         this.state = {
             view: 'tile',
             sort: 'date',
-            products: props.products,
         };
 
         this.changeViewProducts = this.changeViewProducts.bind(this);
@@ -34,7 +33,8 @@ class CategoryList extends Component {
     }
 
     render() {
-        const {products, view} = this.state;
+        const {view} = this.state;
+        const {products} = this.props;
         const justifyContent = view === 'tile' && 'space-between';
         const flexWrap = view === 'tile' && 'wrap';
         const flexDirection = view !== 'tile' && 'column';
@@ -71,8 +71,11 @@ class CategoryList extends Component {
     }
 }
 
-const mapStateToProps = ({products}) => ({
-    products,
-});
+const mapStateToProps = (state) => {
+    console.log('----------', state)
+    return ({
+        products: state.products,
+    });
+}
 
 export default connect(mapStateToProps)(CategoryList);
