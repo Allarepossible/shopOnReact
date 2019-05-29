@@ -7,8 +7,8 @@ const PORT = 8080;
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send(renderer());
+app.get('*', (req, res) => {
+    res.send(renderer(req));
 });
 
 app.listen(PORT, () => {
