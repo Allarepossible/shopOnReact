@@ -36,6 +36,7 @@
     "styled-components": "^4.0.3",
     "styled-system": "^3.1.11",
     "url-loader": "^1.1.2",
+    "webpack-merge": "^4.2.1",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
