@@ -13,13 +13,26 @@ import Home from '../src/client/components/Home';
 const app = Express();
 const port = 8080;
 
+app.use(Express.static('public'));
 app.get('/', (req, res) => {
     const content = renderToString(<Home />);
 
-    res.send(content);
-})
+    const html = `
+        <html>
+          <head>
+            <title>Redux Shop</title>
+          </head>
+          <body>
+            <div id="root">${content}</div>
+            
+            <script src="bundle.js"></script>
+          </body>
+        </html>
+    `;
 
-//app.use('/static', Express.static('static'));
+    res.send(html);
+});
+
 // app.get('/', function(req, res){
 //     res.send('hello world!')
 // });
