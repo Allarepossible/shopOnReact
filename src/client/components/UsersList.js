@@ -23,8 +23,15 @@ class UsersList extends Component {
         );
     }
 }
+
 function mapStateToProps(state) {
     return {users: state.users};
 }
+
+function loadData() {
+    console.log('load');
+}
+
+export {loadData};
 
 export default connect(mapStateToProps, {fetchUsers})(UsersList);
