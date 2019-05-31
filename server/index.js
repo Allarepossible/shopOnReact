@@ -1,23 +1,38 @@
 import 'idempotent-babel-polyfill';
 import express from 'express';
 import {matchRoutes} from 'react-router-config';
+import proxy from 'express-http-proxy';
 
 import Routes from '../src/client/Routes';
 import renderer from '../src/helpers/renderer';
 import createStore from '../src/helpers/createStore';
 
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
+
+app.use(
+    '/api',
+    proxy('http://react-ssr-api.herokuapp.com', {
+        proxyReqOptDecorator(opts) {
+            opts.headers['x-forwarded-host'] = 'localhost:3000';
+            return opts;
+        },
+    })
+);
 
 app.use(express.static('public'));
 
 app.get('*', (req, res) => {
-    const store = createStore();
+    const store = createStore(req);
 
 
-    matchRoutes(Routes, req.path).map(({route}) => route.loadData ? route.loadData() : null);
+    const promises = matchRoutes(Routes, req.path).map(({route}) => {
+        return route.loadData ? route.loadData(store) : null;
+    });
 
-    res.send(renderer(req, store));
+    Promise.all(promises).then(() => {
+        res.send(renderer(req, store));
+    });
 });
 
 app.listen(PORT, () => {
