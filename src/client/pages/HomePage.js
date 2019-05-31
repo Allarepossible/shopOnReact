@@ -2,8 +2,8 @@ import React from 'react';
 
 const HomePage = () => (
     <div>
-        <span>Hello my dear friend!! Today I'm fine</span>
-        <button onClick={() => {console.log('clicked')}}>Click me!</button>
+        <h3>Welcome</h3>
+        <p>This is a server side rendering test sit</p>
     </div>
 );
 
