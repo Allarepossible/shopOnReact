@@ -4,6 +4,7 @@ import {StaticRouter} from 'react-router-dom';
 import {renderRoutes} from 'react-router-config';
 import serialize from 'serialize-javascript';
 import {Provider} from 'react-redux';
+import {Helmet} from 'react-helmet';
 
 import Routes from '../client/Routes';
 
@@ -16,10 +17,13 @@ export default (req, store, context) => {
         </Provider>
     );
 
+    const helmet = Helmet.renderStatic();
+
     return `
         <html>
           <head>
-            <title>Redux Shop</title>
+            ${helmet.title.toString()}
+            ${helmet.meta.toString()}
           </head>
           <body>
             <div id="root">${content}</div>
