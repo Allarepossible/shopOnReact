@@ -12,7 +12,7 @@ const PORT = 3000;
 
 app.use(
     '/api',
-    proxy('http://react-ssr-api.herokuapp.com', {
+    proxy('http://redux-react-shop.herokuapp.com', {
         proxyReqOptDecorator(opts) {
             opts.headers['x-forwarded-host'] = 'localhost:3000';
             return opts;
