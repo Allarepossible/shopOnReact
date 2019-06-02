@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {createStore, applyMiddleware} from 'redux';
-import {Router, Route, hashHistory} from 'react-router';
-import {syncHistoryWithStore} from 'react-router-redux';
+import {Router, Route} from 'react-router';
 import thunk from 'redux-thunk';
 import {ThemeProvider} from 'styled-components';
 
@@ -18,12 +17,11 @@ import reducer from './reducers';
 import theme from './theme';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
-const history = syncHistoryWithStore(hashHistory, store);
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
         <Provider store={store}>
-            <Router history={history}>
+            <Router>
                 <Route path='/' component={Shop} />
                 <Route path='/search' component={Search} />
                 <Route path='/cart' component={Cart} />

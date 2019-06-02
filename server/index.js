@@ -1,63 +1,56 @@
-import qs from 'qs';
-import path from 'path';
-import Express from 'express';
-import React from 'react';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
-import {renderToString} from 'react-dom/server';
+import 'idempotent-babel-polyfill';
+import express from 'express';
+import {matchRoutes} from 'react-router-config';
+import proxy from 'express-http-proxy';
 
-import {fetchCounter} from '../api/counter';
-import counterApp from '../src/reducers';
-import App from '../src/containers/App';
+import Routes from '../src/client/Routes';
+import renderer from '../src/helpers/renderer';
+import createStore from '../src/helpers/createStore';
 
-const app = Express();
-const port = 8080;
+const app = express();
+const PORT = 3000;
 
-app.use('/static', Express.static('static'));
+app.use(
+    '/api',
+    proxy('http://redux-react-shop.herokuapp.com', {
+        proxyReqOptDecorator(opts) {
+            opts.headers['x-forwarded-host'] = 'localhost:3000';
+            return opts;
+        },
+    })
+);
 
-const handleRender = (req, res) => {
-    fetchCounter(apiResult => {
-        // Read the counter from the request, if provided
-        const params = qs.parse(req.query);
-        const products = parseInt(params.counter, 10) || apiResult || 0;
-        // Compile an initial state
-        let preloadedState = {products};
+app.use(express.static('public'));
 
-        // Create a new Redux store instance
-        const store = createStore(counterApp, preloadedState)
+app.get('*', (req, res) => {
+    const store = createStore(req);
 
-        // Render the component to a string
-        const html = renderToString(
-            <Provider store={store}>
-                <App />
-            </Provider>
-        );
 
-        // Grab the initial state from our Redux store
-        const finalState = store.getState()
-        // Send the rendered page back to the client
-        res.send(renderFullPage(html, finalState));
+    const promises = matchRoutes(Routes, req.path).map(({route}) => {
+        return route.loadData ? route.loadData(store) : null;
+    }).map(promise => {
+        if (promise) {
+            return new Promise((resolve, reject) => {
+                promise.then(resolve).catch(resolve);
+            });
+        }
     });
-}
 
-function renderFullPage(html, preloadedState) {
-    return `
-        <!doctype html>
-        <html>
-          <head>
-            <title>Redux Shop</title>
-          </head>
-          <body>
-            <div id="root">${html}</div>
-            <script>
-              window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-            </script>
-            <script src="/static/bundle.js"></script>
-          </body>
-        </html>
-    `;
-}
+    Promise.all(promises).then(() => {
+        const context = {};
+        const content = renderer(req, store, context);
 
-app.use(handleRender);
+        if (context.url) {
+            return res.redirect(301, context.url);
+        }
+        if (context.notFound) {
+            res.status('404');
+        }
 
-app.listen(port)
+        res.send(content);
+    });
+});
+
+app.listen(PORT, () => {
+    console.log('server run!');
+})
