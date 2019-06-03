@@ -8,7 +8,6 @@ import Page from './Page';
 
 class CatalogPage extends Component {
     componentDidMount() {
-        console.log('================', this.props)
         this.props.fetchCatalog(this.props.path);
     }
 

@@ -1,7 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import {fetchCatalog} from '../../actions';
 import Box from '../Box';
 
 const MenuLink = styled(Link)`
@@ -33,7 +35,7 @@ const FooterLink = styled(Link)`
 
 
 const MenuItem = ({
-    name, id, active = false, type,
+    name, id, active = false, type, fetchCatalog: fetch,
 }) => {
     const ml = type === 'footer' ? 20 : 0;
 
@@ -45,6 +47,7 @@ const MenuItem = ({
                         to={`/catalog/${id}`}
                         className={active && 'active'}
                         data={id}
+                        onClick={fetch.bind(this, `/catalog/${id}`)}
                     >
                         {name}
                     </MenuLink>
@@ -63,5 +66,5 @@ const MenuItem = ({
     );
 };
 
-export default MenuItem;
+export default connect(null, {fetchCatalog})(MenuItem);
 
