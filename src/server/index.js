@@ -27,7 +27,7 @@ app.get('*', (req, res) => {
 
 
     const promises = matchRoutes(Routes, req.path).map(({route}) => {
-        return route.loadData ? route.loadData(store) : null;
+        return route.loadData ? route.loadData(store, req) : null;
     }).map(promise => {
         if (promise) {
             return new Promise((resolve, reject) => {

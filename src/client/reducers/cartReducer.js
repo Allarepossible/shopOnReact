@@ -1,8 +1,8 @@
-import {FETCH_CATEGORIES} from '../actions';
+import {ADD_PRODUCT_TO_CART} from '../actions';
 
 export default (state = [], {type, payload}) => {
     switch (type) {
-        case FETCH_CATEGORIES:
+        case ADD_PRODUCT_TO_CART:
             return payload.data;
         default:
             return state;

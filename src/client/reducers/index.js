@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
-import usersReducer from './usersReducer';
+import catalogReducer from './catalogReducer';
 import adminsReducer from './adminsReducer';
 import categoriesReducer from './categoriesReducer';
 
 export default combineReducers({
-    users: usersReducer,
+    catalog: catalogReducer,
     admins: adminsReducer,
     categories: categoriesReducer,
 });

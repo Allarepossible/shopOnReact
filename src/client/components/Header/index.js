@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import Flex from './Flex';
-import Box from './Box';
-import MenuItem from './MenuItem';
+
+import Flex from '../Flex';
+import Box from '../Box';
+import MenuItem from '../MenuItem';
 
 const Container = styled(Box)`
     margin: 0 auto;

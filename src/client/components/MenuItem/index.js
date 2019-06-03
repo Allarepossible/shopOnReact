@@ -33,7 +33,7 @@ const FooterLink = styled(Link)`
 
 
 const MenuItem = ({
-    name, id, active, type,
+    name, id, active = false, type,
 }) => {
     const ml = type === 'footer' ? 20 : 0;
 
@@ -45,14 +45,13 @@ const MenuItem = ({
                         to={`/catalog/${id}`}
                         className={active && 'active'}
                         data={id}
-                        activeClassName="active"
                     >
                         {name}
                     </MenuLink>
                 ) : (
                     <FooterLink
                         to={`/catalog/${id}`}
-                        className={active}
+                        className={active && 'active'}
                         data={id}
                     >
                         {name}
