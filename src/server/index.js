@@ -3,9 +3,9 @@ import express from 'express';
 import {matchRoutes} from 'react-router-config';
 import proxy from 'express-http-proxy';
 
-import Routes from '../src/client/Routes';
-import renderer from '../src/helpers/renderer';
-import createStore from '../src/helpers/createStore';
+import Routes from '../client/Routes';
+import renderer from '../helpers/renderer';
+import createStore from '../helpers/createStore';
 
 const app = express();
 const PORT = 3000;
