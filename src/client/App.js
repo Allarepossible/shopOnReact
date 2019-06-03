@@ -2,20 +2,18 @@ import React from 'react';
 import {renderRoutes} from 'react-router-config';
 
 import Header from './components/Header';
-import {fetchCurrentUser} from './actions';
+import {fetchCategories} from './actions';
+import GlobalStyle from '../global-styles.js';
 
 const App = ({route}) => (
     <div>
+        <GlobalStyle />
         <Header/>
         {renderRoutes(route.routes)}
     </div>
 );
 
-function loadData({dispatch}) {
-    return dispatch(fetchCurrentUser());
-}
-
 export default {
-    loadData,
+    loadData: ({dispatch}) => dispatch(fetchCategories()),
     component: App,
 };

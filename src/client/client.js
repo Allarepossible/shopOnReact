@@ -7,7 +7,9 @@ import {createStore, applyMiddleware} from 'redux';
 import axios from 'axios';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
+import {ThemeProvider} from 'styled-components';
 
+import theme from '../theme';
 import reducers from './reducers';
 import Routes from './Routes';
 
@@ -22,10 +24,12 @@ const store = createStore(
 );
 
 ReactDOM.hydrate(
-    <Provider store={store}>
-        <BrowserRouter>
-            <div>{renderRoutes(Routes)}</div>
-        </BrowserRouter>
-    </Provider>,
+    <ThemeProvider theme={theme}>
+        <Provider store={store}>
+            <BrowserRouter>
+                <div>{renderRoutes(Routes)}</div>
+            </BrowserRouter>
+        </Provider>
+    </ThemeProvider>,
     document.querySelector('#root')
 );

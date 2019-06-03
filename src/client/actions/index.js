@@ -1,21 +1,21 @@
-export const FETCH_USERS = 'FETCH_USERS';
-export const FETCH_CURRENT_USER = 'FETCH_CURRENT_USER';
+export const FETCH_CATALOG = 'FETCH_CATALOG';
+export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_ADMINS = 'FETCH_ADMINS';
+export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 
-export const fetchUsers = () => async (dispatch, getState, api) => {
-    const result = await api.get('/users');
+export const fetchCatalog = path => async (dispatch, getState, api) => {
+    const result = await api.get(path);
 
     dispatch({
-        type: FETCH_USERS,
+        type: FETCH_CATALOG,
         payload: result,
     });
 };
 
-export const fetchCurrentUser = () => async (dispatch, getState, api) => {
-    const result = await api.get('/current_user');
-
+export const fetchCategories = () => async (dispatch, getState, api) => {
+    const result = await api.get('/catalogs');
     dispatch({
-        type: FETCH_CURRENT_USER,
+        type: FETCH_CATEGORIES,
         payload: result,
     });
 };
