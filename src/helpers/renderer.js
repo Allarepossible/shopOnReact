@@ -26,6 +26,7 @@ export default (req, store, context) => {
     return `
         <html>
           <head>
+            <link rel='shortcut icon' href='/api/images/favicon.ico'>
             ${helmet.title.toString()}
             ${helmet.meta.toString()}
           </head>

@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Helmet} from 'react-helmet';
 
 import {fetchCatalog} from '../actions';
+import Flex from '../components/Flex';
+import Page from './Page';
 
 class CatalogPage extends Component {
     componentDidMount() {
@@ -19,11 +21,27 @@ class CatalogPage extends Component {
     }
 
     render() {
+        const {catalog} = this.props;
+
+        const catalogLink = `/catalog/${catalog.id}`;
+
         return (
-            <div>
-                {this.head()}
-                Here's a big list of users:
-            </div>
+            <Page
+                withInformation={true}
+                title={catalog.name}
+                breadcrumbs={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
+            >
+                <Flex justifyContent='space-between'>
+                    <Flex flexDirection='column' width='30%'>
+                        {/*<Filters*/}
+                        {/*    filters={filters}*/}
+                        {/*/>*/}
+                    </Flex>
+                    <Flex flexDirection='column' width='67%'>
+                        {/*<CategoryList />*/}
+                    </Flex>
+                </Flex>
+            </Page>
         );
     }
 }

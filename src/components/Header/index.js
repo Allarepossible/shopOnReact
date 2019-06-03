@@ -141,7 +141,7 @@ const Header = ({cart}) => {
             <Flex justifyContent='space-between'>
                 <Container justifyContent='space-between' pt={30} pb={30}>
                     <Link to='/'>
-                        <Logo src='images/logo/logo.png' alt='Cooltech' />
+                        <Logo src='/api/images/logo/logo.png' alt='Cooltech' />
                     </Link>
                     <Form action="">
                         <Input type='text' placeholder='Что будем искать' />

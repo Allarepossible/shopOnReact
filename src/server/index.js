@@ -25,16 +25,11 @@ app.use(express.static('public'));
 app.get('*', (req, res) => {
     const store = createStore(req);
 
-
-    const promises = matchRoutes(Routes, req.path).map(({route}) => {
-        return route.loadData ? route.loadData(store, req) : null;
-    }).map(promise => {
-        if (promise) {
-            return new Promise((resolve, reject) => {
-                promise.then(resolve).catch(resolve);
-            });
-        }
-    });
+    const promises = matchRoutes(Routes, req.path)
+        .map(({route}) => (route.loadData ? route.loadData(store, req) : null))
+        .map(promise => (promise ? new Promise(resolve => {
+            promise.then(resolve).catch(resolve);
+        }) : null));
 
     Promise.all(promises).then(() => {
         const context = {};
@@ -52,5 +47,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('server run!');
-})
+    console.log('server run');
+});
