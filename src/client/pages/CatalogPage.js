@@ -4,6 +4,8 @@ import {Helmet} from 'react-helmet';
 
 import {fetchCatalog} from '../actions';
 import Flex from '../components/Flex';
+import Filters from '../components/Filters';
+import CategoryList from '../components/CategoryList';
 import Page from './Page';
 
 class CatalogPage extends Component {
@@ -14,7 +16,7 @@ class CatalogPage extends Component {
     head() {
         return (
             <Helmet>
-                <title>{`${this.props.catalog.name} - shop`}</title>
+                <title>{`${this.props.catalog.name} - Покупайте у нас`}</title>
                 <meta property='og:title' content='Users app' />
             </Helmet>
         );
@@ -31,14 +33,13 @@ class CatalogPage extends Component {
                 title={catalog.name}
                 breadcrumbs={[{name: 'Каталог', link: '/catalog/'}, {name: catalog.name, link: catalogLink}]}
             >
+                {this.head()}
                 <Flex justifyContent='space-between'>
                     <Flex flexDirection='column' width='30%'>
-                        {/*<Filters*/}
-                        {/*    filters={filters}*/}
-                        {/*/>*/}
+                        <Filters />
                     </Flex>
                     <Flex flexDirection='column' width='67%'>
-                        {/*<CategoryList />*/}
+                        <CategoryList />
                     </Flex>
                 </Flex>
             </Page>
