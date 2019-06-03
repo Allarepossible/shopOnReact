@@ -46,6 +46,8 @@ app.get('*', (req, res) => {
     });
 });
 
+app.disable('etag');
+
 app.listen(PORT, () => {
     console.log('server run');
 });

@@ -8,6 +8,7 @@ import Page from './Page';
 
 class CatalogPage extends Component {
     componentDidMount() {
+        console.log('================', this.props)
         this.props.fetchCatalog(this.props.path);
     }
 
@@ -46,9 +47,9 @@ class CatalogPage extends Component {
     }
 }
 
-const mapStateToProps = ({catalog}, {route}) => ({catalog, path: route.path});
+const mapStateToProps = ({catalog}, {match}) => ({catalog, path: match.url});
 
 export default {
-    loadData: ({dispatch}, {path}) => dispatch(fetchCatalog(path)),
+    loadData: ({dispatch}, {url}) => dispatch(fetchCatalog(url)),
     component: connect(mapStateToProps, {fetchCatalog})(CatalogPage),
 };
