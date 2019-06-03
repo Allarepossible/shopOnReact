@@ -1,5 +1,5 @@
 export const FETCH_USERS = 'FETCH_USERS';
-export const FETCH_CURRENT_USER = 'FETCH_CURRENT_USER';
+export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_ADMINS = 'FETCH_ADMINS';
 
 export const fetchUsers = () => async (dispatch, getState, api) => {
@@ -11,11 +11,10 @@ export const fetchUsers = () => async (dispatch, getState, api) => {
     });
 };
 
-export const fetchCurrentUser = () => async (dispatch, getState, api) => {
-    const result = await api.get('/current_user');
-
+export const fetchCategories = () => async (dispatch, getState, api) => {
+    const result = await api.get('/catalogs');
     dispatch({
-        type: FETCH_CURRENT_USER,
+        type: FETCH_CATEGORIES,
         payload: result,
     });
 };

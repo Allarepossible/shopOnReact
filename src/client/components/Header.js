@@ -1,30 +1,39 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+import Flex from './Flex';
+import Box from './Box';
+import MenuItem from './MenuItem';
 
-const Header = ({auth}) => {
-    console.log('status', auth);
+const Container = styled(Box)`
+    margin: 0 auto;
+    width: ${({theme}) => theme.maxWidths.main};
+`;
 
-    const authButton = auth ? (
-        <a href='/api/logout'>Logout</a>
-    ) : (
-        <a href='/api/auth/google'>Login</a>
-    );
+const Header = ({catalogs}) => {
 
     return (
-        <div>
-            <Link to='/'>React SSR</Link>
-            <div>
-                <Link to='/users'>Users</Link>
-                <Link to='/admins'>Admins</Link>
-                {authButton}
-            </div>
-        </div>
+        <Flex background='white' mb={15}>
+            <Container>
+                <Flex justifyContent='space-between'>
+                    {
+                        catalogs.map((catalog, i) => (
+                            <MenuItem
+                                key={i}
+                                name={catalog.name}
+                                id={catalog.id}
+                                type="menu"
+                            />
+                        ))
+                    }
+                </Flex>
+            </Container>
+        </Flex>
     );
 };
 
-function mapStateToProps({auth}) {
-    return {auth};
-}
+const mapStateToProps = ({categories}) => ({
+    catalogs: categories,
+});
 
 export default connect(mapStateToProps)(Header);
