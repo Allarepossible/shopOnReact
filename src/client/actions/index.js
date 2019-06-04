@@ -1,4 +1,5 @@
 export const FETCH_CATALOG = 'FETCH_CATALOG';
+export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_ADMINS = 'FETCH_ADMINS';
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
@@ -8,6 +9,15 @@ export const fetchCatalog = path => async (dispatch, getState, api) => {
 
     dispatch({
         type: FETCH_CATALOG,
+        payload: result,
+    });
+};
+
+export const fetchProduct = path => async (dispatch, getState, api) => {
+    const result = await api.get(path);
+
+    dispatch({
+        type: FETCH_PRODUCT,
         payload: result,
     });
 };

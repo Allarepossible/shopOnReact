@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {find} from 'lodash';
-import styled, {withTheme} from 'styled-components';
+import styled from 'styled-components';
 
 import Text from '../Text';
 import Box from '../Box';
@@ -119,7 +119,7 @@ const ProductSnippet = ({
                 <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
                 <Flex justifyContent='space-between' mb={20} width='90%'>
                     <Stock>{nalichie}</Stock>
-                    <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
+                    <StyledLink to={`/product/${articul}`}>Подробнее</StyledLink>
                 </Flex>
                 <Button type='primary' onClick={addProductToCart}>В корзину</Button>
             </ProductSnippetStyle>
@@ -141,7 +141,7 @@ const ProductSnippet = ({
                     <Rating count={ratio} />
                     <Flex justifyContent='space-between'>
                         <Stock>{nalichie}</Stock>
-                        <StyledLink to={`/catalog/${catalogId}/${articul}`}>Подробнее</StyledLink>
+                        <StyledLink to={`/product/${articul}`}>Подробнее</StyledLink>
                     </Flex>
                 </Content>
                 <Flex flexDirection='column'>
