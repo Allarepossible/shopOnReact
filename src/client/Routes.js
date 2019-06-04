@@ -4,6 +4,7 @@ import App from './App';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import CatalogPage from './pages/CatalogPage';
+import CatalogsPage from './pages/CatalogsPage';
 import AdminsListPage from './pages/AdminsListPage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -16,6 +17,9 @@ export default [{
     }, {
         ...CatalogPage,
         path: '/catalog/:id',
+    }, {
+        ...CatalogsPage,
+        path: '/catalogs',
     }, {
         ...ProductPage,
         path: '/product/:id',

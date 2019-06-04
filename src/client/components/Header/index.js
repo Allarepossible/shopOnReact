@@ -119,8 +119,8 @@ const Header = () => {
         name: 'Контакты',
         link: '/contacts',
     }, {
-        name: 'Каталог',
-        link: '/catalog',
+        name: 'Все разделы',
+        link: '/catalogs',
     }, {
         name: 'Корзина',
         link: '/cart',
