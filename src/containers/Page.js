@@ -32,7 +32,7 @@ class Page extends Component {
                     {children}
                 </Container>
                 {
-                    withInformation && <Information />
+                        withInformation && <Information />
                 }
                 <Footer />
             </Flex>

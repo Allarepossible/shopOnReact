@@ -48,7 +48,7 @@ class CategoryList extends Component {
                 />
                 <Flex mb={30} flexWrap={flexWrap} flexDirection={flexDirection} justifyContent={justifyContent}>
                     {
-                        products.filter(product => product.name).map((el, index) => (
+                        products && products.filter(product => product.name).map((el, index) => (
                             <ProductSnippet
                                 key={index}
                                 id={index}

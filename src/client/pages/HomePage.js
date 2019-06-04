@@ -1,10 +1,8 @@
 import React from 'react';
+import Page from './Page';
 
 const HomePage = () => (
-    <div>
-        <h3>Welcome</h3>
-        <p>This is a server side rendering test sit</p>
-    </div>
+    <Page title='Главная' withInformation={true} />
 );
 
 export default {

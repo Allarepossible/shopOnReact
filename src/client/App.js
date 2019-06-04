@@ -5,6 +5,7 @@ import Header from './components/Header';
 import {fetchCategories} from './actions';
 import GlobalStyle from '../global-styles.js';
 import Menu from './components/Menu';
+import Footer from './components/Footer';
 import Flex from './components/Flex';
 
 const App = ({route}) => (
@@ -13,6 +14,7 @@ const App = ({route}) => (
         <Header/>
         <Menu />
         {renderRoutes(route.routes)}
+        <Footer />
     </Flex>
 );
 
