@@ -40,7 +40,7 @@ const Wrap = styled(Flex)`
     justify-content: center;
 `;
 
-const CatalogsPage = ({catalogs, fetchCatalog: fetch,}) => (
+const CatalogsPage = ({catalogs, fetchCatalog: fetch}) => (
     <Page title='Каталог' breadcrumbs={[{name: 'Каталог', link: '/catalogs/'}]}>
         <Flex mb='100px' justifyContent='space-between' flexWrap='wrap'>
             {

@@ -3,6 +3,7 @@ import React from 'react';
 import App from './App';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
+import CartPage from './pages/CartPage';
 import CatalogPage from './pages/CatalogPage';
 import CatalogsPage from './pages/CatalogsPage';
 import AdminsListPage from './pages/AdminsListPage';
@@ -20,6 +21,9 @@ export default [{
     }, {
         ...CatalogsPage,
         path: '/catalogs',
+    }, {
+        ...CartPage,
+        path: '/cart',
     }, {
         ...ProductPage,
         path: '/product/:id',
