@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {find, propEq} from 'ramda';
 import {connect} from 'react-redux';
 import {Helmet} from 'react-helmet';
 
@@ -27,25 +28,27 @@ class ProductPage extends Component {
     }
 
     render() {
-        const {product, catalog, addProductToCart: addToCart} = this.props;
-        const catalogLink = `/catalog/${catalog.id}`;
+        const {product, addProductToCart: addToCart, categories} = this.props;
+        const {catalog, articul, name, images, feature, ratio, info} = product;
+        const catalogLink = `/catalog/${catalog}`;
+        const catalogName = find(propEq('id', catalog), categories).name;
         const NewPrice = String(product.price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
 
         return (
             <Page
-                title={product.name}
+                title={name}
                 breadcrumbs={[
                     {name: 'Каталог', link: '/catalog'},
-                    {name: catalog.name, link: catalogLink},
-                    {name: product.name, link: catalogLink + product.articul},
+                    {name: catalogName, link: catalogLink},
+                    {name, link: catalogLink + articul},
                 ]}
             >
                 {this.head()}
                 <Flex flexDirection='column' mb='50px'>
                     <Flex justifyContent='space-between'>
                         <SlideShow
-                            images={product.images}
-                            name={product.name}
+                            images={images}
+                            name={name}
                         />
                         <Flex
                             flexDirection='column'
@@ -53,23 +56,23 @@ class ProductPage extends Component {
                             justifyContent='flex-start'
                             alignItems='flex-start'
                         >
-                            <Features features={product.feature} />
-                            <Text fontWeight='bold' color='grey' fontSize='s'>Артикул {product.articul}</Text>
-                            <Rating count={product.ratio} />
+                            <Features features={feature} />
+                            <Text fontWeight='bold' color='grey' fontSize='s'>Артикул {articul}</Text>
+                            <Rating count={ratio} />
                         </Flex>
                         <Flex flexDirection='column' width='30%' justifyContent='flex-start' alignItems='flex-end'>
                             <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
-                            <Button type='primary' onClick={addToCart.bind(this, product.articul)}>В корзину</Button>
+                            <Button type='primary' onClick={addToCart.bind(this, product)}>В корзину</Button>
                         </Flex>
                     </Flex>
-                    <Box>{product.info}</Box>
+                    <Box>{info}</Box>
                 </Flex>
             </Page>
         );
     }
 }
 
-const mapStateToProps = ({product, catalog}, {match}) => ({product, catalog, path: match.url});
+const mapStateToProps = ({product, categories}, {match}) => ({product, categories, path: match.url});
 
 export default {
     loadData: ({dispatch}, {url}) => dispatch(fetchProduct(url)),

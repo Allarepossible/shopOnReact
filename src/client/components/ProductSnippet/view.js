@@ -93,6 +93,7 @@ const ProductSnippet = ({
     addProductToCart,
     view,
 }) => {
+    const product = {images, articul, name, info, ratio, price, nalichie};
     const NewPrice = String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
 
     if (view === 'tile') {
@@ -113,7 +114,7 @@ const ProductSnippet = ({
                     <Stock>{nalichie}</Stock>
                     <StyledLink to={`/product/${articul}`}>Подробнее</StyledLink>
                 </Flex>
-                <Button type='primary' onClick={addProductToCart.bind(this, articul)}>В корзину</Button>
+                <Button type='primary' onClick={addProductToCart.bind(this, product)}>В корзину</Button>
             </ProductSnippetStyle>
         );
     } if (view === 'column') {
@@ -138,7 +139,7 @@ const ProductSnippet = ({
                 </Content>
                 <Flex flexDirection='column'>
                     <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
-                    <Button type='primary' onClick={addProductToCart.bind(this, articul)}>В корзину</Button>
+                    <Button type='primary' onClick={addProductToCart.bind(this, product)}>В корзину</Button>
                 </Flex>
             </LineProductSnippet>
         );
@@ -151,7 +152,7 @@ const ProductSnippet = ({
             <Info maxWidth='250px' mb={0} overflow='hidden'>{info}</Info>
             <Stock>{nalichie}</Stock>
             <Text fontWeight='bold' fontSize='l'>{NewPrice} ₽</Text>
-            <Button type='primary' onClick={addProductToCart.bind(this, articul)}>В корзину</Button>
+            <Button type='primary' onClick={addProductToCart.bind(this, product)}>В корзину</Button>
         </LineProductSnippet>
     );
 };

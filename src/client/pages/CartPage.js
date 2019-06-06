@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {find, reduce, map} from 'lodash';
+import {find, reduce} from 'ramda';
 import styled from 'styled-components';
 
 import {deleteProduct, changeCountOfProductInCart} from '../actions';
@@ -83,7 +83,7 @@ const Button = styled.i`
         top: 5px;
         left: 6px;
     
-        content: '';
+        content: '+';
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTExIDExVjIuOTkxYzAtLjUzNi40NDctLjk5MSAxLS45OTEuNTU2IDAgMSAuNDQ0IDEgLjk5MVYxMWg4LjAwOGMuNTM2IDAgLjk5Mi40NDcuOTkyIDEgMCAuNTU2LS40NDUgMS0uOTkyIDFIMTN2OC4wMDhjMCAuNTM2LS40NDguOTkyLTEgLjk5Mi0uNTU3IDAtMS0uNDQ1LTEtLjk5MlYxM0gyLjk5MUMyLjQ1NSAxMyAyIDEyLjU1MiAyIDEyYzAtLjU1Ny40NDQtMSAuOTkxLTFIMTF6Ii8+PC9zdmc+);
     
         color: #a8abad;
@@ -109,7 +109,7 @@ const Button = styled.i`
         position: absolute;
         top: 11px;
         left: 6px;
-        content: '';
+        content: '-';
     
         background-color: black;
     }
@@ -173,8 +173,7 @@ const CartItem = ({image, name, articul, nalichie, catalog, price, count, delete
 
 
 const CartPage = ({cart, deleteProduct: del, changeCountOfProductInCart: change}) => {
-    const products = map(cart, 'product');
-    const commonPrice = reduce(cart, (result, {product, count}) => result + product.price * count, 0);
+    const commonPrice = reduce((result, {product, count}) => result + product.price * count, 0, cart);
 
     return (
         <Page title='Корзина' breadcrumbs={[{name: 'Корзина', link: '/cart'}]}>
@@ -182,26 +181,22 @@ const CartPage = ({cart, deleteProduct: del, changeCountOfProductInCart: change}
                 <Flex flexDirection='column'>
                     {
                         cart.length > 0
-                        && products.map((el, index) => {
-                            const count = find(cart, ['articul', el.articul]).count;
-
-                            return (
-                                <CartItem
-                                    key={index}
-                                    image={el.images[0].image}
-                                    name={el.name}
-                                    price={el.price}
-                                    count={count}
-                                    articul={el.articul}
-                                    info={el.info}
-                                    nalichie={el.nalichie}
-                                    catalog={el.catalog}
-                                    cart={cart}
-                                    deleteP={del}
-                                    change={change}
-                                />
-                            );
-                        })
+                        && cart.map(({product, count}, index) => (
+                            <CartItem
+                                key={index}
+                                image={product.images[0].image}
+                                name={product.name}
+                                price={product.price}
+                                count={count}
+                                articul={product.articul}
+                                info={product.info}
+                                nalichie={product.nalichie}
+                                catalog={product.catalog}
+                                cart={cart}
+                                deleteP={del}
+                                change={change}
+                            />
+                        ))
                     }
                     {
                         cart.length === 0

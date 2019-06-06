@@ -3,7 +3,7 @@ import {renderRoutes} from 'react-router-config';
 
 import Header from './components/Header';
 import {fetchCategories} from './actions';
-import GlobalStyle from '../global-styles.js';
+import GlobalStyle from '../helpers/global-styles';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 import Flex from './components/Flex';

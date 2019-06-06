@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import {isEmpty, map, prop, reduce} from 'ramda';
 
 import Flex from '../Flex';
 import Socials from '../Socials';
@@ -113,8 +114,8 @@ const NavItems = ({name, link, cartSize}) => {
     );
 };
 
-const Header = () => {
-    const cartSize = 1;
+const Header = ({cart}) => {
+    const cartSize = isEmpty(cart) ? '0' : reduce((sum, i) => i + sum, 0, map(prop('count'), cart));
     const nav = [{
         name: 'Контакты',
         link: '/contacts',
@@ -166,7 +167,7 @@ const Header = () => {
     );
 };
 
-const mapStateToProps = state => (state);
+const mapStateToProps = ({cart}) => ({cart});
 
 export default connect(mapStateToProps)(Header);
 

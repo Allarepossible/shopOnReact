@@ -42,10 +42,10 @@ export const fetchAdmins = () => async (dispatch, getState, api) => {
     });
 };
 
-export const addProductToCart = articul => async dispatch => {
+export const addProductToCart = product => async dispatch => {
     dispatch({
         type: ADD_PRODUCT_TO_CART,
-        payload: articul,
+        payload: product,
     });
 };
 
