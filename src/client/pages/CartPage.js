@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {find, reduce} from 'ramda';
+import {reduce} from 'ramda';
 import styled from 'styled-components';
 
 import {deleteProduct, changeCountOfProductInCart} from '../actions';
@@ -65,53 +65,23 @@ const Input = styled.input`
     border-radius: 3px;
 `;
 
-const Button = styled.i`
+const Button = styled.button`
     position: relative;
 
     width: 25px;
     height: 25px;
-
+    margin: 0 5px;
+    padding: 0;
+    line-height: 18px;
+    font-size: 19px;
+    margin: 0 5px;
     cursor: pointer;
 
     border: 1px solid #dee1e4;
     background-color: #fff;
     
-    .plus:after {
-        width: 13px;
-        height: 13px;
-        position: absolute;
-        top: 5px;
-        left: 6px;
-    
-        content: '+';
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTExIDExVjIuOTkxYzAtLjUzNi40NDctLjk5MSAxLS45OTEuNTU2IDAgMSAuNDQ0IDEgLjk5MVYxMWg4LjAwOGMuNTM2IDAgLjk5Mi40NDcuOTkyIDEgMCAuNTU2LS40NDUgMS0uOTkyIDFIMTN2OC4wMDhjMCAuNTM2LS40NDguOTkyLTEgLjk5Mi0uNTU3IDAtMS0uNDQ1LTEtLjk5MlYxM0gyLjk5MUMyLjQ1NSAxMyAyIDEyLjU1MiAyIDEyYzAtLjU1Ny40NDQtMSAuOTkxLTFIMTF6Ii8+PC9zdmc+);
-    
-        color: #a8abad;
-    }
-    .minus.disabled {
-        border-color: #f0f4f7;
-        
-        &:after {
-            width: 10px;
-            height: 1px;
-            position: absolute;
-            top: 11px;
-            left: 6px;
-            content: '';
-        
-            background-color: #ccd4da;
-        }
-    }
-    .minus:after {
-
-        width: 10px;
-        height: 1px;
-        position: absolute;
-        top: 11px;
-        left: 6px;
-        content: '-';
-    
-        background-color: black;
+    [disabled] {
+        opacity: 0.3;
     }
 `;
 
@@ -127,49 +97,28 @@ const Delete = styled.i`
 `;
 
 
-const CartItem = ({image, name, articul, nalichie, catalog, price, count, deleteP, change}) => {
-    const deleteProductFromCart = () => {
-        deleteP(articul);
-    };
-
-    const decreaseCount = () => {
-        if (count > 1) {
-            change(articul);
-        }
-    };
-
-    const changeCount = () => {
-    };
-
-    const increaseCount = () => {
-        change(articul, '+');
-    };
-
-    const disabledClass = count === 1 ? ' disabled' : '';
-
-    return (
-        <CartItemStyle>
-            <Link to={`/catalog/${catalog}/${articul}`}>
-                <CartItemImage>
-                    <img src={image} alt={name} />
-                </CartItemImage>
-            </Link>
-            <Box>
-                <Text fontWeight='bold' color='grey' fontSize='s'>Артикул</Text>
-                <Text fontWeight='bold'>{articul}</Text>
-            </Box>
-            <Text>{name}</Text>
-            <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
-            <Flex justifyContent='space-around'>
-                <Button className={`minus${disabledClass}`} onClick={decreaseCount} />
-                <Input type='text' value={count} onChange={changeCount} />
-                <Button className='plus' onClick={increaseCount} />
-                <Delete onClick={deleteProductFromCart} />
-            </Flex>
-            <Text size='l'>{normalizePrice(price)} ₽</Text>
-        </CartItemStyle>
-    );
-};
+const CartItem = ({image, name, articul, nalichie, catalog, price, count, deleteP, change}) => (
+    <CartItemStyle>
+        <Link to={`/catalog/${catalog}/${articul}`}>
+            <CartItemImage>
+                <img src={image} alt={name} />
+            </CartItemImage>
+        </Link>
+        <Box>
+            <Text fontWeight='bold' color='grey' fontSize='s'>Артикул</Text>
+            <Text fontWeight='bold'>{articul}</Text>
+        </Box>
+        <Text>{name}</Text>
+        <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
+        <Flex justifyContent='space-around'>
+            <Button onClick={change.bind(this, {articul}, '+')} disabled={count === 1}>-</Button>
+            <Input type='text' value={count} />
+            <Button onClick={change.bind(this, {articul})}>+</Button>
+            <Delete onClick={deleteP} />
+        </Flex>
+        <Text size='l'>{normalizePrice(price)} ₽</Text>
+    </CartItemStyle>
+);
 
 
 const CartPage = ({cart, deleteProduct: del, changeCountOfProductInCart: change}) => {
@@ -193,7 +142,7 @@ const CartPage = ({cart, deleteProduct: del, changeCountOfProductInCart: change}
                                 nalichie={product.nalichie}
                                 catalog={product.catalog}
                                 cart={cart}
-                                deleteP={del}
+                                deleteP={del.bind(this, product)}
                                 change={change}
                             />
                         ))

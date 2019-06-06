@@ -1,6 +1,11 @@
-import {find, propEq} from 'ramda';
+import {find, propEq, reject} from 'ramda';
 
-import {ADD_PRODUCT_TO_CART} from '../actions';
+import {
+    ADD_PRODUCT_TO_CART,
+    DECREASE_COUNT_OF_PRODUCT_IN_CART,
+    INCREASE_COUNT_OF_PRODUCT_IN_CART,
+    DELETE_PRODUCT_FROM_CART,
+} from '../actions';
 
 export default (state = [], {type, payload: product}) => {
     const {articul} = product || {};
@@ -15,6 +20,16 @@ export default (state = [], {type, payload: product}) => {
             }
 
             return [...state, {articul, count: 1, product}];
+        case DECREASE_COUNT_OF_PRODUCT_IN_CART:
+            productAlreadyInCart.count++;
+
+            return [...state];
+        case INCREASE_COUNT_OF_PRODUCT_IN_CART:
+            productAlreadyInCart.count--;
+
+            return [...state];
+        case DELETE_PRODUCT_FROM_CART:
+            return [...reject(propEq('articul', articul), state)];
         default:
             return state;
     }

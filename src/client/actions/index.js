@@ -3,9 +3,10 @@ export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_ADMINS = 'FETCH_ADMINS';
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
+export const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
-export const INCREASE_COUNT_PRODUCT = 'INCREASE_COUNT_PRODUCT';
-export const DECREASE_COUNT_PRODUCT = 'DECREASE_COUNT_PRODUCT';
+export const INCREASE_COUNT_OF_PRODUCT_IN_CART = 'INCREASE_COUNT_OF_PRODUCT_IN_CART';
+export const DECREASE_COUNT_OF_PRODUCT_IN_CART = 'DECREASE_COUNT_OF_PRODUCT_IN_CART';
 
 export const fetchCatalog = path => async (dispatch, getState, api) => {
     const result = await api.get(path);
@@ -49,6 +50,12 @@ export const addProductToCart = product => async dispatch => {
     });
 };
 
+export const deleteProductFromCart = product => async dispatch => {
+    dispatch({
+        type: DELETE_PRODUCT_FROM_CART,
+        payload: product,
+    });
+};
 export const deleteProduct = articul => async dispatch => {
     dispatch({
         type: DELETE_PRODUCT,
@@ -56,16 +63,16 @@ export const deleteProduct = articul => async dispatch => {
     });
 };
 
-export const changeCountOfProductInCart = (articul, type) => async dispatch => {
+export const changeCountOfProductInCart = (product, type) => async dispatch => {
     if (type === '+') {
         dispatch({
-            type: INCREASE_COUNT_PRODUCT,
-            payload: articul,
+            type: INCREASE_COUNT_OF_PRODUCT_IN_CART,
+            payload: product,
         });
     } else {
         dispatch({
-            type: DECREASE_COUNT_PRODUCT,
-            payload: articul,
+            type: DECREASE_COUNT_OF_PRODUCT_IN_CART,
+            payload: product,
         });
     }
 };
