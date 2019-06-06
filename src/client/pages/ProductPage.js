@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Helmet} from 'react-helmet';
 
-import {fetchProduct} from '../actions';
+import {fetchProduct, addProductToCart} from '../actions';
 import Features from '../components/Features';
 import Rating from '../components/Rating';
 import SlideShow from '../components/SlideShow';
@@ -27,7 +27,7 @@ class ProductPage extends Component {
     }
 
     render() {
-        const {product, catalog} = this.props;
+        const {product, catalog, addProductToCart: addToCart} = this.props;
         const catalogLink = `/catalog/${catalog.id}`;
         const NewPrice = String(product.price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
 
@@ -59,7 +59,7 @@ class ProductPage extends Component {
                         </Flex>
                         <Flex flexDirection='column' width='30%' justifyContent='flex-start' alignItems='flex-end'>
                             <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
-                            <Button type='primary' onClick={() => console.log('add')}>В корзину</Button>
+                            <Button type='primary' onClick={addToCart.bind(this, product.articul)}>В корзину</Button>
                         </Flex>
                     </Flex>
                     <Box>{product.info}</Box>
@@ -69,9 +69,9 @@ class ProductPage extends Component {
     }
 }
 
-const mapStateToProps = ({product, catalog}, {match}) => ({product, catalog,  path: match.url});
+const mapStateToProps = ({product, catalog}, {match}) => ({product, catalog, path: match.url});
 
 export default {
     loadData: ({dispatch}, {url}) => dispatch(fetchProduct(url)),
-    component: connect(mapStateToProps, {fetchProduct})(ProductPage),
+    component: connect(mapStateToProps, {fetchProduct, addProductToCart})(ProductPage),
 };

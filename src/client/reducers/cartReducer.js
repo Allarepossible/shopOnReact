@@ -1,11 +1,19 @@
+import {find, propEq} from 'ramda';
+
 import {ADD_PRODUCT_TO_CART} from '../actions';
 
-const initialState = {}
+export default (state = [], {type, payload: articul}) => {
+    const productAlreadyInCart = find(propEq('articul', articul), state);
 
-export default (state = [], {type, payload}) => {
     switch (type) {
         case ADD_PRODUCT_TO_CART:
-            return payload.data;
+            if (productAlreadyInCart) {
+                productAlreadyInCart.count++;
+
+                return [...state];
+            }
+
+            return [...state, {articul, count: 1}];
         default:
             return state;
     }

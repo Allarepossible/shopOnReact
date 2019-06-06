@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {find} from 'lodash';
 import styled from 'styled-components';
 
 import Text from '../Text';
@@ -91,17 +90,10 @@ const ProductSnippet = ({
     ratio,
     price,
     nalichie,
-    catalogId,
-    addToCart,
-    catalog,
+    addProductToCart,
     view,
 }) => {
     const NewPrice = String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
-    const addProductToCart = () => {
-        const product = find(catalog.products, ['articul', articul]);
-
-        addToCart(product);
-    };
 
     if (view === 'tile') {
         return (
@@ -121,7 +113,7 @@ const ProductSnippet = ({
                     <Stock>{nalichie}</Stock>
                     <StyledLink to={`/product/${articul}`}>Подробнее</StyledLink>
                 </Flex>
-                <Button type='primary' onClick={addProductToCart}>В корзину</Button>
+                <Button type='primary' onClick={addProductToCart.bind(this, articul)}>В корзину</Button>
             </ProductSnippetStyle>
         );
     } if (view === 'column') {
@@ -146,7 +138,7 @@ const ProductSnippet = ({
                 </Content>
                 <Flex flexDirection='column'>
                     <Text fontWeight='bold' mb={15} fontSize='l'>{NewPrice} ₽</Text>
-                    <Button type='primary' onClick={addProductToCart}>В корзину</Button>
+                    <Button type='primary' onClick={addProductToCart.bind(this, articul)}>В корзину</Button>
                 </Flex>
             </LineProductSnippet>
         );
@@ -159,7 +151,7 @@ const ProductSnippet = ({
             <Info maxWidth='250px' mb={0} overflow='hidden'>{info}</Info>
             <Stock>{nalichie}</Stock>
             <Text fontWeight='bold' fontSize='l'>{NewPrice} ₽</Text>
-            <Button type='primary' onClick={addProductToCart}>В корзину</Button>
+            <Button type='primary' onClick={addProductToCart.bind(this, articul)}>В корзину</Button>
         </LineProductSnippet>
     );
 };
