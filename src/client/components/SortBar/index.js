@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Box from '../Box';
-import Text from '../Text';
-import Flex from '../Flex';
+import Box from '../common/Box';
+import Text from '../common/Text';
+import Flex from '../common/Flex';
 
 const Container = styled(Flex)`
     justify-content: space-between;

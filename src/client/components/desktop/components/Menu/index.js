@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Flex from '../common/Flex';
-import MenuItem from '../MenuItem';
-import Container from '../common/Container';
+import Flex from '../../../common/Flex';
+import MenuItem from '../../../MenuItem';
+import Container from '../../../common/Container';
 
 const Menu = ({catalogs}) => (
     <Flex background='white' mb={15}>

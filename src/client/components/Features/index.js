@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, {withTheme} from 'styled-components';
 
-import Flex from '../Flex';
-import Text from '../Text';
+import Flex from '../common/Flex';
+import Text from '../common/Text';
 
 const FeatureItem = styled(Flex)`
     padding: ${({size}) => (size === 'big' ? '5px 3px' : '1px 3px')};;

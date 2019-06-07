@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import Filter from '../Filter';
-import Box from '../Box';
+import Box from '../common/Box';
 
 const Filters = ({filters}) => (
     <Box background='white' width='100%' borderRadius='5px' mb={6}>

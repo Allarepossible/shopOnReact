@@ -2,9 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 
-import Box from '../Box';
-import Text from '../Text';
-import Flex from '../Flex';
+import Box from '../common/Box';
+import Text from '../common/Text';
+import Flex from '../common/Flex';
 import CheckboxFilter from '../CheckboxFilter';
 
 const FiltersItem = styled(Box)`

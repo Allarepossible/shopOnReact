@@ -1,24 +1,33 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {renderRoutes} from 'react-router-config';
+import universal from 'react-universal-component';
 
-import Header from './components/Header';
 import {fetchCategories} from './actions';
 import GlobalStyle from '../helpers/global-styles';
-import Menu from './components/Menu';
 import Footer from './components/Footer';
-import Flex from './components/Flex';
+import Flex from './components/common/Flex';
 
-const App = ({route}) => (
-    <Flex flexDirection='column'>
-        <GlobalStyle />
-        <Header/>
-        <Menu />
-        {renderRoutes(route.routes)}
-        <Footer />
-    </Flex>
-);
+const App = ({isMobile, route}) => {
+    const folder = isMobile ? 'mobile' : 'desktop';
+
+    const Layout = universal(import(`./components/${folder}/index`), {
+        minDelay: 200,
+    });
+
+    return (
+        <Flex flexDirection='column'>
+            <GlobalStyle />
+            <Layout/>
+            {renderRoutes(route.routes)}
+            <Footer />
+        </Flex>
+    );
+};
+
+const mapStateToProps = ({isMobile}, ownProps) => ({isMobile, ...ownProps});
 
 export default {
     loadData: ({dispatch}) => dispatch(fetchCategories()),
-    component: App,
+    component: connect(mapStateToProps)(App),
 };

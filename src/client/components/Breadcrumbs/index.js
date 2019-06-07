@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import Box from '../Box';
-import Flex from '../Flex';
+import Box from '../common/Box';
+import Flex from '../common/Flex';
 
 const Item = styled(Flex)`
     & + &:before {

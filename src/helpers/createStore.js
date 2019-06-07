@@ -14,7 +14,7 @@ export default req => {
     });
     const store = createStore(
         reducers,
-        {},
+        {isMobile: req.useragent.isMobile},
         composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance)))
     );
 

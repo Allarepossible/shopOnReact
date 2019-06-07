@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 
-import Flex from '../Flex';
+import Flex from '../common/Flex';
 import SortBar from '../SortBar';
 import ProductSnippet from '../ProductSnippet';
 

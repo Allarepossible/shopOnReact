@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Flex from '../Flex';
-import {media} from '../../../helpers/global-styles';
+import Flex from '../../common/Flex';
+import {media} from '../../../../helpers/global-styles';
 
 const Container = styled(Flex)`
     margin: 0 auto;

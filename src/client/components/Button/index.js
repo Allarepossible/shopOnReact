@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {withTheme} from 'styled-components';
 
-import Box from '../Box';
+import Box from '../common/Box';
 
 const StyledButton = styled(Box)`
   &:hover {

@@ -15,7 +15,7 @@ export default (req, store, context) => {
         <ThemeProvider theme={theme}>
             <Provider store={store}>
                 <StaticRouter location={req.path} context={context}>
-                    <div>{renderRoutes(Routes)}</div>
+                    {renderRoutes(Routes)}
                 </StaticRouter>
             </Provider>
         </ThemeProvider>

@@ -1,5 +1,6 @@
 import 'idempotent-babel-polyfill';
 import express from 'express';
+import useragent from 'express-useragent';
 import {matchRoutes} from 'react-router-config';
 import proxy from 'express-http-proxy';
 
@@ -19,7 +20,7 @@ app.use(
         },
     })
 );
-
+app.use(useragent.express());
 app.use(express.static('public'));
 
 app.get('*', (req, res) => {

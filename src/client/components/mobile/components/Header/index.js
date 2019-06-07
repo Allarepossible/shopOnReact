@@ -4,10 +4,9 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 import {isEmpty, map, prop, reduce} from 'ramda';
 
-import Flex from '../Flex';
-import Socials from '../Socials';
-import Box from '../Box';
-import Container from '../Container';
+import Flex from '../../../common/Flex';
+import Box from '../../../common/Box';
+import Container from '../../../common/Container';
 
 const Top = styled(Flex)`
     border-bottom: 2px solid #ebedef;
@@ -127,8 +126,10 @@ const Header = ({cart}) => {
         <Flex justifyContent='space-between' flexDirection='column'>
             <Top>
                 <Container justifyContent='space-between' pt={30} pb={30}>
-                    <Socials />
-                    <Flex width='45%' justifyContent='space-between'>
+                    <Link to='/'>
+                        <Logo src='/api/images/logo/logo.png' alt='Cooltech' />
+                    </Link>
+                    <Flex width='45%' justifyContent='space-between' flexDirection='column'>
                         <Address>ул. Маяковская 6, офис 17</Address>
                         <Phone href='tel://+7(921)123-12-13'>+7 (921) 123-12-12</Phone>
                     </Flex>
@@ -136,27 +137,10 @@ const Header = ({cart}) => {
             </Top>
             <Flex justifyContent='space-between'>
                 <Container justifyContent='space-between' pt={30} pb={30}>
-                    <Link to='/'>
-                        <Logo src='/api/images/logo/logo.png' alt='Cooltech' />
-                    </Link>
                     <Form action="">
                         <Input type='text' placeholder='Что будем искать' />
                         <Button type='submit' href='/search'>Найти</Button>
                     </Form>
-                    <Box width='30%'>
-                        <Flex justifyContent='space-between'>
-                            {
-                                nav.map(el => (
-                                    <NavItems
-                                        key={el.name}
-                                        name={el.name}
-                                        link={el.link}
-                                        cartSize={cartSize}
-                                    />
-                                ))
-                            }
-                        </Flex>
-                    </Box>
                 </Container>
             </Flex>
         </Flex>

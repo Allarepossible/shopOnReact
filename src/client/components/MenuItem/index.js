@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import {fetchCatalog} from '../../actions';
-import Flex from '../Flex';
+import Flex from '../common/Flex';
 import {media} from '../../../helpers/global-styles';
 
 const StyledMenuItem = styled(Flex)`

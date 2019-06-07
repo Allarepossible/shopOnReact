@@ -2,9 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import Text from '../Text';
-import Box from '../Box';
-import Flex from '../Flex';
+import Text from '../common/Text';
+import Box from '../common/Box';
+import Flex from '../common/Flex';
 import Button from '../Button';
 import SlideShow from '../SlideShow';
 import Rating from '../Rating';
