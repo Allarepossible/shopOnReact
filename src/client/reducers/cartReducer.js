@@ -19,7 +19,7 @@ export default (state = [], {type, payload: product}) => {
                 return [...state];
             }
 
-            return [...state, {articul, count: 1, product}];
+            return [...state, {articul, count: 1}];
         case DECREASE_COUNT_OF_PRODUCT_IN_CART:
             productAlreadyInCart.count++;
 

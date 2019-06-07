@@ -1,3 +1,5 @@
+import {isNil} from 'ramda';
+export const FETCH_CART = 'FETCH_CART';
 export const FETCH_CATALOG = 'FETCH_CATALOG';
 export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
@@ -23,6 +25,17 @@ export const fetchProduct = path => async (dispatch, getState, api) => {
         type: FETCH_PRODUCT,
         payload: result,
     });
+};
+
+export const fetchCart = ids => async (dispatch, getState, api) => {
+    const result = await api.get(`products?ids=${ids}`);
+
+    if (!isNil(result)) {
+        dispatch({
+            type: FETCH_CART,
+            payload: result,
+        });
+    }
 };
 
 export const fetchCategories = () => async (dispatch, getState, api) => {

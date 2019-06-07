@@ -72,7 +72,11 @@ class ProductPage extends Component {
     }
 }
 
-const mapStateToProps = ({product, categories}, {match}) => ({product, categories, path: match.url});
+const mapStateToProps = ({products, categories}, {match}) => ({
+    product: find(propEq('articul', Number(match.params.id)), products),
+    categories,
+    path: match.url,
+});
 
 export default {
     loadData: ({dispatch}, {url}) => dispatch(fetchProduct(url)),

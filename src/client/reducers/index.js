@@ -9,7 +9,7 @@ import categoriesReducer from './categoriesReducer';
 export default combineReducers({
     cart: cartReducer,
     catalog: catalogReducer,
-    product: productReducer,
+    products: productReducer,
     admins: adminsReducer,
     categories: categoriesReducer,
 });

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {reduce} from 'ramda';
+import {find, isEmpty, map, prop, propEq, reduce} from 'ramda';
 import styled from 'styled-components';
 
-import {deleteProductFromCart, changeCountOfProductInCart} from '../actions';
+import {deleteProductFromCart, changeCountOfProductInCart, fetchCart} from '../actions';
+import {loadState} from '../../helpers/localStorage';
 import Box from '../components/Box';
 import Flex from '../components/Flex';
 import Text from '../components/Text';
@@ -121,53 +122,73 @@ const CartItem = ({image, name, articul, nalichie, catalog, price, count, delete
 );
 
 
-const CartPage = ({cart, deleteProductFromCart: deleteProduct, changeCountOfProductInCart: change}) => {
-    const commonPrice = reduce((result, {product, count}) => result + product.price * count, 0, cart);
+class CartPage extends Component {
+    componentDidMount() {
+        const {cart} = this.props;
 
-    return (
-        <Page title='Корзина' breadcrumbs={[{name: 'Корзина', link: '/cart'}]}>
-            <Box mb='150px'>
-                <Flex flexDirection='column'>
-                    {
-                        cart.length > 0
-                        && cart.map(({product, count}, index) => (
-                            <CartItem
-                                key={index}
-                                image={product.images[0].image}
-                                name={product.name}
-                                price={product.price}
-                                count={count}
-                                articul={product.articul}
-                                info={product.info}
-                                nalichie={product.nalichie}
-                                catalog={product.catalog}
-                                cart={cart}
-                                deleteProduct={deleteProduct.bind(this, product)}
-                                change={change}
-                            />
-                        ))
-                    }
-                    {
-                        cart.length === 0
-                        && <Empty>Корзина пуста!</Empty>
-                    }
-                </Flex>
-                {
-                    cart.length > 0
-                    && (
-                        <Price>
-                            Итоговая цена:
-                            {normalizePrice(commonPrice)}
-                        </Price>
-                    )
-                }
-            </Box>
-        </Page>
-    );
-};
+        if (!isEmpty(cart)) {
+            const ids = map(prop('articul'))(cart);
 
-const mapStateToProps = ({cart}) => ({cart});
+            this.props.fetchCart(ids);
+        }
+    }
+
+    render() {
+        const {deleteProductFromCart: deleteProduct, changeCountOfProductInCart: change, products, cart} = this.props;
+
+        return (
+            <Page title='Корзина' breadcrumbs={[{name: 'Корзина', link: '/cart'}]}>
+                <Box mb='150px'>
+                    <Flex flexDirection='column'>
+                        {
+                            !isEmpty(products)
+                            && cart.map(({articul, count}, index) => {
+                                const product = find(propEq('articul', Number(articul)), products);
+
+                                return (
+                                    <CartItem
+                                        key={index}
+                                        image={product.images[0].image}
+                                        name={product.name}
+                                        price={product.price}
+                                        count={count}
+                                        articul={product.articul}
+                                        info={product.info}
+                                        nalichie={product.nalichie}
+                                        catalog={product.catalog}
+                                        cart={cart}
+                                        deleteProduct={deleteProduct.bind(this, product)}
+                                        change={change}
+                                    />
+                                );
+                            })
+                        }
+                        {
+                            isEmpty(products)
+                            && <Empty>Корзина пуста!</Empty>
+                        }
+                    </Flex>
+                    {
+                        !isEmpty(products)
+                        && (
+                            <Price>
+                                Итоговая цена:
+                                {normalizePrice(reduce((result, {articul, count}) => {
+                                    const product = find(propEq('articul', Number(articul)), products);
+
+                                    return result + product.price * count;
+                                }, 0, cart))}
+                            </Price>
+                        )
+                    }
+                </Box>
+            </Page>
+        );
+    }
+}
+
+const mapStateToProps = ({cart, products}) => ({cart, products});
 
 export default {
-    component: connect(mapStateToProps, {deleteProductFromCart, changeCountOfProductInCart})(CartPage),
+    component: connect(mapStateToProps, {deleteProductFromCart, changeCountOfProductInCart, fetchCart})(CartPage),
 };
