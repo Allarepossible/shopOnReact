@@ -1,7 +1,10 @@
 const path = require('path');
+const util = require('util');
 
 const merge = require('webpack-merge');
 const webpackNodeExternals = require('webpack-node-externals');
+
+const debuglog = util.debuglog('webpack_config');
 
 const baseConfig = require('./webpack.base');
 
@@ -13,6 +16,13 @@ const config = {
         filename: 'bundle.js',
     },
     externals: [webpackNodeExternals()],
+    devtool: 'cheap-module-eval-source-map',
 };
 
-module.exports = merge(baseConfig, config);
+module.exports = () => {
+    const result = merge(baseConfig, config);
+
+    debuglog(result);
+
+    return result;
+};

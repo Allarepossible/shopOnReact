@@ -1,6 +1,9 @@
 const path = require('path');
+const util = require('util');
 
 const merge = require('webpack-merge');
+
+const debuglog = util.debuglog('webpack_config');
 
 const baseConfig = require('./webpack.base');
 
@@ -12,4 +15,10 @@ const config = {
     },
 };
 
-module.exports = merge(baseConfig, config);
+module.exports = () => {
+    const result = merge(baseConfig, config);
+
+    debuglog(result);
+
+    return result;
+};
