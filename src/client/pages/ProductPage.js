@@ -29,6 +29,9 @@ class ProductPage extends Component {
 
     render() {
         const {product, addProductToCart: addToCart, categories} = this.props;
+        if (!product) {
+            return null;
+        }
         const {catalog, articul, name, images, feature, ratio, info} = product;
         const catalogLink = `/catalog/${catalog}`;
         const catalogName = find(propEq('id', catalog), categories).name;
