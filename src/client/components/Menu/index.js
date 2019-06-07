@@ -1,20 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import styled from 'styled-components';
 
 import Flex from '../Flex';
-import Box from '../Box';
 import MenuItem from '../MenuItem';
-
-const Container = styled(Box)`
-    margin: 0 auto;
-    width: ${({theme}) => theme.maxWidths.main};
-`;
+import Container from '../Container';
 
 const Menu = ({catalogs}) => (
     <Flex background='white' mb={15}>
         <Container>
-            <Flex justifyContent='space-between'>
+            <Flex justifyContent='space-between' flex={1}>
                 {
                     catalogs.map((catalog, i) => (
                         <MenuItem

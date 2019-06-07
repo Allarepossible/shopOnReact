@@ -7,16 +7,11 @@ import Flex from '../Flex';
 import Box from '../Box';
 import Socials from '../Socials';
 import MenuItem from '../MenuItem';
+import Container from '../Container';
 
 const FooterContainer = styled(Box)`
     padding: 30px 0 5px;
     background-image: url('/api/images/footer.png');
-    min-width: 1256px;
-`;
-
-const Container = styled(Box)`
-    margin: 0 auto;
-    width: ${({theme}) => theme.maxWidths.main};
 `;
 
 const Copyright = styled(Text)`
@@ -30,7 +25,7 @@ const Logo = styled.img`
 
 const Footer = ({catalogs}) => (
     <FooterContainer>
-        <Container>
+        <Container flexDirection='column'>
             <Flex justifyContent='space-between' mb={30}>
                 <Logo src="/api/images/logo/logo_footer.png" alt="" />
                 <Flex justifyContent='space-between' alignItems='flex-end' flexDirection='column'>

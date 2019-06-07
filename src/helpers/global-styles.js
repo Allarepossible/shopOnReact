@@ -1,7 +1,8 @@
 import {createGlobalStyle, css} from 'styled-components';
 
 const sizes = {
-    desktop: 992,
+    big: 1200,
+    desktop: 1000,
     tablet: 768,
     phone: 576,
 };
@@ -9,7 +10,7 @@ const sizes = {
 // Iterate through the sizes and create a media template
 export const media = Object.keys(sizes).reduce((acc, label) => {
     acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label] / 16}em) {
+    @media (max-width: ${sizes[label]}px) {
       ${css(...args)}
     }
   `;
@@ -30,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
         color: #000;
         margin: 0;
         background-color: #f4f4f4;
+       
     }
     @font-face {
         font-family: 'OpenSansRegular';

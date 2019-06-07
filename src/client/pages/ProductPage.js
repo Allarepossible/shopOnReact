@@ -59,7 +59,7 @@ class ProductPage extends Component {
                             justifyContent='flex-start'
                             alignItems='flex-start'
                         >
-                            <Features features={feature} />
+                            <Features features={feature} size='big' />
                             <Text fontWeight='bold' color='grey' fontSize='s'>Артикул {articul}</Text>
                             <Rating count={ratio} />
                         </Flex>

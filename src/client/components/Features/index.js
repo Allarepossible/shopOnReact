@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {withTheme} from 'styled-components';
 
 import Flex from '../Flex';
 import Text from '../Text';
 
 const FeatureItem = styled(Flex)`
-    padding: 1px 3px;
+    padding: ${({size}) => (size === 'big' ? '5px 3px' : '1px 3px')};;
     
     background-color: #e6e6e6;
     
@@ -15,19 +15,19 @@ const FeatureItem = styled(Flex)`
 `;
 
 const FeatureList = styled.div`
-    width: 195px;
+    width: 100%;
     border: 1px solid #eee;
     margin-bottom: 15px;
 `;
 
-const Feature = ({name, value}) => (
-    <FeatureItem justifyContent='space-between'>
+const Feature = ({name, value, size}) => (
+    <FeatureItem justifyContent='space-between' size={size}>
         <Text>{name}</Text>
         <Text>{value}</Text>
     </FeatureItem>
 );
 
-const Features = ({features}) => (
+const Features = ({features, size}) => (
     <FeatureList>
         {
             features.map(feature => (
@@ -35,10 +35,11 @@ const Features = ({features}) => (
                     key={feature.name}
                     name={feature.name}
                     value={feature.value}
+                    size={size}
                 />
             ))
         }
     </FeatureList>
 );
 
-export default Features;
+export default withTheme(Features);

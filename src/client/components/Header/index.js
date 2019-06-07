@@ -7,15 +7,11 @@ import {isEmpty, map, prop, reduce} from 'ramda';
 import Flex from '../Flex';
 import Socials from '../Socials';
 import Box from '../Box';
+import Container from '../Container';
 
 const Top = styled(Flex)`
     border-bottom: 2px solid #ebedef;
     background-color: #fff;
-`;
-
-const Container = styled(Flex)`
-    margin: 0 auto;
-    width: ${({theme}) => theme.maxWidths.main};
 `;
 
 const Address = styled(Box)`
@@ -132,7 +128,7 @@ const Header = ({cart}) => {
             <Top>
                 <Container justifyContent='space-between' pt={30} pb={30}>
                     <Socials />
-                    <Flex width='40%' justifyContent='space-between'>
+                    <Flex width='45%' justifyContent='space-between'>
                         <Address>ул. Маяковская 6, офис 17</Address>
                         <Phone href='tel://+7(921)123-12-13'>+7 (921) 123-12-12</Phone>
                     </Flex>

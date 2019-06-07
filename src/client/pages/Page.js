@@ -12,7 +12,7 @@ class Page extends Component {
         const {children, title, breadcrumbs, withInformation} = this.props;
 
         return (
-            <Container>
+            <Container flexDirection='column'>
                 {
                     breadcrumbs && <Breadcrumbs catalog={breadcrumbs}/>
                 }

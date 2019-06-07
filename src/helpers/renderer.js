@@ -27,6 +27,7 @@ export default (req, store, context) => {
         <html>
           <head>
             <link rel='shortcut icon' href='/api/images/favicon.ico'>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
             ${helmet.title.toString()}
             ${helmet.meta.toString()}
           </head>
