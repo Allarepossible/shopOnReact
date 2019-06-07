@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {reduce} from 'ramda';
 import styled from 'styled-components';
 
-import {deleteProduct, changeCountOfProductInCart} from '../actions';
+import {deleteProductFromCart, changeCountOfProductInCart} from '../actions';
 import Box from '../components/Box';
 import Flex from '../components/Flex';
 import Text from '../components/Text';
@@ -97,7 +97,7 @@ const Delete = styled.i`
 `;
 
 
-const CartItem = ({image, name, articul, nalichie, catalog, price, count, deleteP, change}) => (
+const CartItem = ({image, name, articul, nalichie, catalog, price, count, deleteProduct, change}) => (
     <CartItemStyle>
         <Link to={`/catalog/${catalog}/${articul}`}>
             <CartItemImage>
@@ -112,16 +112,16 @@ const CartItem = ({image, name, articul, nalichie, catalog, price, count, delete
         <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
         <Flex justifyContent='space-around'>
             <Button onClick={change.bind(this, {articul}, '+')} disabled={count === 1}>-</Button>
-            <Input type='text' value={count} />
+            <Input type='text' value={count} onChange={() => {console.log('i')}}/>
             <Button onClick={change.bind(this, {articul})}>+</Button>
-            <Delete onClick={deleteP} />
+            <Delete onClick={deleteProduct} />
         </Flex>
         <Text size='l'>{normalizePrice(price)} ₽</Text>
     </CartItemStyle>
 );
 
 
-const CartPage = ({cart, deleteProduct: del, changeCountOfProductInCart: change}) => {
+const CartPage = ({cart, deleteProductFromCart: deleteProduct, changeCountOfProductInCart: change}) => {
     const commonPrice = reduce((result, {product, count}) => result + product.price * count, 0, cart);
 
     return (
@@ -142,7 +142,7 @@ const CartPage = ({cart, deleteProduct: del, changeCountOfProductInCart: change}
                                 nalichie={product.nalichie}
                                 catalog={product.catalog}
                                 cart={cart}
-                                deleteP={del.bind(this, product)}
+                                deleteProduct={deleteProduct.bind(this, product)}
                                 change={change}
                             />
                         ))
@@ -169,5 +169,5 @@ const CartPage = ({cart, deleteProduct: del, changeCountOfProductInCart: change}
 const mapStateToProps = ({cart}) => ({cart});
 
 export default {
-    component: connect(mapStateToProps, {deleteProduct, changeCountOfProductInCart})(CartPage),
+    component: connect(mapStateToProps, {deleteProductFromCart, changeCountOfProductInCart})(CartPage),
 };

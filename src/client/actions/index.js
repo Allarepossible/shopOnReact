@@ -4,7 +4,6 @@ export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_ADMINS = 'FETCH_ADMINS';
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
-export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const INCREASE_COUNT_OF_PRODUCT_IN_CART = 'INCREASE_COUNT_OF_PRODUCT_IN_CART';
 export const DECREASE_COUNT_OF_PRODUCT_IN_CART = 'DECREASE_COUNT_OF_PRODUCT_IN_CART';
 
@@ -54,12 +53,6 @@ export const deleteProductFromCart = product => async dispatch => {
     dispatch({
         type: DELETE_PRODUCT_FROM_CART,
         payload: product,
-    });
-};
-export const deleteProduct = articul => async dispatch => {
-    dispatch({
-        type: DELETE_PRODUCT,
-        payload: articul,
     });
 };
 

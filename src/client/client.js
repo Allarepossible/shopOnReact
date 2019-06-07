@@ -13,6 +13,9 @@ import {ThemeProvider} from 'styled-components';
 import theme from '../theme';
 import reducers from './reducers';
 import Routes from './Routes';
+import {saveState, loadState} from '../helpers/localStorage';
+
+const persistedState = loadState();
 
 const axiosInstance = axios.create({
     baseURL: '/api',
@@ -20,9 +23,13 @@ const axiosInstance = axios.create({
 
 const store = createStore(
     reducers,
-    window.INITIAL_STATE,
+    {...window.INITIAL_STATE, cart: persistedState.cart},
     composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance)))
 );
+
+store.subscribe(() => {
+    saveState(store.getState());
+});
 
 ReactDOM.hydrate(
     <ThemeProvider theme={theme}>
