@@ -17,6 +17,6 @@ export const saveStateCart = cart => {
         const serializedState = JSON.stringify(cart);
         localStorage.setItem('cart', serializedState);
     } catch (err) {
-        console.log(err);
+        // ошибка
     }
 };

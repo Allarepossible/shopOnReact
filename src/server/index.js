@@ -43,11 +43,14 @@ app.get('*', (req, res) => {
         }
 
         res.send(content);
+
+        return undefined;
     });
 });
 
 app.disable('etag');
 
 app.listen(PORT, () => {
+    // eslint-disable-next-line
     console.log('server run');
 });

@@ -5,7 +5,6 @@ import {find, isEmpty, map, prop, propEq, reduce} from 'ramda';
 import styled from 'styled-components';
 
 import {deleteProductFromCart, changeCountOfProductInCart, fetchCart} from '../actions';
-import {loadState} from '../../helpers/localStorage';
 import Box from '../components/Box';
 import Flex from '../components/Flex';
 import Text from '../components/Text';
@@ -113,7 +112,7 @@ const CartItem = ({image, name, articul, nalichie, catalog, price, count, delete
         <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
         <Flex justifyContent='space-around'>
             <Button onClick={change.bind(this, {articul}, '+')} disabled={count === 1}>-</Button>
-            <Input type='text' value={count} onChange={() => {console.log('i')}}/>
+            <Input type='text' value={count} onChange={() => {}}/>
             <Button onClick={change.bind(this, {articul})}>+</Button>
             <Delete onClick={deleteProduct} />
         </Flex>

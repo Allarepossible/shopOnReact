@@ -1,4 +1,5 @@
 import {isNil} from 'ramda';
+
 export const FETCH_CART = 'FETCH_CART';
 export const FETCH_CATALOG = 'FETCH_CATALOG';
 export const FETCH_PRODUCT = 'FETCH_PRODUCT';

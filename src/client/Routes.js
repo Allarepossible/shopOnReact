@@ -1,5 +1,3 @@
-import React from 'react';
-
 import App from './App';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
