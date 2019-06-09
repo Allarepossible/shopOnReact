@@ -10,7 +10,7 @@ const baseConfig = require('./webpack.base');
 
 const config = {
     target: 'node',
-    entry: './src/server/index.js',
+    entry: './src/server/index.tsx',
     output: {
         path: path.join(__dirname, '/dist'),
         filename: 'bundle.js',

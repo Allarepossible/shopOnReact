@@ -1,7 +1,10 @@
 module.exports = {
     mode: 'development',
+    resolve: {
+        // Add `.ts` and `.tsx` as a resolvable extension.
+        extensions: ['.ts', '.tsx', '.js'],
+    },
     module: {
-        resolve: {extensions: ['.js', '.jsx', '.react.js', '.ts', '.tsx']},
         rules: [
             {
                 // test: /\.js$/,
@@ -10,7 +13,10 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader',
+                use: [{
+                    loader: 'ts-loader',
+                }],
+                exclude: /node_modules/,
             },
             {
                 test: /\.(pdf|jpg|png|gif|svg|ico)$/,

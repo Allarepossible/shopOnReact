@@ -1,13 +1,28 @@
 {
-	"compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "module": "commonjs",
-        "target": "es5",
-        "jsx": "react"
-    },
-    "include": [
-        "./src/**/*"
-    ]
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES2017",
+    "module": "ES2015",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "pretty": true,
+    "alwaysStrict": true,
+    "lib": [
+      "DOM",
+      "ES2017",
+      "DOM.Iterable",
+      "ScriptHost"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["./client/app/components/*"],
+      "containers/*": ["./client/app/containers/*"],
+    }
+  }
 }
