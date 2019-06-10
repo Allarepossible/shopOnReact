@@ -1,28 +1,27 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "allowJs": true,
-    "target": "ES2017",
-    "module": "ES2015",
-    "moduleResolution": "Node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
+    "checkJs": false,
+    "jsx": "react",
+    "outDir": "./build",
+    "removeComments": true,
+    "noEmit": true,
     "pretty": true,
-    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "module": "es2015",
     "lib": [
-      "DOM",
-      "ES2017",
-      "DOM.Iterable",
-      "ScriptHost"
+      "es2015",
+      "es2016"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "components/*": ["./client/app/components/*"],
-      "containers/*": ["./client/app/containers/*"],
-    }
-  }
+    "esModuleInterop": true
+  },
+  "include": [
+    "./src/client/client.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

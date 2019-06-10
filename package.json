@@ -12,6 +12,8 @@
     "dev:build-client": "webpack --config webpack.client.js --watch"
   },
   "dependencies": {
+    "@types/react-router": "^5.0.1",
+    "@types/styled-components": "^4.1.16",
     "axios": "0.16.2",
     "clean-tag": "^2.0.2",
     "express": "4.15.4",
