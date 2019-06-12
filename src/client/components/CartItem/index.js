@@ -79,7 +79,17 @@ const Delete = styled.i`
     background-size: 100%;
 `;
 
-const CartItem = ({image, name, articul, nalichie, catalog, price, count, deleteProduct, change}) => (
+const CartItem = ({
+    image,
+    name,
+    articul,
+    nalichie,
+    catalog,
+    price,
+    count,
+    deleteProduct,
+    change,
+}) => (
     <CartItemStyle>
         <Link to={`/catalog/${catalog}/${articul}`}>
             <CartItemImage>

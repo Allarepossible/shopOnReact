@@ -82,4 +82,3 @@ const MenuItem = ({
 };
 
 export default connect(null, {fetchCatalog})(MenuItem);
-

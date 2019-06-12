@@ -9,7 +9,9 @@ import Information from '../components/Information';
 
 class Page extends Component {
     render() {
-        const {children, title, breadcrumbs, withInformation} = this.props;
+        const {
+            children, title, breadcrumbs, withInformation,
+        } = this.props;
 
         return (
             <Container flexDirection='column'>

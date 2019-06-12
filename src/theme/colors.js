@@ -1,4 +1,6 @@
-import {keys, merge, pipe, reduce} from 'ramda';
+import {
+    keys, merge, pipe, reduce,
+} from 'ramda';
 import {tint, shade} from 'polished';
 
 const BASE_COLORS = {

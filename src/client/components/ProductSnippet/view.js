@@ -93,7 +93,9 @@ const ProductSnippet = ({
     addProductToCart,
     view,
 }) => {
-    const product = {images, articul, name, info, ratio, price, nalichie};
+    const product = {
+        images, articul, name, info, ratio, price, nalichie,
+    };
     const NewPrice = String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
 
     if (view === 'tile') {

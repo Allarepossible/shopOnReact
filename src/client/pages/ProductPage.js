@@ -32,7 +32,9 @@ class ProductPage extends Component {
         if (!product) {
             return null;
         }
-        const {catalog, articul, name, images, feature, ratio, info} = product;
+        const {
+            catalog, articul, name, images, feature, ratio, info,
+        } = product;
         const catalogLink = `/catalog/${catalog}`;
         const catalogName = find(propEq('id', catalog), categories).name;
         const NewPrice = String(product.price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');

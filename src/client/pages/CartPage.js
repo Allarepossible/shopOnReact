@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {find, isEmpty, map, prop, propEq, reduce} from 'ramda';
+import {
+    find, isEmpty, map, prop, propEq, reduce,
+} from 'ramda';
 import styled from 'styled-components';
 
 import {deleteProductFromCart, changeCountOfProductInCart, fetchCart} from '../actions';
@@ -35,7 +37,9 @@ class CartPage extends Component {
     }
 
     render() {
-        const {deleteProductFromCart: deleteProduct, changeCountOfProductInCart: change, products, cart} = this.props;
+        const {
+            deleteProductFromCart: deleteProduct, changeCountOfProductInCart: change, products, cart,
+        } = this.props;
 
         return (
             <Page title='Корзина' breadcrumbs={[{name: 'Корзина', link: '/cart'}]}>
