@@ -8,7 +8,7 @@ const debuglog = util.debuglog('webpack_config');
 const baseConfig = require('./webpack.base');
 
 const config = {
-    entry: './src/client/client.js',
+    entry: './src/client/client.tsx',
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js',
