@@ -7,6 +7,8 @@ import Text from '../Text';
 import Flex from '../Flex';
 import CheckboxFilter from '../CheckboxFilter';
 
+import {changeFilter} from '../../actions';
+
 const FiltersItem = styled(Box)`
     padding: 10px 15px;
 
@@ -155,7 +157,7 @@ const COLORS = {
 
 const Select = ({name}) => (
     <FilterItem>
-        <input type='radio' id={name} name='available' />
+        <input type='radio' id={name} name='available' onClick={changeFilter.bind(this, name)}/>
         <LabelRadio htmlFor={name} className='radio'>
             {name}
         </LabelRadio>
@@ -200,13 +202,11 @@ const RangeBox = () => {
     );
 };
 
-const Filter = ({filter, changeFilter}) => {
+const Filter = ({filter, changeFilter: change}) => {
     const active = filter.open === 'yes' ? 'active' : '';
 
     const onTitleClick = () => {
         filter.open = filter.open === 'yes' ? 'no' : 'yes';
-
-        changeFilter(filter);
     };
     const justifyContent = filter.id === 'color' ? 'space-between' : 'flex-start';
     const flexWrap = filter.id === 'color' ? 'wrap' : 'nowrap';
@@ -229,6 +229,7 @@ const Filter = ({filter, changeFilter}) => {
                                 id={filter.id}
                                 key={i}
                                 name={el}
+                                onClick={change.bind(this, filter.id)}
                             />
                         ))
                         }
@@ -238,6 +239,7 @@ const Filter = ({filter, changeFilter}) => {
                             <Select
                                 key={el}
                                 name={el}
+                                onClick={change.bind(this, filter.id)}
                             />
                         ))
                         }
@@ -247,6 +249,7 @@ const Filter = ({filter, changeFilter}) => {
                             <Color
                                 key={i}
                                 name={el}
+                                onClick={change.bind(this, filter.id)}
                             />
                         ))
                         }
@@ -269,11 +272,4 @@ const mapStateToProps = (state, {filter}) => ({
     filter,
 });
 
-const mapDispatchToProps = dispatch => ({
-    changeFilter: filter => {
-        const payload = filter;
-        dispatch({type: 'CHANGE_FILTER', payload});
-    },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Filter);
+export default connect(mapStateToProps, {changeFilter})(Filter);

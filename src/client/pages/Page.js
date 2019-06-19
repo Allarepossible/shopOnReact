@@ -14,7 +14,7 @@ class Page extends Component {
         } = this.props;
 
         return (
-            <Container flexDirection='column' style={{'min-height': '50vh'}}>
+            <Container flexDirection='column' style={{minHeight: '50vh'}}>
                 {
                     breadcrumbs && <Breadcrumbs catalog={breadcrumbs}/>
                 }
