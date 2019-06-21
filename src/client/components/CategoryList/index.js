@@ -11,6 +11,7 @@ class CategoryList extends Component {
         this.state = {
             view: 'tile',
             sort: 'date',
+            products: props.products,
         };
 
         this.changeViewProducts = this.changeViewProducts.bind(this);
@@ -28,7 +29,7 @@ class CategoryList extends Component {
         const sortedProducts = this.props.products.sort((a, b) => a[activeSort] - b[activeSort]);
 
         this.setState({sort: activeSort});
-        this.setState({products: sortedProducts});
+        this.props.products = sortedProducts;
     }
 
     render() {
