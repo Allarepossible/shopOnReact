@@ -1,5 +1,4 @@
 import React, {Component, Fragment} from 'react';
-import {connect} from 'react-redux';
 
 import Flex from '../Flex';
 import SortBar from '../SortBar';
@@ -71,8 +70,4 @@ class CategoryList extends Component {
     }
 }
 
-const mapStateToProps = ({catalog}) => ({
-    products: catalog.products,
-});
-
-export default connect(mapStateToProps)(CategoryList);
+export default CategoryList;
