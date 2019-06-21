@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 
 import Flex from '../Flex';
 import SortBar from '../SortBar';
-import ProductSnippet from '../ProductSnippet';
+import ProductSnippet from '../../containers/ProductSnippet';
 
 class CategoryList extends Component {
     constructor(props) {
