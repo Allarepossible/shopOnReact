@@ -6,6 +6,7 @@ export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_ADMINS = 'FETCH_ADMINS';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
+export const CHANGE_SORT = 'CHANGE_SORT';
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
 export const INCREASE_COUNT_OF_PRODUCT_IN_CART = 'INCREASE_COUNT_OF_PRODUCT_IN_CART';
@@ -68,6 +69,13 @@ export const changeFilter = filter => async dispatch => {
     dispatch({
         type: CHANGE_FILTER,
         payload: filter,
+    });
+};
+
+export const changeSort = ({target}) => async dispatch => {
+    dispatch({
+        type: CHANGE_SORT,
+        payload: target.value,
     });
 };
 

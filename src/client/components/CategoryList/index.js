@@ -15,7 +15,6 @@ class CategoryList extends Component {
         };
 
         this.changeViewProducts = this.changeViewProducts.bind(this);
-        this.changeSortProduct = this.changeSortProduct.bind(this);
     }
 
     changeViewProducts(e) {
@@ -24,17 +23,9 @@ class CategoryList extends Component {
         this.setState({view: activeView});
     }
 
-    changeSortProduct(e) {
-        const activeSort = e.target.value;
-        const sortedProducts = this.props.products.sort((a, b) => a[activeSort] - b[activeSort]);
-
-        this.setState({sort: activeSort});
-        this.props.products = sortedProducts;
-    }
-
     render() {
         const {view} = this.state;
-        const {products} = this.props;
+        const {products, changeSort} = this.props;
         const justifyContent = view === 'tile' && 'space-between';
         const flexWrap = view === 'tile' && 'wrap';
         const flexDirection = view !== 'tile' && 'column';
@@ -44,7 +35,7 @@ class CategoryList extends Component {
                 <SortBar
                     activeView={this.state.view}
                     changeViewProducts={this.changeViewProducts}
-                    changeSortProduct={this.changeSortProduct}
+                    changeSortProduct={changeSort}
                 />
                 <Flex mb={30} flexWrap={flexWrap} flexDirection={flexDirection} justifyContent={justifyContent}>
                     {
