@@ -3,7 +3,7 @@ import {FETCH_CART, FETCH_PRODUCT, CHANGE_FILTER, FETCH_CATALOG, CHANGE_SORT} fr
 export default (state = [], {type, payload}) => {
     switch (type) {
         case FETCH_CATALOG:
-            return payload.data.products;
+            return payload.products;
         case FETCH_PRODUCT:
             return [...state, payload.data];
         case FETCH_CART:

@@ -13,11 +13,11 @@ export const INCREASE_COUNT_OF_PRODUCT_IN_CART = 'INCREASE_COUNT_OF_PRODUCT_IN_C
 export const DECREASE_COUNT_OF_PRODUCT_IN_CART = 'DECREASE_COUNT_OF_PRODUCT_IN_CART';
 
 export const fetchCatalog = path => async (dispatch, getState, api) => {
-    const result = await api.get(path);
+    const {data} = await api.get(path);
 
     dispatch({
         type: FETCH_CATALOG,
-        payload: result,
+        payload: data,
     });
 };
 

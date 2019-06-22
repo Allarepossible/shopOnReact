@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 
 import {fetchCatalog} from '../actions';
 import Flex from '../components/Flex';
-import Filters from '../components/Filters';
+import Filters from '../containers/Filters';
 import CategoryList from '../containers/CategoryList';
 import Page from './Page';
 
