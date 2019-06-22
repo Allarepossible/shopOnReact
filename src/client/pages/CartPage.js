@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {
-    find, isEmpty, map, prop, propEq, reduce,
+    find, isEmpty, map, prop, propEq, reduce, filter,
 } from 'ramda';
 import styled from 'styled-components';
 
@@ -27,9 +27,9 @@ const Empty = styled(Flex)`
 
 class CartPage extends Component {
     componentDidMount() {
-        const {cart} = this.props;
+        const {cart ,products} = this.props;
 
-        if (!isEmpty(cart)) {
+        if (!isEmpty(cart) && cart.length !== products.length) {
             const ids = map(prop('articul'))(cart);
 
             this.props.fetchCart(ids);
@@ -92,7 +92,12 @@ class CartPage extends Component {
     }
 }
 
-const mapStateToProps = ({cart, products}) => ({cart, products});
+const mapStateToProps = ({cart = [], products = []}) => {
+    const articuls = map(item => item.articul, cart);
+    const productsInCart = filter(({articul}) => articuls.indexOf(articul) > -1, products);
+
+    return {cart, products: productsInCart};
+};
 
 export default {
     component: connect(mapStateToProps, {deleteProductFromCart, changeCountOfProductInCart, fetchCart})(CartPage),
