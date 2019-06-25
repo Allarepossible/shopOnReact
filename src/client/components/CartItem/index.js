@@ -19,6 +19,11 @@ const Td = styled(tag.td)`
     border-bottom: 1px solid #d4d4d4;
 `;
 
+const TdCenter = styled(tag.td)`
+    text-align: center;
+    border-bottom: 1px solid #d4d4d4;
+`;
+
 const CartItemImage = styled(Flex)`
     width: 70px;
     height: 70px;
@@ -97,20 +102,20 @@ const CartItem = ({
                 </CartItemImage>
             </Link>
         </Td>
-        <Td>
+        <TdCenter>
             <Box>
                 <Text fontWeight='bold' color='grey' fontSize='s'>Артикул</Text>
                 <Text fontWeight='bold'>{articul}</Text>
             </Box>
-        </Td>
+        </TdCenter>
         <Td>
             <Text>{name}</Text>
         </Td>
-        <Td>
+        <TdCenter>
             <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
-        </Td>
+        </TdCenter>
         <Td>
-            <Flex justifyContent='space-around'>
+            <Flex justifyContent="center">
                 <Button onClick={change.bind(this, {articul}, '+')} disabled={count === 1}>-</Button>
                 <Input type='text' value={count} onChange={() => {}}/>
                 <Button onClick={change.bind(this, {articul})}>+</Button>
