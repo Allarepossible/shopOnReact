@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import tag from 'clean-tag';
 
 import Flex from '../Flex';
 import Box from '../Box';
@@ -8,16 +9,14 @@ import Text from '../Text';
 
 const normalizePrice = price => String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
 
-const CartItemStyle = styled(Flex)`
-    align-items: center;
-    justify-content: space-between;
+const Tr = styled(tag.tr)`
+    background-color: #fff;
+`;
 
-    margin-bottom: 5px;
-    padding: 5px 10px;
-
-    border: 1px solid #dee1e4;
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, .6);
+const Td = styled(tag.td)`
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #d4d4d4;
 `;
 
 const CartItemImage = styled(Flex)`
@@ -90,26 +89,38 @@ const CartItem = ({
     deleteProduct,
     change,
 }) => (
-    <CartItemStyle>
-        <Link to={`/catalog/${catalog}/${articul}`}>
-            <CartItemImage>
-                <img src={image} alt={name} />
-            </CartItemImage>
-        </Link>
-        <Box>
-            <Text fontWeight='bold' color='grey' fontSize='s'>Артикул</Text>
-            <Text fontWeight='bold'>{articul}</Text>
-        </Box>
-        <Text>{name}</Text>
-        <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
-        <Flex justifyContent='space-around'>
-            <Button onClick={change.bind(this, {articul}, '+')} disabled={count === 1}>-</Button>
-            <Input type='text' value={count} onChange={() => {}}/>
-            <Button onClick={change.bind(this, {articul})}>+</Button>
-            <Delete onClick={deleteProduct} />
-        </Flex>
-        <Text size='l'>{normalizePrice(price)} ₽</Text>
-    </CartItemStyle>
+    <Tr>
+        <Td>
+            <Link to={`/catalog/${catalog}/${articul}`}>
+                <CartItemImage>
+                    <img src={image} alt={name} />
+                </CartItemImage>
+            </Link>
+        </Td>
+        <Td>
+            <Box>
+                <Text fontWeight='bold' color='grey' fontSize='s'>Артикул</Text>
+                <Text fontWeight='bold'>{articul}</Text>
+            </Box>
+        </Td>
+        <Td>
+            <Text>{name}</Text>
+        </Td>
+        <Td>
+            <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
+        </Td>
+        <Td>
+            <Flex justifyContent='space-around'>
+                <Button onClick={change.bind(this, {articul}, '+')} disabled={count === 1}>-</Button>
+                <Input type='text' value={count} onChange={() => {}}/>
+                <Button onClick={change.bind(this, {articul})}>+</Button>
+                <Delete onClick={deleteProduct} />
+            </Flex>
+        </Td>
+        <Td>
+            <Text size='l'>{normalizePrice(price)} ₽</Text>
+        </Td>
+    </Tr>
 );
 
 export default CartItem;
