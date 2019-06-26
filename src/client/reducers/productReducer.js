@@ -1,4 +1,10 @@
-import {FETCH_CART, FETCH_PRODUCT, CHANGE_FILTER, FETCH_CATALOG, CHANGE_SORT} from '../actions';
+import {
+    FETCH_CART,
+    FETCH_PRODUCT,
+    CHANGE_FILTER,
+    FETCH_CATALOG,
+    CHANGE_SORT,
+} from '../actions';
 
 export default (state = [], {type, payload}) => {
     switch (type) {

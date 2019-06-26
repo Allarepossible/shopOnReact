@@ -6,7 +6,6 @@ import Box from '../Box';
 import Text from '../Text';
 import Flex from '../Flex';
 import CheckboxFilter from '../CheckboxFilter';
-
 import {changeFilter} from '../../actions';
 
 const FiltersItem = styled(Box)`
