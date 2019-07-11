@@ -69,9 +69,11 @@ class CartPage extends Component {
                         </thead>
                         <tbody>
                             {
-                                !isEmpty(products)
-                                && cart.map(({articul, count}, index) => {
+                                !isEmpty(products) && cart.map(({articul, count}, index) => {
                                     const product = find(propEq('articul', Number(articul)), products);
+                                    if (isEmpty(product)) {
+                                        return null;
+                                    }
 
                                     return (
                                         <CartItem
