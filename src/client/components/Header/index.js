@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {isEmpty, map, prop, reduce} from 'ramda';
+import {
+    isEmpty, map, prop, reduce,
+} from 'ramda';
 
 import Flex from '../Flex';
 import Socials from '../Socials';
@@ -166,4 +168,3 @@ const Header = ({cart}) => {
 const mapStateToProps = ({cart}) => ({cart});
 
 export default connect(mapStateToProps)(Header);
-

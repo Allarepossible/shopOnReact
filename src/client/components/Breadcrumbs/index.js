@@ -21,7 +21,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Breadcrumb = ({name, link}) => (
-    <Item>
+    <Item key={name}>
         <StyledLink to={link}>{name}</StyledLink>
     </Item>
 );

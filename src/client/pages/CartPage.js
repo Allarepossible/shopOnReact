@@ -1,51 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {find, isEmpty, map, prop, propEq, reduce} from 'ramda';
+import {
+    find, isEmpty, map, prop, propEq, reduce, filter,
+} from 'ramda';
 import styled from 'styled-components';
+import tag from 'clean-tag';
 
 import {deleteProductFromCart, changeCountOfProductInCart, fetchCart} from '../actions';
 import Box from '../components/Box';
 import Flex from '../components/Flex';
-import Text from '../components/Text';
+import CartItem from '../components/CartItem';
 import Page from './Page';
 
 const normalizePrice = price => String(price).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ');
-
-const CartItemStyle = styled(Flex)`
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-    margin-bottom: 5px;
-    padding: 5px 10px;
-
-    border: 1px solid #dee1e4;
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, .6);
-`;
-
-const CartItemImage = styled(Flex)`
-    width: 70px;
-    height: 70px;
-
-    border: 1px solid #dee1e4;
-    border-radius: 2px;
-    background-color: #fff;
-
-    align-items: center;
-    justify-content: center;
-    img {
-        max-width: 95%;
-        max-height: 95%;
-    }
-`;
 
 const Price = styled(Flex)`
     font-size: 22px;
     justify-content: flex-end;
 `;
-
 
 const Empty = styled(Flex)`
     font-size: 30px;
@@ -53,79 +25,23 @@ const Empty = styled(Flex)`
     justify-content: center;
 `;
 
-const Input = styled.input`
-    font-size: 15px;
-
-    width: 25px;
-    height: 25px;
-
-    text-align: center;
-
-    border: 1px solid #dee1e4;
-    border-radius: 3px;
+const Table = styled(tag.table)`
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
 `;
 
-const Button = styled.button`
-    position: relative;
-
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
-    padding: 0;
-    line-height: 18px;
-    font-size: 19px;
-    margin: 0 5px;
-    cursor: pointer;
-
-    border: 1px solid #dee1e4;
-    background-color: #fff;
-    
-    [disabled] {
-        opacity: 0.3;
-    }
+const Th = styled(tag.th)`
+    padding: 10px 0;
+    border-bottom: 2px solid #000000; 
 `;
-
-
-const Delete = styled.i`
-    width: 19px;
-    height: 22px;
-
-    cursor: pointer;
-
-    background: url('/api/images/trash.png') center center no-repeat;
-    background-size: 100%;
-`;
-
-
-const CartItem = ({image, name, articul, nalichie, catalog, price, count, deleteProduct, change}) => (
-    <CartItemStyle>
-        <Link to={`/catalog/${catalog}/${articul}`}>
-            <CartItemImage>
-                <img src={image} alt={name} />
-            </CartItemImage>
-        </Link>
-        <Box>
-            <Text fontWeight='bold' color='grey' fontSize='s'>Артикул</Text>
-            <Text fontWeight='bold'>{articul}</Text>
-        </Box>
-        <Text>{name}</Text>
-        <Text fontWeight='bold' color='grey' fontSize='s'>{nalichie}</Text>
-        <Flex justifyContent='space-around'>
-            <Button onClick={change.bind(this, {articul}, '+')} disabled={count === 1}>-</Button>
-            <Input type='text' value={count} onChange={() => {}}/>
-            <Button onClick={change.bind(this, {articul})}>+</Button>
-            <Delete onClick={deleteProduct} />
-        </Flex>
-        <Text size='l'>{normalizePrice(price)} ₽</Text>
-    </CartItemStyle>
-);
-
 
 class CartPage extends Component {
     componentDidMount() {
-        const {cart} = this.props;
+        const {cart, products} = this.props;
 
-        if (!isEmpty(cart)) {
+        if (!isEmpty(cart) && cart.length !== products.length) {
             const ids = map(prop('articul'))(cart);
 
             this.props.fetchCart(ids);
@@ -133,40 +49,56 @@ class CartPage extends Component {
     }
 
     render() {
-        const {deleteProductFromCart: deleteProduct, changeCountOfProductInCart: change, products, cart} = this.props;
+        const {
+            deleteProductFromCart: deleteProduct, changeCountOfProductInCart: change, products, cart,
+        } = this.props;
 
         return (
             <Page title='Корзина' breadcrumbs={[{name: 'Корзина', link: '/cart'}]}>
                 <Box mb='150px'>
-                    <Flex flexDirection='column'>
-                        {
-                            !isEmpty(products)
-                            && cart.map(({articul, count}, index) => {
-                                const product = find(propEq('articul', Number(articul)), products);
+                    <Table>
+                        <thead>
+                            <tr>
+                                <Th>Photo</Th>
+                                <Th>Articul</Th>
+                                <Th>Name</Th>
+                                <Th>In stock</Th>
+                                <Th>Quantity</Th>
+                                <Th>Price</Th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                !isEmpty(products) && cart.map(({articul, count}, index) => {
+                                    const product = find(propEq('articul', Number(articul)), products);
+                                    if (isEmpty(product)) {
+                                        return null;
+                                    }
 
-                                return (
-                                    <CartItem
-                                        key={index}
-                                        image={product.images[0].image}
-                                        name={product.name}
-                                        price={product.price}
-                                        count={count}
-                                        articul={product.articul}
-                                        info={product.info}
-                                        nalichie={product.nalichie}
-                                        catalog={product.catalog}
-                                        cart={cart}
-                                        deleteProduct={deleteProduct.bind(this, product)}
-                                        change={change}
-                                    />
-                                );
-                            })
-                        }
-                        {
-                            isEmpty(products)
-                            && <Empty>Корзина пуста!</Empty>
-                        }
-                    </Flex>
+                                    return (
+                                        <CartItem
+                                            key={index}
+                                            image={product.images[0].image}
+                                            name={product.name}
+                                            price={product.price}
+                                            count={count}
+                                            articul={product.articul}
+                                            info={product.info}
+                                            nalichie={product.nalichie}
+                                            catalog={product.catalog}
+                                            cart={cart}
+                                            deleteProduct={deleteProduct.bind(this, product)}
+                                            change={change}
+                                        />
+                                    );
+                                })
+                            }
+                        </tbody>
+                    </Table>
+                    {
+                        isEmpty(products)
+                        && <Empty>Корзина пуста!</Empty>
+                    }
                     {
                         !isEmpty(products)
                         && (
@@ -186,7 +118,12 @@ class CartPage extends Component {
     }
 }
 
-const mapStateToProps = ({cart, products}) => ({cart, products});
+const mapStateToProps = ({cart = [], products = []}) => {
+    const articuls = map(item => item.articul, cart);
+    const productsInCart = filter(({articul}) => articuls.indexOf(articul) > -1, products);
+
+    return {cart, products: productsInCart};
+};
 
 export default {
     component: connect(mapStateToProps, {deleteProductFromCart, changeCountOfProductInCart, fetchCart})(CartPage),
