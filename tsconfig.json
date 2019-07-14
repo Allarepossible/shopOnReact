@@ -4,6 +4,7 @@
     "allowJs": true,
     "checkJs": false,
     "jsx": "react",
+    "rootDir": "./src",
     "outDir": "./build",
     "removeComments": true,
     "noEmit": true,
