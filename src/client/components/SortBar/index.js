@@ -70,12 +70,12 @@ const ViewItem = ({
     );
 };
 
-const SortBar = ({changeViewProducts, changeSortProducts, activeView}) => (
+const SortBar = ({changeViewProducts, changeSortProduct, activeView}) => (
     <Container>
         <Flex>
             <Text fontSize='s' color='grey' lineHeight='40px'>Сортировать по</Text>
             <Box ml={3} pt={2} pb={2}>
-                <select name="sort" onChange={changeSortProducts}>
+                <select name="sort" onChange={changeSortProduct}>
                     <option value="date">по новизне</option>
                     <option value="ratio">по рейтингу</option>
                     <option value="price">по цене</option>
