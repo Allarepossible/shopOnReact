@@ -3,7 +3,8 @@ import {find, propEq} from 'ramda';
 import {connect} from 'react-redux';
 import {Helmet} from 'react-helmet';
 
-import {fetchProduct, addProductToCart} from '../actions';
+import {addProductToCart} from '../actions';
+import {fetchProductEpic} from '../epics/product';
 import Features from '../components/Features';
 import Rating from '../components/Rating';
 import SlideShow from '../components/SlideShow';

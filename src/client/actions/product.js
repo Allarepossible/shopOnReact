@@ -1,3 +1,5 @@
+import {createAction} from 'redux-actions';
+
 export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_PRODUCT_DONE = 'FETCH_PRODUCT_DONE';
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
@@ -5,8 +7,8 @@ export const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
 export const INCREASE_COUNT_OF_PRODUCT_IN_CART = 'INCREASE_COUNT_OF_PRODUCT_IN_CART';
 export const DECREASE_COUNT_OF_PRODUCT_IN_CART = 'DECREASE_COUNT_OF_PRODUCT_IN_CART';
 
-const fetchProduct = id => ({type: FETCH_PRODUCT, payload: id});
-const fetchProductDone = product => ({type: FETCH_PRODUCT_DONE, payload: product});
+export const fetchProduct = id => ({type: FETCH_PRODUCT, payload: id});
+export const fetchProductDone = product => ({type: FETCH_PRODUCT_DONE, payload: product});
 
 // export const fetchProduct = path => async (dispatch, getState, api) => {
 //     const result = await api.get(path);
