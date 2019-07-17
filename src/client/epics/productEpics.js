@@ -1,11 +1,9 @@
-
-import {map, mergeMap} from 'rxjs/operators';
-import 'rxjs/add/observable/of';
-import {ajax} from 'rxjs/observable/dom/ajax';
+import {ofType} from 'redux-observable';
+import {mergeMap} from 'rxjs/operators';
 
 import {FETCH_PRODUCT, fetchproductDone} from '../actions/product';
 
-const fetchProductEpic = action$ => action$.pipe(
+export const fetchProductEpic = action$ => action$.pipe(
     ofType(FETCH_PRODUCT),
     mergeMap(action =>
         {
