@@ -28,7 +28,7 @@ const store = createStore(
     reducers,
     {...window.INITIAL_STATE, ...initialState},
     //composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance)))
-    composeWithDevTools(epicMiddleware)
+    composeWithDevTools(applyMiddleware(epicMiddleware))
 );
 epicMiddleware.run(rootEpic);
 
