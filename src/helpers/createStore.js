@@ -3,8 +3,8 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import {createEpicMiddleware} from 'redux-observable';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import rootEpic from '../client/epics';
 
+import {rootEpic} from '../client/epics';
 import reducers from '../client/reducers';
 
 const epicMiddleware = createEpicMiddleware();
@@ -19,7 +19,7 @@ export default req => {
     const store = createStore(
         reducers,
         {},
-        composeWithDevTools(applyMiddleware(epicMiddleware))
+        composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance), epicMiddleware))
     );
 
     epicMiddleware.run(rootEpic);

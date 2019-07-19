@@ -14,7 +14,7 @@ import {ThemeProvider} from 'styled-components';
 
 import theme from '../theme';
 import reducers from './reducers';
-import rootEpic from './epics';
+import {rootEpic} from './epics';
 import Routes from './Routes';
 import {saveStateCart, loadState} from '../helpers/localStorage';
 
@@ -27,8 +27,7 @@ const initialState = !isEmpty(loadState()) ? {cart: loadState()} : {};
 const store = createStore(
     reducers,
     {...window.INITIAL_STATE, ...initialState},
-    //composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance)))
-    composeWithDevTools(applyMiddleware(epicMiddleware))
+    composeWithDevTools(applyMiddleware(thunk.withExtraArgument(axiosInstance), epicMiddleware))
 );
 epicMiddleware.run(rootEpic);
 

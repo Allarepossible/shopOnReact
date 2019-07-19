@@ -4,7 +4,7 @@ import {mergeMap} from 'rxjs/operators';
 import {FETCH_PRODUCT, fetchproductDone} from '../actions/product';
 
 export const fetchProductEpic = action$ => action$.pipe(
-    ofType(FETCH_PRODUCT),
+    ofType('FETCH_PRODUCT'),
     mergeMap(action =>
         {
             console.lof('-----------------', action)
