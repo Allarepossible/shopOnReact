@@ -5,6 +5,7 @@ import {
     FETCH_CATALOG,
     CHANGE_SORT,
 } from '../actions';
+import {FETCH_PRODUCT_DONE} from '../actions/product';
 
 export default (state = [], {type, payload}) => {
     switch (type) {
@@ -12,6 +13,8 @@ export default (state = [], {type, payload}) => {
             return payload.products;
         case FETCH_PRODUCT:
             return [...state, payload.data];
+        case FETCH_PRODUCT_DONE:
+            return [...state, payload];
         case FETCH_CART:
             return [...state, ...payload.data];
         case CHANGE_FILTER:

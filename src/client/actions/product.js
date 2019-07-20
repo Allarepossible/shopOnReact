@@ -7,17 +7,8 @@ export const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
 export const INCREASE_COUNT_OF_PRODUCT_IN_CART = 'INCREASE_COUNT_OF_PRODUCT_IN_CART';
 export const DECREASE_COUNT_OF_PRODUCT_IN_CART = 'DECREASE_COUNT_OF_PRODUCT_IN_CART';
 
-export const fetchProduct = id => ({type: FETCH_PRODUCT, payload: id});
-export const fetchProductDone = product => ({type: FETCH_PRODUCT_DONE, payload: product});
-
-// export const fetchProduct = path => async (dispatch, getState, api) => {
-//     const result = await api.get(path);
-//
-//     dispatch({
-//         type: FETCH_PRODUCT,
-//         payload: result,
-//     });
-// };
+export const fetchProduct = path => (dispatch, getState, api) => dispatch({type: FETCH_PRODUCT, payload: {path, api}});
+export const fetchProductDone = product => dispatch => dispatch({type: FETCH_PRODUCT_DONE, payload: product});
 
 export const addProductToCart = product => async dispatch => {
     dispatch({
