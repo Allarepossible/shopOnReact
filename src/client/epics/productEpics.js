@@ -7,7 +7,7 @@ export const fetchProductEpic = action$ => action$.pipe(
     ofType('FETCH_PRODUCT'),
     mergeMap(action =>
         {
-            console.lof('-----------------', action)
+            console.log('-----------------', action)
         }
         // ajax.getJSON(`https://api.github.com/users/${action.payload}`).pipe(
         //     map(response => fetchproductDone(response))
