@@ -1,5 +1,3 @@
-import {createAction} from 'redux-actions';
-
 export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_PRODUCT_DONE = 'FETCH_PRODUCT_DONE';
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';

@@ -21,15 +21,6 @@ export const fetchCatalog = path => async (dispatch, getState, api) => {
     });
 };
 
-export const fetchProduct = path => async (dispatch, getState, api) => {
-    const result = await api.get(path);
-
-    dispatch({
-        type: FETCH_PRODUCT,
-        payload: result,
-    });
-};
-
 export const fetchCart = ids => async (dispatch, getState, api) => {
     const result = await api.get(`products?ids=${ids}`);
 
