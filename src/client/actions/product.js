@@ -6,7 +6,7 @@ export const INCREASE_COUNT_OF_PRODUCT_IN_CART = 'INCREASE_COUNT_OF_PRODUCT_IN_C
 export const DECREASE_COUNT_OF_PRODUCT_IN_CART = 'DECREASE_COUNT_OF_PRODUCT_IN_CART';
 
 export const fetchProduct = path => (dispatch, getState, api) => dispatch({type: FETCH_PRODUCT, payload: {path, api}});
-export const fetchProductDone = product => dispatch => dispatch({type: FETCH_PRODUCT_DONE, payload: product});
+export const fetchProductDone = product => ({type: FETCH_PRODUCT_DONE, payload: product});
 
 export const addProductToCart = product => async dispatch => {
     dispatch({
