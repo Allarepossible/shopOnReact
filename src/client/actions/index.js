@@ -2,8 +2,8 @@ import {isNil} from 'ramda';
 
 export const FETCH_CART = 'FETCH_CART';
 export const FETCH_CATALOG = 'FETCH_CATALOG';
-export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
+export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_ADMINS = 'FETCH_ADMINS';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const CHANGE_SORT = 'CHANGE_SORT';
@@ -18,15 +18,6 @@ export const fetchCatalog = path => async (dispatch, getState, api) => {
     dispatch({
         type: FETCH_CATALOG,
         payload: data,
-    });
-};
-
-export const fetchProduct = path => async (dispatch, getState, api) => {
-    const result = await api.get(path);
-
-    dispatch({
-        type: FETCH_PRODUCT,
-        payload: result,
     });
 };
 
