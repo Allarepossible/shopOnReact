@@ -1,6 +1,5 @@
 import {
     FETCH_CART,
-    FETCH_PRODUCT,
     CHANGE_FILTER,
     FETCH_CATALOG,
     CHANGE_SORT,
@@ -12,7 +11,6 @@ export default (state = [], {type, payload}) => {
         case FETCH_CATALOG:
             return payload.products;
         case FETCH_PRODUCT_DONE:
-            console.log('===============', payload)
             return [...state, payload];
         case FETCH_CART:
             return [...state, ...payload.data];
