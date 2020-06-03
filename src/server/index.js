@@ -52,5 +52,5 @@ app.disable('etag');
 
 app.listen(PORT, () => {
     // eslint-disable-next-line
-    console.log('server run');
+    console.log('server run on port', PORT);
 });
